@@ -1,1 +1,12 @@
-<p>products works!</p>
+<div class = "row">
+    <div class = "col-sm-4" *ngFor="let product of products">
+        <div class ="card">
+            <img src="Product.imgUrl" alt="">
+            <a  [routerLink]="['/products',product.id]"><h3 class = "card-title">
+                {{product.name}}
+            </h3>
+        </a>
+        </div>
+        
+    </div>
+</div>

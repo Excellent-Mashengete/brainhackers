@@ -1,1 +1,44 @@
-<p>cart works!</p>
+<!-- <div class ="empty" *ngIf=" items.length <1 "> -->
+    <div class ="empty" *ngIf=" items.length >1 ">
+    <div class ="info">
+        <h4>You dont have any items in your cart.</h4>
+        <a routerLink="" class="btn btn-success">Start Shopping </a>
+    </div>
+    <ng-container  *ngIf="items.length  > 0 "></ng-container>
+    <div class="='cart" *ngFor="let item of items; let index">
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="card text-left" *ngFor="let p of products">
+        <div class="row">
+            <div class="col">
+                <img class="card-img-top" src="{{p.image}}" alt="">
+            </div>
+            <div class="col mt-1">
+                <h4 class="card-title">{{p.name}}</h4>
+                <p class="card-text">{{p.description}}</p>
+                <!-- <p class="card-text">{{p.size}}</p> -->
+                <p class="card-text">R {{p.price}}</p>
+            </div>
+            <div class="col">
+                <div class="my-2">
+                    <a class="btn btn-primary btn-sm " role="button" onClick="increment()">+</a>
+                    <div class="form-group my-1">
+                      <input type="text"
+                        class="form-control" name="" id="" aria-describedby="helpId" value="{{quantity}}">
+                    </div>
+                    <a class="btn btn-primary btn-sm " role="button" onClick="increment">-</a>
+    
+                </div>
+                
+                <div>
+                    <a class="btn btn-cancel btn-sm " href="#" role="button">X</a> 
+                </div>
+            </div>
+        </div>
+        
+       
+        
+</div>

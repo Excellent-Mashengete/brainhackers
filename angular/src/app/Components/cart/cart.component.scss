@@ -1,0 +1,33 @@
+.empty{
+    height: 70vh;
+ display: grid;
+ justify-content: center;
+ align-content: center;
+
+ text-align: center;
+}
+
+
+.btn-sm{
+    width: 45%;
+}
+
+input{
+    width: 45%;
+}
+
+.btn-cancel{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 8%;
+    border-radius: 50%;
+}
+
+h4{
+    font-size: initial;
+}
+
+p{
+    font-size: small;
+}
