@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #ECECEC;
+}
+
+.container{
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: white;
+    width: 320px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 15px;
+    padding: 10px;
+}
+.card-img{
+    height: 170px;
+    margin-bottom: 15px;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-1{
+    background: url(../../../assets/productPage1.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-2{
+    background: url(../../../assets/productPage2.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-3{
+    background: url(../../../assets/productPage4.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-4{
+    background: url(../../../assets/productPage5.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-5{
+    background: url(../../../assets/productPage.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card-6{
+    background: url(../../../assets/productPage4.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card a{
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    text-decoration: none;
+}
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
