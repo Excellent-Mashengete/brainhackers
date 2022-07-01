@@ -9,20 +9,19 @@ import Validation from '../../utils/validation';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
-    username: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
+    enteremail: new FormControl(''),
+    entername: new FormControl(''),
+    createpassword: new FormControl(''),
     confirmPassword: new FormControl(''),
-    acceptTerms: new FormControl(false),
+  
   });
   submitted = false;
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        fullname: ['', Validators.required],
-        username: [
+        enteremail: ['', Validators.required],
+        entername: [
           '',
           [
             Validators.required,
@@ -30,8 +29,8 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(20)
           ]
         ],
-        email: ['', [Validators.required, Validators.email]],
-        password: [
+        createpassword: ['', [Validators.required, Validators.email]],
+        confirmpassword: [
           '',
           [
             Validators.required,
@@ -39,11 +38,10 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(40)
           ]
         ],
-        confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
+        
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: [Validation.match('createpassword', 'confirmPassword')]
       }
     );
   }
