@@ -1,13 +1,41 @@
+body {
+
+  
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
 .body {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(242, 242, 242);
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     color: white;
 }
 
+
+ // HEADER SECTION 
+.header {
+    
+    color: black;
+    height: 10%;
+}
+
+
+//   MAIN SECTION 
+.main {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 40px;
+    height: 60%;
+    padding: 20px;
+}
+
+
+//  UNORDERED LISTS SECTION
 ul {
     display: flex;
     justify-content: space-evenly;
@@ -22,44 +50,60 @@ ul li {
     width: 40px;
     height: 40px;
     text-align: center;
+    padding-top: 20px;
     border-radius: 100%;
     
 }
 
 
+
+//   STYLING BUTTONS 
 button {
     border-radius: 20px;
     background-color: rgba(16, 16, 231);
+    color: white;
     border-style: none;
-    
+    width: 40%;
+    height: 40px;
 }
+
+
 
 .picked {
     background-color: rgba(16, 16, 231);
     color: white;
 }
 
-//.header {
-    
-//}
 
-.header {
-    color: red;
+// IMAGE STYLE
+img {
+    padding: 40px;
+    margin-right: auto;
+    margin-left: auto;
+ 
+  }
+
+
+.header img  {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
 }
+
 .navSvg {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 20px;
 }
 
-.main {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border-radius: 40px;
-    padding: 20px;
+.navSvg img {
+    height: 190px;
+    width: 250px;
 }
 
-.main-bottom {
-    display: flex;
-    justify-content: space-around;
+
+
+.cart-button {
+    width: 40%px;
 }
