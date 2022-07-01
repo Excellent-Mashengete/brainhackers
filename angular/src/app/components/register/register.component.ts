@@ -9,10 +9,10 @@ import Validation from '../../utils/validation';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
-    enteremail: new FormControl(''),
-    entername: new FormControl(''),
+    email: new FormControl(''),
+    name: new FormControl(''),
     createpassword: new FormControl(''),
-    confirmPassword: new FormControl(''),
+    confirmpassword: new FormControl(''),
   
   });
   submitted = false;
@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        enteremail: ['', Validators.required],
-        entername: [
+        email: ['', Validators.required],
+       name: [
           '',
           [
             Validators.required,
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         
       },
       {
-        validators: [Validation.match('createpassword', 'confirmPassword')]
+        validators: [Validation.match('createpassword', 'confirmpassword')]
       }
     );
   }
