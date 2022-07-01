@@ -13,8 +13,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
   
-   
   }
+
+  
+
 
 items:Product[] = [];
 
@@ -34,7 +36,7 @@ products = [
       description: 'color:royalty green with touch of black a',
       size: [4, 5, 6, 7, 8],
       price: 1700,
-      image: '../../../assets/images/productPage.png',
+      image: '../../../assets/images/cartMobile-.png',
       quantity:1,
     },
     {
@@ -43,11 +45,14 @@ products = [
       description: 'color:royalty green with touch of black a',
       size: [4, 5, 6, 7, 8],
       price: 2000,
-      image: '../../../assets/images/productPage.png',
+      image: '../../../assets/images/productPage1.png',
       quantity:1,
     }
   
 ];
+
+
+
   increment(pro:any){
     pro.quantity = pro.quantity +1;
   }
