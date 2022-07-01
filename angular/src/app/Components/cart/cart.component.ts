@@ -9,10 +9,14 @@ import { Product } from 'src/app/product.model';
 })
 export class CartComponent implements OnInit {
 
+  constructor(private cartService: CartService) { }
+
+  ngOnInit(): void {
+  
+   
+  }
+
 items:Product[] = [];
-
-quantity = 0;
-
 
 products = [
   {
@@ -22,21 +26,57 @@ products = [
     size: [4, 5, 6, 7, 8],
     price: 1500,
     image: '../../../assets/images/productPage.png',
-    quantity: 10,
-  }
-];
-
-
-  constructor(private cartServices: CartService) { }
-
-  ngOnInit(): void {
-    this.increment();
-  }
-
+    quantity:1,
+  },
+    {
+      id: 2,
+      name: 'Puma X-Ray 2.0',
+      description: 'color:royalty green with touch of black a',
+      size: [4, 5, 6, 7, 8],
+      price: 1700,
+      image: '../../../assets/images/productPage.png',
+      quantity:1,
+    },
+    {
+      id: 3,
+      name: 'Puma X-Ray 2.0',
+      description: 'color:royalty green with touch of black a',
+      size: [4, 5, 6, 7, 8],
+      price: 2000,
+      image: '../../../assets/images/productPage.png',
+      quantity:1,
+    }
   
-  increment(){
-    this.quantity = this.products[0].quantity + this.quantity++;
-console.log(this.quantity)
+];
+  increment(pro:any){
+    pro.quantity = pro.quantity +1;
+  }
+
+  decrement(pro:any){
+    if(pro.quantity !=1)
+    pro.quantity = pro.quantity -1;
+  }
+
+  onDelete(i:number){
+    this.products.splice(i,1)
+
+  }
+  validateInput(event: any , i : number){
+    const qty = +event.target.value;
+    if(qty <1) {
+      event.target.value = this.products[i].quantity;
+      return;
+
+    }
+    this.qtyUpdated(qty, i)
+  }
+  private qtyUpdated(qty:number , i:number){
+    this.products[i].quantity = qty;
+
+   // this.cartService.addItem(this.products)
+
   }
 
 }
+
+

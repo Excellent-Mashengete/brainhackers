@@ -5,40 +5,50 @@
         <a routerLink="" class="btn btn-success">Start Shopping </a>
     </div>
     <ng-container  *ngIf="items.length  > 0 "></ng-container>
-    <div class="='cart" *ngFor="let item of items; let index">
+    <div class="='cart" *ngFor="let item of items; let i=index">
 
     </div>
 </div>
 
 <div class="container mt-5">
-    <div class="card text-left" *ngFor="let p of products">
+    <div class="card text-left" *ngFor="let pro of products">
         <div class="row">
             <div class="col">
-                <img class="card-img-top" src="{{p.image}}" alt="">
+                <img class="card-img-top" src="{{pro.image}}" alt="">
             </div>
             <div class="col mt-1">
-                <h4 class="card-title">{{p.name}}</h4>
-                <p class="card-text">{{p.description}}</p>
+                <h4 class="card-title">{{pro.name}}</h4>
+                <p class="card-text">{{pro.description}}</p>
                 <!-- <p class="card-text">{{p.size}}</p> -->
-                <p class="card-text">R {{p.price}}</p>
+                <p class="card-text">R {{pro.price}}</p>
             </div>
             <div class="col">
                 <div class="my-2">
-                    <a class="btn btn-primary btn-sm " role="button" onClick="increment()">+</a>
+                    <a class="btn btn-primary btn-sm " role="button" onClick="increment(pro)">+</a>
                     <div class="form-group my-1">
-                      <input type="text"
-                        class="form-control" name="" id="" aria-describedby="helpId" value="{{quantity}}">
+                      
+                       <span>{{pro.quantity}}</span>
+                       
                     </div>
-                    <a class="btn btn-primary btn-sm " role="button" onClick="increment">-</a>
+                    <a class="btn btn-primary btn-sm " role="button" onClick="decrement(pro)">-</a>
+                    <div class="subTotal">{{pro.price * pro.quantity}}</div>
     
                 </div>
                 
                 <div>
-                    <a class="btn btn-cancel btn-sm " href="#" role="button">X</a> 
+                    <a [routerLink]="['/cart']" class="btn btn-cancel btn-sm text-danger " href="#" role="button"  onClick="onDelete(i)">X</a> 
                 </div>
             </div>
         </div>
         
-       
+     <div class ="order">
+        <div>Subtotal</div>
+        <b>R 0</b>
+        <div>Total</div>
+     
+        <button class =" btn btn-success" onclick="placeOrder()">Place order</button>
+
+     </div>
         
 </div>
+

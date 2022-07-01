@@ -31,3 +31,32 @@ h4{
 p{
     font-size: small;
 }
+
+.cart{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &:not(:last-child){border-bottom: inset 2px oldlace;}
+
+    &>*{
+        margin:1rem;
+
+    }
+}
+.order{
+    display: grid;
+    justify-content: end;
+    grid-template-columns: repeat(2,8rem);
+    margin-top:1rem;
+    padding:.5rem;
+}
+b{
+    justify-self: end;
+
+}
+
+.btn{
+    grid-column: 1/-1;
+}
+

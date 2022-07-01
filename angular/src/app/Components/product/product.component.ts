@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/product.model';
 import { ProductService } from 'src/app/Services/product.service';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +10,8 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  // product:Product;
+  //product:Product;
+
 
   id = 1;
 
@@ -38,7 +40,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     // const id = this.route.snapshot.params['id'];
-    // this.product = this.productService.getProduct()
+     //this.product = this.productService.getProduct()
   }
 
   getproduct(id:any){
