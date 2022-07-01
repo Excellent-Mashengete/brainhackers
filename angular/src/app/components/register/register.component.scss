@@ -1,0 +1,33 @@
+h1{
+    padding-left: 25px;
+}
+
+form{
+    width:100%;
+}
+
+section {
+    background-image: url(../../../assets/BG_login.jpeg);
+    height: 98vh;
+    background-size: cover;
+    height: calc(100vh - 80px);
+
+}
+.form-group
+{
+    margin-top: 20px;
+    width: 50%;
+    padding-left: 25px;
+}
+.btn
+{
+    border-radius: 10px;
+    background-color: grey;
+    margin-right: 20px;
+}
+.btn1
+{
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
