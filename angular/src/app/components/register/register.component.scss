@@ -1,34 +1,56 @@
-h1{
+.container{
+   align-self: center;
+   padding-left: auto;
+   padding-right: auto;
+}
+
+h3{
     padding-left: 25px;
-    
+    text-align: center;
+
+}
+p{
+    text-align: center;
 }
 
 form{
+    padding-left: 10px;
+    align-items: center;
     width:100%;
-}
-
-section {
-    background-image: url(../../../assets/BG_login.jpeg);
-    height: 98vh;
-    background-size: cover;
-    height: calc(100vh - 80px);
-
+    
 }
 .form-group
 {
     margin-top: 20px;
-    width: 50%;
+    width: 80%;
     padding-left: 25px;
+    padding-right: 25px;
 }
-.btn
-{
-    border-radius: 10px;
-    background-color: grey;
-    margin-right: 20px;
-}
+
 .btn1
 {
+    
     border-radius: 10px;
-    margin-left: 20px;
+    margin-left: 2px;
+    background-color: rgba(217, 217, 217, 1);
+    width: 100%;
+    
+}
+body {
+    padding: 10px;
+    align-items: center;
+    
+}
+svg{
+    color: rgba(210,124,44);
+}
+ul{
+    list-style-type: none;
+
+}
+nav{
+    display: flex;
+    background-color: white;
+
 }
 

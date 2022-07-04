@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
-        email: ['', Validators.required],
-       name: [
+        fullname: ['', Validators.required],
+       email: [
           '',
           [
             Validators.required,
@@ -59,6 +59,10 @@ export class RegisterComponent implements OnInit {
     this.submitted = false;
     this.form.reset();
   }
+
+  
+  
 }
+
 
 
