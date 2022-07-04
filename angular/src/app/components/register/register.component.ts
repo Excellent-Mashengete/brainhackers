@@ -9,10 +9,10 @@ import Validation from '../../utils/validation';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup = new FormGroup({
+    fullname: new FormControl(''),
     email: new FormControl(''),
-    name: new FormControl(''),
-    createpassword: new FormControl(''),
-    confirmpassword: new FormControl(''),
+    password: new FormControl(''),
+    retypepassword: new FormControl(''),
   
   });
   submitted = false;
@@ -29,8 +29,8 @@ export class RegisterComponent implements OnInit {
             Validators.maxLength(20)
           ]
         ],
-        createpassword: ['', [Validators.required, Validators.email]],
-        confirmpassword: [
+        password: ['', [Validators.required, Validators.email]],
+        retypepassword: [
           '',
           [
             Validators.required,
@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
         
       },
       {
-        validators: [Validation.match('createpassword', 'confirmpassword')]
+        validators: [Validation.match('password', 'retypepassword')]
       }
     );
   }
