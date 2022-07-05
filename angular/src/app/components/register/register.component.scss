@@ -11,46 +11,48 @@ h3{
 }
 p{
     text-align: center;
+    padding-left: 20px;
 }
 
 form{
-    padding-left: 10px;
+    // padding-left: 10px;
     align-items: center;
     width:100%;
     
 }
 .form-group
 {
-    margin-top: 20px;
-    width: 80%;
-    padding-left: 25px;
-    padding-right: 25px;
+    // margin-top: 20px;
+    // width: 80%;
+    // padding-left: 25px;
+    // padding-right: 25px;
 }
 
-.btn1
+button
 {
     
     border-radius: 10px;
-    margin-left: 2px;
+    // margin-left: 2px;
     background-color: rgba(217, 217, 217, 1);
     width: 100%;
+    color: white;
     
 }
-body {
-    padding: 10px;
-    align-items: center;
+// body {
+//     padding: 10px;
+//     align-items: center;
     
-}
+// }
 svg{
     color: rgba(210,124,44);
 }
-ul{
-    list-style-type: none;
+// ul{
+//     list-style-type: none;
 
-}
-nav{
-    display: flex;
-    background-color: white;
+// }
+// nav{
+//     display: flex;
+//     background-color: white;
 
-}
+// }
 

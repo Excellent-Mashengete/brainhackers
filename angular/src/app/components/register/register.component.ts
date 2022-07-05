@@ -26,7 +26,9 @@ export class RegisterComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(20)
+            Validators.maxLength(20),
+            // console.log("fullname is "+ this.form)
+            
           ]
         ],
         password: ['', [Validators.required, Validators.email]],
@@ -60,7 +62,11 @@ export class RegisterComponent implements OnInit {
     this.form.reset();
   }
 
-  
+  register(){
+    console.log(this.form.value);
+ 
+    
+  }
   
 }
 
