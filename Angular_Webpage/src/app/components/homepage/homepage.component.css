@@ -1,0 +1,34 @@
+section {
+    background: url(../../../assets/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg) no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+  }
+  .textbtn {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    padding: 15px;
+    background-color: #3d67d4;
+    font-size: larger;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 5px solid grey;
+  }
+  .text1 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-color: #3d67d4;
+    padding: 15px;
+    margin: 0;
+    border-radius: 5px solid grey;
+  }
+  .text2 {
+    position: absolute;
+    top: 28%;
+    left: 10%;
+    background-color: #3d67d4;
+    padding: 15px;
+    margin: 0;
+  }
+  
