@@ -1,37 +1,3 @@
-#cart-container table{
-    border-collapse: collapse;
-    width: 100%;
-    table-layout: fixed;
-}
-#cart-container table thead{
-    font-weight: 700;
-}
-#cart-container table thead td{
-    background: pink;
-    border: none;
-    color: white;
-    padding: 6px 0;
-}
-#cart-container table td{
-    border: 1px solid maroon;
-    text-align: center;
-}
-#cart-container table td:nth-child(1){
-    width: 100px;
-}
-#cart-container table td:nth-child(2),
-#cart-container table td:nth-child(3){
-    width: 200px;
-}
-#cart-container table td:nth-child(4),
-#cart-container table td:nth-child(5){
-    width: 170px;
-}
-#cart-container table tbody img{
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
-}
 
 *{
     box-sizing: border-box;
@@ -81,11 +47,6 @@ body{
     font-size: 0.875rem;
     letter-spacing: 3px;
     color: aqua;
-}
-.profile-body{
-    font-weight: 300;
-    opacity: 0.8;
-    margin-bottom: 0;
 }
 .profile-sidebar{
     display: flex;
