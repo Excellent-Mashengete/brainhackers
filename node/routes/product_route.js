@@ -15,8 +15,8 @@
 module.exports = app =>{
     const productCont = require('../controllers/productController');
 
-    router.get('/',productCont.product_details)
-    router.get('/:id', productCont.product_details);  
+    router.get('/',productCont.getAllProducts)
+    router.get('/:id', productCont.getProductById);  
 
     app.use('api/products', router)
 }

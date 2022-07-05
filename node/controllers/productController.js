@@ -4,6 +4,16 @@ const poolConnection = require('../configurations/dbconn');
 const pool = poolConnection;                                                            // initialising a pool connection 
 
 
+
+const products = async (request, response) => {
+    if (request.treatment == 'on') {
+      pool.query('SELECT * FROM  products', (error, results) => {
+        response.status(200).json(results.rows);
+      });
+    } else {
+      response.status(200).json(inMemoryHorrors);
+    }
+};
 exports.products = (req, res) => {
     Product.findById(req.params.id)
         .then(data => {
