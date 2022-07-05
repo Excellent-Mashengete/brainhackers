@@ -3,15 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartComponent } from './Components/cart/cart.component';
-import { HeaderComponent } from './Components/header/header.component';
-import { ProductsComponent } from './Components/products/products.component';
-import { ProductComponent } from './Components/product/product.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { RegisterComponent } from './Components/register/register.component';
-import { NavbarComponent } from './navbar/navbar/navbar.component';
-
+import { CartComponent } from './components/cart/cart.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductsComponent } from './components/products/products.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -21,8 +19,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
     HeaderComponent,
     ProductsComponent,
     ProductComponent,
-    RegisterComponent,
-    NavbarComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
