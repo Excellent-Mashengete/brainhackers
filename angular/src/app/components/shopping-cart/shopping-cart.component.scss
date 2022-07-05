@@ -71,6 +71,10 @@ body{
     margin: 0.5em auto;
     opacity: 0.35;
 }
+.inner{
+    display: flex;
+    flex-direction: column;
+}
 .profile-position{
     margin: 0;
     text-transform: uppercase;
