@@ -55,7 +55,7 @@ body{
     padding: 2em;
 }
 .profile-image{
-    border-radius: 50%;
+    border-radius: 5px;
     border: 4px solid green;
 }
 .profile-name{
@@ -82,6 +82,14 @@ body{
     font-weight: 300;
     opacity: 0.8;
     margin-bottom: 0;
+}
+.profile-sidebar{
+    display: flex;
+    height: 100%;
+}
+.profile-main{
+    display: flex;
+    flex-direction: column;
 }
 @media (min-width: 600) {
     .card{
