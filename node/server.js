@@ -15,7 +15,7 @@ app.use( express.json() )
 
 app.use( express.urlencoded({ extended: true }) )                     //  sending data (in the form of some data object) to the server and you are asking the server to accept or store that data (object), which is enclosed in the body 
 
-app.use('/products', require('./routes/product_route'))                   // calling the routes 
+app.use('/', require('./routes/product_route'))                   // calling the routes 
 
 
 // app.get('/', (req, res) =>{

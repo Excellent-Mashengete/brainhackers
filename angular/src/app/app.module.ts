@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import{AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductsComponent } from './components/products/products.component';
-import { RegisterComponent } from './components/register/register.component';
+import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { OneProductComponent } from './Components/one-product/one-product.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CartComponent,
-    HeaderComponent,
-    ProductsComponent,
-    ProductComponent,
-    RegisterComponent
+    RegisterComponent,
+    FinalProductsPageComponent,
+    NavBarComponent,
+    LoginComponent,
+    OneProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule,
-    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

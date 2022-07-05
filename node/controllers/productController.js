@@ -6,7 +6,7 @@ const pool = poolConnection;                                                    
 
 
 const getAllProducts = async (req,res) =>{
-    await pool.query('SELECT * FROM products ORDER BY id ASC', (error,results) =>{
+    await pool.query('SELECT * FROM products ', (error,results) =>{
         if(error){
             throw error
         }

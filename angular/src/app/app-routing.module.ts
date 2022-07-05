@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductsComponent } from './components/products/products.component';
-import { RegisterComponent } from './components/register/register.component';
+import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+
 
 const routes: Routes = [
-  {path:'product', component:ProductComponent},
-  {path:'cart',component:CartComponent},
-  {path:'products',component:ProductsComponent},
-  {path:'products/:id',component:ProductComponent},
-  {path:'register', component : RegisterComponent}
+  {path:'', component:LoginComponent},
+  {path:'login', component:LoginComponent},
+  {path:'register', component : RegisterComponent},
+  {path:'products',component:FinalProductsPageComponent},
 ]
 
 @NgModule({
