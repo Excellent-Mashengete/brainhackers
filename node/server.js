@@ -1,7 +1,10 @@
 
 //modules
+require('dotenv').config;
 const express = require('express');
 const app = express();
+
+
 const bodyParser = require('body-parser');
 
 const dbConnect = require('../node/configurations/dbconn');                 // connecting to database database
@@ -10,10 +13,14 @@ const port = process.env.PORT || 4201;                                  // the p
 
 app.use( express.json() )
 
-app.use( express.urlencoded({ extended: false }) )                     //  sending data (in the form of some data object) to the server and you are asking the server to accept or store that data (object), which is enclosed in the body 
+app.use( express.urlencoded({ extended: true }) )                     //  sending data (in the form of some data object) to the server and you are asking the server to accept or store that data (object), which is enclosed in the body 
 
 app.use('/products', require('./routes/product_route'))                   // calling the routes 
 
+
+// app.get('/', (req, res) =>{
+//    res.send("welcome");
+// })
 
 
 
@@ -31,7 +38,7 @@ app.use('/products', require('./routes/product_route'))                   // cal
 
 
  
-app.listen(port, (res,err) => {
+app.listen(port, () => 
    console.log(`API running on localhost:${port}`)
-});
+);
 

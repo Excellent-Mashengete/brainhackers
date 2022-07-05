@@ -5,16 +5,28 @@ const pool = poolConnection;                                                    
 
 
 
-const products = async (request, response) => {
-    if (request.treatment == 'on') {
-      pool.query('SELECT * FROM  products', (error, results) => {
-        response.status(200).json(results.rows);
-      });
-    } else {
-      response.status(200).json(inMemoryHorrors);
+const getAllProducts = (req,res) =>{
+    pool.query('SELECT * FROM products ORDER BY id ASC', (error,results) =>{
+        if(error){
+            throw error
+            console.log(err, " nooo")
+        }
+        res.status(200).json(results.rows)
+    })
+}
+
+
+const getProductById =(req,res) =>{
+    const id =parseInt(req.params.id)  // string to int
+
+    pool.query('SELECT * FROM products WHERE id = $1',[id],(error,results)=>{  // quesry to request one user and if not found throw the error 
+        if(error){
+        throw error
     }
-};
-exports.products = (req, res) => {
+    res.results(200).json(results.rows)
+    })
+}
+/*exports.products = (req, res) => {
     Product.findById(req.params.id)
         .then(data => {
             if(!data) {
@@ -41,3 +53,9 @@ exports.products = (req, res) => {
         });
     });
 };
+*/
+module.exports = {
+    getAllProducts,
+    getProductById,
+   
+}
