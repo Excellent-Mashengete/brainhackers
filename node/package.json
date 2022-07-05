@@ -1,10 +1,14 @@
 {
-  "name": "node",
+  "name": "brainhackers-1",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.thedigitalacademy.co.za/caiphus/brainhackers.git"
   },
   "keywords": [],
   "author": "",
