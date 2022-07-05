@@ -1,6 +1,6 @@
 require("dotenv").config();
 const { request, response } = require("express");
-const poolConnection = require('../configurations/dbconn');
+const poolConnection = require('../configurations/dbconnect');
 const pool = poolConnection;                                                            // initialising a pool connection 
 
 
