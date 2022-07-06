@@ -9,6 +9,9 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -26,6 +29,7 @@ import { OneProductComponent } from './Components/one-product/one-product.compon
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule,
+ HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

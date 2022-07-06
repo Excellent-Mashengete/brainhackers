@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { OneProductComponent } from './Components/one-product/one-product.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component : RegisterComponent},
   {path:'products',component:FinalProductsPageComponent},
+  {path: 'one-product',component:OneProductComponent},
 ]
 
 @NgModule({
