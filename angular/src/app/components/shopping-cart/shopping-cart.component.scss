@@ -24,7 +24,14 @@ body{
     text-align: center;
     padding: 2em;
     flex-wrap: wrap;
-    margin-left: 15px;
+    margin: 10px;
+}
+.card-3{
+    margin: 10px;
+    padding: 2em;
+    width: 60%;
+    max-width: 500px;
+    display: flex;
 }
 .profile-image{
     border-radius: 5px;
@@ -52,7 +59,10 @@ body{
     text-transform: uppercase;
     font-size: 0.875rem;
     letter-spacing: 3px;
-    color: aqua;
+    color: #D27C2C;
+}
+.title{
+    text-align: center;
 }
 .profile-sidebar{
     display: flex;
@@ -75,6 +85,18 @@ body{
         margin-left: 0;
     }
 }
+@media (min-width: 380){
+    .card{
+        width: 100rem;
+        flex-direction: row;
+        margin: 10px;
+        
+    }
+    .profile-name{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 .icon{
     position: absolute;
     top: 0;
@@ -93,5 +115,28 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     //border: 5px solid grey;
-    color: white;
+    color: black;
+}
+.card-info{
+    border: 3px solid grey;
+    width: 40%;
+    padding: 25px;
+    margin: 0 auto;
+}
+.order-title{
+    font-size: 28px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.one{
+    text-align: right;
+    margin-left: 15px; 
+    margin-bottom: 60px;
+    vertical-align: bottom;
+    border: 3px solid pink;
+}
+.btn{
+    background: lightgrey;
+    padding: 15px 45px;
+    margin: 0 auto;
+    margin-left: 59px;
 }
