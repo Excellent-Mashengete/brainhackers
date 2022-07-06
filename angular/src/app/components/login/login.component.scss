@@ -32,6 +32,8 @@ p{
 }
 .btn{
 
+    margin-top:10%;
+    margin-bottom:10%;
     border-radius: 10px;
     // margin-left: 2px;
     background-color:rgba(217,217,217,1);
@@ -79,7 +81,18 @@ ul li {
     list-style: none;
 }
 
+  
+.col-mb-4 {
 
+    margin-right:35%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+a {
+    align-items: flex-start;
+}
 // .body {
 //     padding: 10%;
 // }
