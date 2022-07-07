@@ -3,23 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import{AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FinalProductsPageComponent } from './components/final-products-page/final-products-page.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-=======
-import { ReactiveFormsModule } from '@angular/forms';
-import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
-import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
-import { LoginComponent } from './Components/login/login.component';
-import { RegisterComponent } from './Components/register/register.component';
-import { OneProductComponent } from './Components/one-product/one-product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FinalProductsPageComponent } from './components/final-products-page/final-products-page.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { OneProductComponent } from './components/one-product/one-product.component';
+import { RegisterComponent } from './components/register/register.component';
 
-
->>>>>>> 18a0822d9f39c5ab140ad4255574bcf9386246ed
 
 
 
@@ -37,11 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule,
-<<<<<<< HEAD
-    FormsModule
-=======
- HttpClientModule
->>>>>>> 18a0822d9f39c5ab140ad4255574bcf9386246ed
+    FormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
