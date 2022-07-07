@@ -6,10 +6,11 @@ const app = express();
 
 const cors = require('cors')                                    //initialising cors 
 const bodyParser = require('body-parser');
+// const dbConnect = require('../node/configurations/productsconfig');                 // connecting to database database
 
 const dbConnect = require('../node/controllers/productController');                // connecting to database database
 
-const port = process.env.PORT || 4201;                                  // the port
+const port = process.env.PORT || 3000;                                  // the port
 
 app.use( express.json() )
 
@@ -52,6 +53,7 @@ app.use((req, res, next) => {
 //     process.exit(1); 
 //  })
 
+require('./routes/productsroutes')(app)
 
  
 app.listen(port, () => 

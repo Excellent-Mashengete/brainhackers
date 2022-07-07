@@ -2,11 +2,8 @@
     background-color: rgb(245, 245, 245);
     height: 100%;
     width: 100%;
+    padding-bottom: 15%;
 }
-
-
-
-
 
 .right-tools {
     display: flex;
@@ -30,9 +27,10 @@ ul li {
 }
 
 .new-arrivals {
-    display: flex;
-    flex-wrap: nowrap;
+    //display: flex;
+    //flex-wrap: nowrap;
     justify-content: space-between;
+   
 }
 
 .products-for-you {
@@ -43,15 +41,15 @@ ul li {
 }
 
 .products-for-you .card {
-    margin: 1%;
+    margin: 2%;
     width: 30%;
 }
 
 .card {
-    background-color: rgb(255, 255, 255);
-    width: 20%;
-    height: 50%;
-    padding: 20px;
+ //   background-color: rgb(255, 255, 255);
+//    width: 20%;
+//    height: 50%;
+    //padding: 20%;
 }
 
 .card-bottom{
@@ -72,3 +70,4 @@ ul li {
     height: 50%;
     padding-left: 60px;
 }
+
