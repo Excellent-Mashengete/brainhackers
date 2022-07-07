@@ -3,6 +3,7 @@
     height: 100%;
     width: 100%;
     padding-bottom: 15%;
+    font-family: Inder;
 }
 
 .right-tools {
@@ -27,8 +28,8 @@ ul li {
 }
 
 .new-arrivals {
-    //display: flex;
-    //flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
    
 }
