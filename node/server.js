@@ -3,6 +3,7 @@
 require('dotenv').config;
 const express = require('express');
 const app = express();
+const cors = require("cors");
 
 const cors = require('cors')                                    //initialising cors 
 const bodyParser = require('body-parser');
@@ -12,6 +13,10 @@ const dbConnect = require('../node/configurations/dbconn');
 const dbConnect = require('../node/controllers/productController');                // connecting to database database
 const port = process.env.PORT || 4201;                                  // the port
 
+var corsOptions = {
+   origin: "http://localhost:8081"
+ };
+ 
 app.use( express.json() )
 
 app.use( express.urlencoded({ extended: true }) )                     //  sending data (in the form of some data object) to the server and you are asking the server to accept or store that data (object), which is enclosed in the body 
@@ -39,22 +44,28 @@ app.use((req, res, next) => {
 //    res.send("welcome");
 // })
 
+ app.use(cors(corsOptions));
+ // parse requests of content-type - application/json
 
+ app.use(express.json());
+ // parse requests of content-type - application/x-www-form-urlencoded
+ app.use(express.urlencoded({ extended: true }));
 
-//catch all errors that are not handled
+app.use( express.json() )
 
-// process.on('uncaughtException', (error)  => {
-//     console.log('Alert! ERROR : ',  error);
-//     process.exit(1);                                                       // Exit your app 
-//  })
+app.use( express.urlencoded({ extended: true }) )                     //  sending data (in the form of some data object) to the server and you are asking the server to accept or store that data (object), which is enclosed in the body 
 
-//  process.on('unhandledRejection', (error, promise)  => {
-//     console.log('Alert! ERROR : ',  error);
-//     process.exit(1); 
-//  })
+app.use('/products', require('./routes/product_route'))                   // calling the routes 
 
+// app.get("/", (req, res) => {
+//    res.json({ message: "Welcome to bezkoder application." });
+//  });
+
+<<<<<<< HEAD
+=======
 require('./routes/productsroutes')(app)
-
+ 
+>>>>>>> 635713df7dca31161a572be7789d5e9de41307a6
 app.listen(port, () => 
    console.log(`API running on localhost:${port}`)
 );
