@@ -14,6 +14,7 @@ export class OneProductComponent implements OnInit {
 
 products = [];
 
+
 sizeForm = new FormGroup({
   size : new FormControl('', Validators.required)
 })
@@ -21,19 +22,27 @@ sizeForm = new FormGroup({
 
   ngOnInit(): void {
    
-    this.oneProductservice.sendGetRequest().subscribe((data: any)=>{
-      console.log(data);
-      this.products = data;
+    // this.oneProductservice.sendGetRequest().subscribe((data: any)=>{
+    //   console.log(data);
+    //   this.products = data;
+      const id = 1;
+      this.oneProductservice.getOneProduct(id).subscribe((data:any)=>{
+        console.log(data)
+        console.log(this.sizeForm.value);
+      })
 
-    console.log(this.sizeForm.value);
-  })
+
+
+    // console.log(this.sizeForm.value);
+   }
+
 }
 
-  addCart(){
-    console.log(this.sizeForm.value);
+//   addCart(){
+//     console.log(this.sizeForm.value);
     
-  }
+//   }
 
-}
+// }
 
 
