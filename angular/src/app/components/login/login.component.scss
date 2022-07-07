@@ -98,18 +98,37 @@ a {
     position: absolute;
     
 }
-.input-icons{
-    border-radius: 50px;
-    display: flex;
-    vertical-align: top;
-    margin-bottom: 0;
-    // border: 3px solid maroon;
-}
-.icon {
+
+.lock-icon i{
+
+    position: absolute;
     padding: 10px;
     color: rgba(210, 124, 44);
     min-width: 50px;
     text-align: center;
+    margin-top: 6px;
+    margin-left: -15px;
+
+
+}
+
+
+
+// .input-icons{
+// //     border-radius: 50px;
+// //     display: flex;
+// //     vertical-align: top;
+// //     // margin-bottom: 0;
+// //     // border: 3px solid maroon;
+//  }
+
+.icon {
+    padding: 10px;
+    color: rgba(210, 124, 44);
+    min-width: 50px;
+     text-align: center;
+     margin-top: 6px;
+     margin-left: -15px;
 }
 .input-field{
     text-align: center;
