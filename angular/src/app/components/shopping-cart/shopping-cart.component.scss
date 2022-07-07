@@ -73,30 +73,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-@media (min-width: 600) {
-    .card{
-        flex-direction: row;
-    }
-    .profile-main{
-        text-align: left;
-        margin-left: 2em;
-    }
-    .profile-name:after{
-        margin-left: 0;
-    }
-}
-@media (min-width: 380){
-    .card{
-        width: 100rem;
-        flex-direction: row;
-        margin: 10px;
-        
-    }
-    .profile-name{
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
 .icon{
     position: absolute;
     top: 0;
@@ -139,4 +115,29 @@ body{
     padding: 15px 45px;
     margin: 0 auto;
     margin-left: 59px;
+}
+
+// @media (min-width: 600) {
+//     .card{
+//         flex-direction: row;
+//         width: 100%;
+//     }
+//     .profile-main{
+//         text-align: left;
+//         margin-left: 2em;
+//     }
+//     .profile-name:after{
+//         margin-left: 0;
+//     }
+// }
+@media (min-width: 380){
+    .card{
+        width: 100%;
+        flex-direction: row;
+        margin: 10px;  
+    }
+    .profile-name{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
