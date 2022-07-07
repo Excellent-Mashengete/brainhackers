@@ -5,9 +5,9 @@ import{AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
-import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 
