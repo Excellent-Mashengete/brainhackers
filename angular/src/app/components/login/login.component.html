@@ -5,13 +5,14 @@
         <form [formGroup]="Form" (ngSubmit)="onSubmit()">
             <div class="form-group col mb-4">
                 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                </svg>
-                <input type="text" formControlName="email" placeholder="Email " class="form-control"
-                    [ngClass]="{ 'is-invalid':submitted && f['email'].errors }" />
+            
+                
+                <div class="input-icons ">
+                    <label for=""><i class="fa fa-user icon"></i></label>
+                  </div>
+                <input type="  text" formControlName="email" placeholder="  Email " class="form-control"
+                    [ngClass]="{ 'is-invalid':submitted && f['email'].errors }">
+
                 <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
                     <div *ngIf="f['email'].errors['required']">Email is required</div>
                     <div *ngIf="f['email'].errors['email']">Email is invalid</div>
@@ -21,24 +22,21 @@
             <div class="form-group col mb-4">
                 
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-file-lock" viewBox="0 0 16 16">
-                    <path
-                        d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1zm2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224zM6.105 8.125A.637.637 0 0 1 6.5 8h3a.64.64 0 0 1 .395.125c.085.068.105.133.105.175v2.4c0 .042-.02.107-.105.175A.637.637 0 0 1 9.5 11h-3a.637.637 0 0 1-.395-.125C6.02 10.807 6 10.742 6 10.7V8.3c0-.042.02-.107.105-.175z" />
-                    <path
-                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
-                </svg>
-                <input type="text" formControlName="password" placeholder="Password" class="form-control"
+                    <div class ="lock-icon">
+
+                        <label for class=""><i class='fas fa-lock'></i></label>
+                    </div>
+                    
+          <input type="text" formControlName="password" placeholder="  Password" class="form-control"
+
                     [ngClass]="{ 'is-invalid':submitted && f['password'].errors }" />
+
                 <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                     <div *ngIf="f['password'].errors['required']">Password is required</div>
                     <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 character</div>
                     <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 40 character</div>
-
                 </div>
             </div>
-
-
 
             <div class="col-mb-4" style="float:right; right:0%;">
                 <a routerLink="#" style="color: rgba(210,124,44);"> forgot password</a>
@@ -51,7 +49,6 @@
 
                 <p routerLink="#" style="color:black;">Don't have account? <a style="color: rgba(210,124,44);" href="#"> register </a></p>
                    
-
             </div>
         </form>
     </div>
