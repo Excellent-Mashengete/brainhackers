@@ -11,8 +11,16 @@
 
 // module.exports = app;
 
+// The shopping cart route
+const cart = require("../controllers/cartController")
+const express = require('express')
+const server = express()
 
-module.exports = app =>{
+server.post("/add-to-cart", cart.addToCart)
+
+module.exports = router
+
+module.exports =  app => {
 
 
    
