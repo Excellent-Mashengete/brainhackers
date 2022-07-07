@@ -6,6 +6,10 @@
 
 .mx-3 {
     font-family: Inder;
+    width: 100%;
+}
+.mb-3{
+    font-family: Inder;
 }
 
 h3 {
@@ -26,7 +30,7 @@ form {
 
 .form-group {
     // margin-top: 20px;
-    width: 80%;
+    width: 100%;
     // padding-left: 25px;
     // padding-right: 25px;
 }
@@ -45,7 +49,7 @@ form {
     padding: 10px;
     color: rgba(210, 124, 44);
     min-width: 50px;
-    text-align: center;
+    text-align: top;
     margin-top: 6px;
     margin-left: -15px;
 }
@@ -54,28 +58,12 @@ form {
     position: absolute;
 }
 
-// .form-group
-// {
-//     // margin-top: 20px;
-//     // width: 80%;
-//     // padding-left: 25px;
-//     // padding-right: 25px;
-// }
-.error-message {
-    color: red;
-}
-
 button {
     border-radius: 10px;
     background-color: rgba(217, 217, 217, 1);
     width: 100%;
     color: white;
 }
-
-input.ng-touched.ng-invalid {
-    border: 1px solid red;
-}
-
 // body {
 //     padding: 10px;
 //     align-items: center;

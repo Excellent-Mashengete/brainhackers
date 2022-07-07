@@ -9,16 +9,15 @@
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <!--full name-->
             <div class="form-group mb-3">
-                <div class="input-icons">
-                    <label for=" "><i class=" fa fa-user icon"></i></label>
+                <div class="lock-icon">
+                    <i class="fa fa-user icon"></i>
                 </div>
                 <input required type="text" formControlName="fullname" placeholder="Full Name" class="form-control">
-  
             </div>
             <!--email-->
             <div class="form-group mb-3">
-                <div class="input-icons">
-                    <label for=" "><i class=" fa fa-user icon"></i></label>
+               <div class="lock-icon">
+                    <i class="fa fa-user icon"></i>
                 </div>
                 <input required type="email" formControlName="email"  placeholder="Email" class="form-control">
                 
@@ -26,9 +25,8 @@
             <!--  password -->
             <div class="form-group mb-3">
                 <div class="lock-icon">
-                    <label for=" "><i class="bi bi-file-lock"></i></label>
+                    <i class="fa fa-user icon"></i>
                 </div>
-            
                 <input required type="password" formControlName="password" placeholder="Password" class="form-control">
                 
             </div>
@@ -36,7 +34,6 @@
             <div class="form-group mb-3">
                 <div class="lock-icon">
                     <i class="fa fa-user icon"></i>
-                    
                 </div>
                 <input required type="password" formControlName="retypepassword" placeholder="Retype Password" class="form-control"> 
                     
