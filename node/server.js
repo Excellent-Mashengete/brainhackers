@@ -61,11 +61,8 @@ app.use('/products', require('./routes/product_route'))                   // cal
 //    res.json({ message: "Welcome to bezkoder application." });
 //  });
 
-<<<<<<< HEAD
-=======
 require('./routes/productsroutes')(app)
  
->>>>>>> 635713df7dca31161a572be7789d5e9de41307a6
 app.listen(port, () => 
    console.log(`API running on localhost:${port}`)
 );
