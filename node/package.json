@@ -24,5 +24,6 @@
     "pool": "^0.4.1",
     "sequelize": "^6.21.2"
   },
+  "devDependencies": {},
   "description": ""
 }

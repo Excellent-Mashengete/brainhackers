@@ -14,6 +14,7 @@ pool.connect((err) =>{
         console.log('didnt connect database ')
     }
     else{
+        
         console.log('connected to database ')
     }
 
