@@ -4,7 +4,19 @@
     width: 100%;
     font-family: Inder;
     padding-bottom: 15%;
-    font-family: Inder;
+    padding: 5px;
+    margin-bottom: 5%;
+}
+h2 {
+  margin: 2%;
+}
+
+.productsForYou {
+    margin-bottom: 2%;
+}
+
+.back-arrow, h2 {
+    padding: 10px;
 }
 
 .right-tools {
@@ -31,27 +43,34 @@ ul li {
 .new-arrivals {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.cart-price {
+    display: flex;
     justify-content: space-between;
-   
 }
 
 .products-for-you {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
+    justify-content: space-between;
+    margin-bottom: 8%;
 }
 
+.new-arrivals .crd, 
 .products-for-you .card {
     margin: 2%;
     width: 30%;
 }
 
-.card {
- //   background-color: rgb(255, 255, 255);
-//    width: 20%;
-//    height: 50%;
-    //padding: 20%;
+p {
+    white-space: nowrap; 
+    width: 90%; 
+    height: 25%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+   
 }
 
 .card-bottom{
@@ -67,9 +86,21 @@ ul li {
     padding: 20px;
 }
 
-.card img {
+.card .card-img-top {
     width: 50%;
     height: 50%;
     padding-left: 60px;
+}
+button {
+    background-color: rgba(217, 217, 217);
+    border: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    .new-arrivals {
+        display: flex;
+        
+    }
 }
 
