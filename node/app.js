@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const dbConnect = require('../node/configurations/dbconn');                 // connecting to database database
 
-const port = process.env.PORT || 4201;                                  // the port
+const port = process.env.PORT || 5432;                                  // the port
 
 app.use( express.json() )
 
@@ -29,8 +29,6 @@ app.use( express.urlencoded({ extended: false }) )                     //  sendi
 //     process.exit(1); 
 //  })
 
-
- 
 app.listen(port, (res,err) => {
    console.log(`API running on localhost:${port}`)
 });

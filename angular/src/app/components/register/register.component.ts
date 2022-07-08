@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import Validation from '../../utils/validation';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   
   });
   submitted = false;
-  constructor(private formBuilder: FormBuilder) {}
+  autheticationService: any;
+  constructor(private formBuilder: FormBuilder, private router:Router) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group(
       {
@@ -42,9 +44,6 @@ export class RegisterComponent implements OnInit {
         ],
         
       },
-      {
-        validators: [Validation.match('password', 'retypepassword')]
-      }
     );
   }
   get f(): { [key: string]: AbstractControl } {
@@ -55,20 +54,21 @@ export class RegisterComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(JSON.stringify(this.form.value, null, 2));
   }
   onReset(): void {
     this.submitted = false;
     this.form.reset();
   }
-
-  register(){
-    console.log(this.form.value);
- 
-    
-  }
+  Register (){
+    this.autheticationService.Register(this.form.value)
+    .subscribe((res: any)=>{
+    alert("Register Successful");
+    this.form.reset();
+    this.router.navigate(["Login"]);
+    },(err: any)=>{
+    alert ("Something went wrong")
+    })
+    }
   
+
 }
-
-
-
