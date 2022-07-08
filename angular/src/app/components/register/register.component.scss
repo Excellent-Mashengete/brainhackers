@@ -5,7 +5,20 @@
 }
 
 .mx-3 {
-    font-family: Inder;
+    // font-family: Inder;
+    width: 100%;
+}
+
+.btn1{
+    margin-top: 10%;
+    margin-bottom: 15%;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 1);
+    width: 100%;
+    
+}
+form input{
+    width: 100%;
 }
 
 h3 {
@@ -24,19 +37,13 @@ form {
     width: 100%;
 }
 
-.form-group {
-    // margin-top: 20px;
-    width: 80%;
-    // padding-left: 25px;
-    // padding-right: 25px;
-}
 
 .icon {
     padding: 10px;
     color: rgba(210, 124, 44);
     min-width: 50px;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-left: -15px;
 }
 
@@ -46,7 +53,7 @@ form {
     color: rgba(210, 124, 44);
     min-width: 50px;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-left: -15px;
 }
 
@@ -54,28 +61,13 @@ form {
     position: absolute;
 }
 
-// .form-group
-// {
-//     // margin-top: 20px;
-//     // width: 80%;
-//     // padding-left: 25px;
-//     // padding-right: 25px;
-// }
-.error-message {
-    color: red;
-}
-
 button {
     border-radius: 10px;
     background-color: rgba(217, 217, 217, 1);
     width: 100%;
     color: white;
+    margin-top: 10%;
 }
-
-input.ng-touched.ng-invalid {
-    border: 1px solid red;
-}
-
 // body {
 //     padding: 10px;
 //     align-items: center;
