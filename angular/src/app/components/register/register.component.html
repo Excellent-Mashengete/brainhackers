@@ -1,9 +1,8 @@
-
 <section class="mx-3">
 
     <h1 class="text-center">Create Account</h1>
-        <p>Let's get started!</p>
-    <div class="container " >    
+    <p>Let's get started!</p>
+    <div class="container ">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <!--full name-->
             <div class="form-group col mb-3">
@@ -18,11 +17,10 @@
             </div>
             <!--email-->
             <div class="form-group col mb-3">
-               <div class="lock-icon">
+                <div class="lock-icon">
                     <i class="fa fa-user icon"></i>
                 </div>
-                <input required type="email" formControlName="  email"  placeholder="  Email" class="form-control"
-                [ngClass]="{'is-invalid':submitted && f['email']}">
+                <input required type="email" formControlName="  email" placeholder="  Email" class="form-control" [ngClass]="{'is-invalid':submitted && f['email']}">
                 <!-- <span class="text-danger" **ngIf="form.control['fEmail'].dirty('required','Email')">Email is required</span> -->
                 <div **ngIf="submitted && f['email'].errors" class="invalid-feedback">
                     <div **ngIf="f['email'].errors['required']">Email is required</div>
@@ -35,8 +33,7 @@
                 <div class="lock-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <input required type="password" formControlName="  password" placeholder="  Password" class="form-control"
-                [ngClass]="{'is-invalid':submitted && f['password']}">
+                <input required type="password" formControlName="  password" placeholder="  Password" class="form-control" [ngClass]="{'is-invalid':submitted && f['password']}">
                 <!-- <span class="text-danger" **ngIf="form.control['password'].dirty('required','password')">full name is required</span> -->
                 <div **ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
                     <div **ngIf="f['password'].errors['required']">Passwrod is required</div>
@@ -50,30 +47,18 @@
                 <div class="lock-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <input required type="password" formControlName="  retypepassword" placeholder="  Retype Password" class="form-control"
-                [ngClass]="{'is-invalid':submitted && f['retypepassword']}"> 
+                <input required type="password" formControlName="  retypepassword" placeholder="  Retype Password" class="form-control" [ngClass]="{'is-invalid':submitted && f['retypepassword']}">
                 <!-- <span class="text-danger" **ngIf="form.control['retypepassword'].dirty('required','password')">Retype Password is required</span> -->
-                    
+
             </div>
 
-<<<<<<< HEAD
-            <div class="form-group mt-5">
-              <button type="submit" class="btn1 mb-3" (click)="register()"> <a style="color: white;" >Registeringddddddddd</a></button>
-              
-              <div class="mb-3 form-check">
-=======
             <div class="form-group">
-              <button type="submit" class="btn1 mb-3 btn btn-success btn-block btn-lg" (click)="Register()"> <a style="color: white;" >Register</a></button>
-              <p router="#" style="color: black;">Already have an account? <a style="color: rgba(219,124,44);" href="#">Login</a></p>
-              <!-- <div class="mb-3 form-check">
->>>>>>> 7fb080b8b2c528bc15dbe874e89c5d34ee8dd02b
+                <button type="submit" class="btn1 mb-3 btn btn-success btn-block btn-lg" (click)="Register()"> <a style="color: white;" >Register</a></button>
+                <p router="#" style="color: black;">Already have an account? <a style="color: rgba(219,124,44);" href="#">Login</a></p>
+                <!-- <div class="mb-3 form-check">
                   <label class="form-check-label" for="exampleCheck1"><small> <a style="color: 000000;">Already have an account?</a>  <a style="color: rgba(210, 124, 44, 1); text-decoration: underline;"> Login </a></small></label>
                 </div> -->
-          </div>
+            </div>
         </form>
     </div>
-</section> 
-
-
-
-
+</section>
