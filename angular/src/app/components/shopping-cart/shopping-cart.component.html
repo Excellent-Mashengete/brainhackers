@@ -4,22 +4,22 @@
 <h2 class="title">My Bag</h2>
 <div class="container">
 
-    <div class="card">
-        <table>
+    <div class="card" *ngFor="let item of cart">
+        <table class="table-items">
             <tr>
                 <td>  <div class="profile-sidebar">
-                    <img class="profile-image" width="100%" height="100vh" src="../../../assets/productPage1.png" alt="">
+                    <img class="profile-image" width="100%" height="100vh" src="{{item.img}}" alt="">
                     </div>
                 </td>
                 <td>
                     <div class="profile-main">
                         <span class="inner">
-                            <h2 class="profile-name">Puma 230</h2>
+                            <h2 class="profile-name">{{item.name}}</h2>
                         </span>
-                        <p class="profile-position" style="font-size: 2rem;">R 2 300.00</p>
+                        <p class="profile-position" style="font-size: 2rem;">R {{item.price}}.00</p>
                         <div class="def-number-input number-input">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <input class="quantity" min="1" name="quantity" value="{{item.quantity}}" type="number">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                           </div>
                     </div>
@@ -32,8 +32,8 @@
             </tr>
         </table> 
     </div>
-    <div class="card">
-        <table>
+    <!-- <div class="card">
+        <table class="table-items">
             <tr>
                 <td>  <div class="profile-sidebar">
                     <img class="profile-image" width="100%" src="../../../assets/productPage2.png" alt="">
@@ -47,7 +47,7 @@
                         <p class="profile-position" style="font-size: 2rem;">R 2 500.00</p>
                         <div class="def-number-input number-input">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <input class="quantity" min="1" name="quantity" value="1" type="number">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                           </div>
                     </div>
@@ -59,12 +59,12 @@
                 </td>
             </tr>
         </table> 
-    </div>
+    </div> -->
 <!-- </div> -->
 
 <!-- <div class="container"> -->
-    <div class="card card-3">
-        <table>
+    <!-- <div class="card card-3">
+        <table class="table-items">
             <tr>
                 <td>  <div class="profile-sidebar">
                     <img class="profile-image" width="100%" src="../../../assets/ productPage3.png" alt="Sneaker">
@@ -78,7 +78,7 @@
                         <p class="profile-position" style="font-size: 2rem;">R 2 000.00</p>
                         <div class="def-number-input number-input">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                            <input class="quantity" min="1" name="quantity" value="1" type="number">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                           </div>
                     </div>
@@ -90,43 +90,14 @@
                 </td>
             </tr>
         </table> 
-    </div>
-
-    <div class="card card-3">
-        <table>
-            <tr>
-                <td>  <div class="profile-sidebar">
-                    <img class="profile-image" width="100%" src="../../../assets/ productPage3.png" alt="Sneaker">
-                    </div>
-                </td>
-                <td>
-                    <div class="profile-main">
-                        <span class="inner">
-                            <h2 class="profile-name">Nike Air Force 240</h2>
-                        </span>
-                        <p class="profile-position" style="font-size: 2rem;">R 2 000.00</p>
-                        <div class="def-number-input number-input">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="1" type="number">
-                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                          </div>
-                    </div>
-                </td>
-                <td class="icon">
-                    <svg style="color: #D27C2C;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                      </svg>
-                </td>
-            </tr>
-        </table> 
-    </div>
+    </div> -->
 
 </div>
 
 <div class="card-info">
     <h2 class="order-title">Order Information</h2>
     <p>No. of items <span>3</span></p>      
-    <h2>Total <span style="color: #D27C2C; font-size: 2.5rem;">R 2 300.00</span></h2>
+    <h2>Total <span style="color: #D27C2C; font-size: 2.5rem;">R {{total}}.00</span></h2>
     <button class="btn">Proceed to checkout</button>
 </div>
 
