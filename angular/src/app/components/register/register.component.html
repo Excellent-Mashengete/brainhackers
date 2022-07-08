@@ -1,6 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-  </svg>
+
 <section class="mx-3">
 
     <h1 class="text-center">Create Account</h1>
@@ -8,43 +6,62 @@
     <div class="container " >    
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <!--full name-->
-            <div class="form-group mb-3">
+            <div class="form-group col mb-3">
                 <div class="lock-icon">
                     <i class="fa fa-user icon"></i>
                 </div>
-                <input required type="text" formControlName="fullname" placeholder="Full Name" class="form-control">
+                <input required type="text" formControlName="  fullname" placeholder=" Full Name" class="form-control">
+                <!-- <span class="text-danger" **ngIf="form.control['fullname'].dirty('required','fullname')">full name is required</span> -->
+                <div **ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                    <div **ngIf="f['fullname'].errors['required']">Full Name is required</div>
+                </div>
             </div>
             <!--email-->
-            <div class="form-group mb-3">
+            <div class="form-group col mb-3">
                <div class="lock-icon">
                     <i class="fa fa-user icon"></i>
                 </div>
-                <input required type="email" formControlName="email"  placeholder="Email" class="form-control">
-                
+                <input required type="email" formControlName="  email"  placeholder="  Email" class="form-control"
+                [ngClass]="{'is-invalid':submitted && f['email']}">
+                <!-- <span class="text-danger" **ngIf="form.control['fEmail'].dirty('required','Email')">Email is required</span> -->
+                <div **ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div **ngIf="f['email'].errors['required']">Email is required</div>
+                    <div **ngIf="f['email'].errors['required']">Email invalid></div>
+
+                </div>
             </div>
             <!--  password -->
-            <div class="form-group mb-3">
+            <div class="form-group col mb-3">
                 <div class="lock-icon">
-                    <i class="fa fa-user icon"></i>
+                    <i class="fas fa-lock"></i>
                 </div>
-                <input required type="password" formControlName="password" placeholder="Password" class="form-control">
-                
+                <input required type="password" formControlName="  password" placeholder="  Password" class="form-control"
+                [ngClass]="{'is-invalid':submitted && f['password']}">
+                <!-- <span class="text-danger" **ngIf="form.control['password'].dirty('required','password')">full name is required</span> -->
+                <div **ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                    <div **ngIf="f['password'].errors['required']">Passwrod is required</div>
+                    <div **ngIf="f['password'].errors['required']">Password must be at least 6 character</div>
+                    <div **ngIf="f['passwrod'].errors['required']">Password must not exceed 40 character</div>
+
+                </div>
             </div>
             <!--retype password-->
-            <div class="form-group mb-3">
+            <div class="form-group col mb-3">
                 <div class="lock-icon">
-                    <i class="fa fa-user icon"></i>
+                    <i class="fas fa-lock"></i>
                 </div>
-                <input required type="password" formControlName="retypepassword" placeholder="Retype Password" class="form-control"> 
+                <input required type="password" formControlName="  retypepassword" placeholder="  Retype Password" class="form-control"
+                [ngClass]="{'is-invalid':submitted && f['retypepassword']}"> 
+                <!-- <span class="text-danger" **ngIf="form.control['retypepassword'].dirty('required','password')">Retype Password is required</span> -->
                     
             </div>
 
-            <div class="form-group mt-5">
-              <button type="submit" class="btn1 mb-3" (click)="register()"> <a style="color: white;" >Register</a></button>
-              
-              <div class="mb-3 form-check">
+            <div class="form-group">
+              <button type="submit" class="btn1 mb-3 btn btn-success btn-block btn-lg" (click)="Register()"> <a style="color: white;" >Register</a></button>
+              <p router="#" style="color: black;">Already have an account? <a style="color: rgba(219,124,44);" href="#">Login</a></p>
+              <!-- <div class="mb-3 form-check">
                   <label class="form-check-label" for="exampleCheck1"><small> <a style="color: 000000;">Already have an account?</a>  <a style="color: rgba(210, 124, 44, 1); text-decoration: underline;"> Login </a></small></label>
-                </div>
+                </div> -->
           </div>
         </form>
     </div>
