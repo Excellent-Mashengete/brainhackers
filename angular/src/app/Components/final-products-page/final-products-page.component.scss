@@ -28,11 +28,12 @@ ul li {
 }
 
 .new-arrivals {
-    //display: flex;
-    //flex-wrap: nowrap;
-    justify-content: space-between;
-   
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
+
+
 
 .products-for-you {
     display: flex;
@@ -41,6 +42,7 @@ ul li {
     
 }
 
+.new-arrivals .crd, 
 .products-for-you .card {
     margin: 2%;
     width: 30%;
@@ -72,3 +74,10 @@ ul li {
     padding-left: 60px;
 }
 
+
+@media screen and (max-width: 600px) {
+    .new-arrivals {
+        display: flex;
+        display: table-column-group;
+    }
+}

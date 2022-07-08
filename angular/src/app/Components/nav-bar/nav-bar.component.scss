@@ -1,5 +1,5 @@
 nav {
-    background-color: rbga(white);
+    background-color: white;
     display: flex;
     overflow: hidden;
     position: fixed;
@@ -9,6 +9,7 @@ nav {
 }
 
 nav svg {
+    
     height: 70%;
     width: 70%;
 }
@@ -24,7 +25,8 @@ ul {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    padding: 0;
+    padding: 1%;
+    
     list-style: none;
 }
 
