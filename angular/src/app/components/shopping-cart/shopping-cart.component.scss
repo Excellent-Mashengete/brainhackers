@@ -15,16 +15,15 @@ body{
 }
 .card{
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    width: 60%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     background-color: white;
     color: black;
     text-align: center;
-    padding: 2em;
     flex-wrap: wrap;
-    margin: 0.5rem;
+    margin:auto
 }
 .card-3{
     margin: 0.5rem;
