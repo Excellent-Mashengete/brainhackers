@@ -13,6 +13,7 @@ import { OneProductComponent } from './Components/one-product/one-product.compon
 import { SignupComponent } from './controllers/signup/signup.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CardComponent } from './Components/card/card.component';
+import { ProductViewComponent } from './Components/product-view/product-view.component';
 import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProductsComponent } from './Components/products/products.component';
     SignupComponent,
     NavbarComponent,
     CardComponent,
-    ProductsComponent,
+    ProductViewComponent,
+    ProductsComponent
 
   ],
   imports: [
