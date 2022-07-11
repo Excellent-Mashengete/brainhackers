@@ -64,6 +64,8 @@ res.status(200).send({ message: 'User added to database, not verified' });
 }
 })
 if (flag) {
+
+  //=======================authenticating and authorising ============================================
 const  token  = jwt.sign(                                        //Signing a jwt token
 {
 email: user.email
