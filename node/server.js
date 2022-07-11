@@ -10,7 +10,7 @@ const bodyParser = require('body-parser');
 require("./App/config/dotenv.config"); //Import your environmental configs
 const client = require ("./App/config/database.config");
 
-//const user = require("./App/routes/routers")
+const login = require("./App/routes/login_route")
 
 app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
@@ -43,9 +43,10 @@ app.get("/", (req, res) =>{
     res.status(200).send("Sever Initialized and Online. Ready to take OFF!");
 });
 
-//app.use("/api", user) // User endpoint API
+app.use("/api", login) // User endpoint API
 
 
 app.listen(port, process.env.baseURL , () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
 })
+

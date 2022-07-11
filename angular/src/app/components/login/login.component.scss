@@ -1,140 +1,50 @@
-
-
-.container{
-
-align-self: center;
-// padding-left:auto;
-// padding-right:auto;
-
+.card-registration .select-input.form-control {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
 }
-
-
-.center{
-
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    margin-top: 140px;
-    
-}
-
-form input{
-    width: 100%;
-
-}
-
-h1{
-    text-align: center;
-}
-
-p{
-    text-align: center;
-}
-.btn{
-
-    margin-top:10%;
-    margin-bottom:15%;
+.card-registration{
+    background: #f5f5f5;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    // margin-left: 2px;
-    background-color:rgba(217,217,217,1);
-    width: 100%;
 }
-svg
-{
-    color: rgba(210,124,44);
+.card-registration .select-arrow {
+    top: 13px;
+} 
+//Desktop
+@media screen and (min-width: 769px){
+    .container{
+        width: 70vw;
+    }
 }
-
-
-nav {
-    background-color: rbga(white);
-    display: flex;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
+//Tablet
+@media screen and (min-width: 768px)and (max-width:768px){
+    .container{
+        width: 65vw;
+    }
 }
-
-nav svg {
-    color: rgba(210, 124, 44);
-    //border: 2px solid red;
-
-    height: 60%;
-    width: 50%;
+.gradient-custom{
+    margin-top: 15vh;
 }
 
-
-    
-
-ul {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    padding: 0;
-    list-style: none;
-}
-
-ul li {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    list-style: none;
-}
-
-  
-.col-mb-4 {
-
-    margin-right:35%;
-    display: flex;
-    justify-content: flex-start;
-}
-
-
-a {
-    align-items: flex-start;
-}
-
-.input-icons i {
-    position: absolute;
-    
-}
-
-.lock-icon i{
-
-    position: absolute;
-    padding: 10px;
-    color: rgba(210, 124, 44);
-    min-width: 50px;
+button{
+    box-sizing: border-box;
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    line-height: 16px;
     text-align: center;
-    margin-top: 6px;
-    margin-left: -15px;
-
-
-}
-
-
-
-// .input-icons{
-// //     border-radius: 50px;
-// //     display: flex;
-// //     vertical-align: top;
-// //     // margin-bottom: 0;
-// //     // border: 3px solid maroon;
-//  }
-
-.icon {
-    padding: 10px;
-    color: rgba(210, 124, 44);
-    min-width: 50px;
-     text-align: center;
-     margin-top: 6px;
-     margin-left: -15px;
-}
-.input-field{
+    width: 128.44px;
+    height: 55px;
     text-align: center;
+    color: #FFFFFF;
 }
-
-
-// .body {
-//     padding: 10%;
-// }
+    .email{
+        background-color: #FFFFFF;
+        color: RGBA(0,0,0,.49);
+    }
+    .bi-envelope{
+        color: #d27c2c;
+    }

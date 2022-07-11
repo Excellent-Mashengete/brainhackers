@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
-
+import {AuthenticationService} from 'src/app/Services/authentication.service'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, ) { }
+  constructor(private formBuilder: FormBuilder, private auth:AuthenticationService) { }
 
   ngOnInit(): void {
     this.Form = this.formBuilder.group({
@@ -29,10 +28,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit():void{
     this.submitted = true;
+
     if(this.Form.invalid){
       return;
     }
-    //console.log(JSON.stringify(this.Form.value));
+    let user = {
+      email: this.Form.value.email,
+      password: this.Form.value.password
+    }
+    
+   
+    console.log(JSON.stringify(this.Form.value));
   }
 
 }
