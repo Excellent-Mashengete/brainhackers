@@ -13,7 +13,7 @@ export class ProductViewComponent implements OnInit {
     let product:any;
     product = localStorage.getItem("product");
     console.log(product)
-   this.product = JSON.parse(product.results)
+   this.product = JSON.parse(product)
   }
 
   ngOnInit(): void {
