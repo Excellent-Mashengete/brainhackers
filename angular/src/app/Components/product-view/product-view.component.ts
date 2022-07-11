@@ -7,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductViewComponent implements OnInit {
 
-
   product!:any;
   constructor() {
 
     let product:any;
     product = localStorage.getItem("product");
-
-    this.product = JSON.parse(product)
-   }
+    console.log(product)
+   this.product = JSON.parse(product.results)
+  }
 
   ngOnInit(): void {
   }
