@@ -12,6 +12,8 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
 import { ProductsComponent } from './Components/products/products.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { CardComponent } from './Components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProductsComponent } from './Components/products/products.component';
     ShoppingCartComponent,
     NavBarComponent,
     OneProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    NavbarComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
