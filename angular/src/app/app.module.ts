@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './Components/card/card.component';
@@ -13,7 +12,7 @@ import { OneProductComponent } from './Components/one-product/one-product.compon
 import { ProductsComponent } from './Components/products/products.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
-
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.
     ProductsComponent,
     RegisterComponent,
     ShoppingCartComponent
-    
+
   ],
   imports: [
     BrowserModule,
