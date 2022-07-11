@@ -10,9 +10,10 @@ import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.
 import { LoginComponent } from './Components/login/login.component';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
-import { ProductsComponent } from './Components/products/products.component';
+import { SignupComponent } from './controllers/signup/signup.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CardComponent } from './Components/card/card.component';
+import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import { CardComponent } from './Components/card/card.component';
     LoginComponent,
     ShoppingCartComponent,
     OneProductComponent,
-    ProductsComponent,
+    SignupComponent,
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    ProductsComponent,
+
   ],
   imports: [
     BrowserModule,
