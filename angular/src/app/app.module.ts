@@ -14,6 +14,7 @@ import { OneProductComponent } from './Components/one-product/one-product.compon
 import { ProductsComponent } from './Components/products/products.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { CardComponent } from './Components/card/card.component';
+import { ProductViewComponent } from './Components/product-view/product-view.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CardComponent } from './Components/card/card.component';
     OneProductComponent,
     ProductsComponent,
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    ProductViewComponent
   ],
   imports: [
     BrowserModule,
