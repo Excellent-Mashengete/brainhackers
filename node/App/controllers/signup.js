@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 //===================================connect the database initialise client  =================================
 
 
-const client = require("../configs/database");
+const client = require("../config/database.config");
 
 
 //=========================authenticate and authorize by initilising json web token  ====================
@@ -49,7 +49,7 @@ var flag = 1;
 //===============================insert into that body you requested the information============================================
 
 client
-.query(`INSERT INTO users (name , email,  password) VALUES ($1,$2,$3,$4);`, [user.name, user.email, user.password], (err) => {
+.query(`INSERT INTO users (name , email,  password) VALUES ($1,$2,$3);`, [user.name, user.email, user.password], (err) => {
 
 if (err) {
 flag  =  0;                          //If user is not inserted is not inserted to database assigning flag as 0/false.
@@ -79,9 +79,9 @@ process.env.SECRET_KEY
 catch (err) {
 console.log(err);
 res.status(500).json({
-error: "Database error while registring user!",                     //Database connection error
+error: "Database error while registering user!",                     //Database connection error
 });
 
 }
 
-}
+} 
