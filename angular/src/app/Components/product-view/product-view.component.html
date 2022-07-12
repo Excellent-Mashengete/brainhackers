@@ -8,7 +8,7 @@
     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
 </svg> -->
 
-
+<app-navbar></app-navbar>
 <i class="fa-solid fa-arrow-left-long"></i>
 
 <h4>Details</h4>
@@ -17,12 +17,12 @@
 
 
 <!-- Default dropright button -->
-  <div class="card">
-    <img src="https://image.tmdb.org/t/p/original{{product.backdrop_path}}" class="card-img-top" alt="...">
+  <div class="card"  *ngFor="let product of product_id ; let i = index">
+    <img src='{{product.image}}' class="card-img-top" alt="...">
     <div class="card-body">
       <div class="d-flex justify-content-between w-100">
-        <p class="card-title nike-shoe"> {{product.name}}</p>
-        <p class="price">Price : R{{product.price}}</p>
+        <p class="card-title nike-shoe"> </p>
+        <p class="price">Price : R</p>
         
       </div>
     

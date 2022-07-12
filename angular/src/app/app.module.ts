@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CardComponent } from './Components/card/card.component';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
@@ -18,7 +17,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     FinalProductsPageComponent,
     LoginComponent,
     NavbarComponent,
@@ -27,7 +25,6 @@ import { AppComponent } from './app.component';
     RegisterComponent,
     ShoppingCartComponent,
     ProductViewComponent
-
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardService } from 'src/app/Services/card.service';
+import { GedById } from 'src/app/Interfaces/ged-by-id'
 
 @Component({
   selector: 'app-product-view',
@@ -8,15 +10,30 @@ import { Component, OnInit } from '@angular/core';
 export class ProductViewComponent implements OnInit {
 
   product!:any;
-  constructor() {
+  product_id: any;
+ id!: any;
 
-    let product:any;
-    product = localStorage.getItem("product");
-    console.log(product)
-   this.product = JSON.parse(product)
+  constructor(private cardservice: CardService) {
+
   }
 
   ngOnInit(): void {
+    this.getCardbyId();
   }
 
+  getCardbyId(){
+    return this.cardservice.getCardbyId(this.id).subscribe({
+      next:data =>{
+        this.product_id = data;
+     
+        console.log(data)
+      }
+    })
+  }
+
+
+
+
+
 }
+
