@@ -11,7 +11,7 @@
         <div class="card">
           <img class="card-img-top" routerLink="/prodDetails/{{product.prod_id}}" src='{{product.image}}' (click)="getProductinfo(i)"alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">{{product.prod_name}}</h5>
+            <h5 class="card-title">{{product.prod_name | uppercase }}</h5>
             <p style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 100ch;" class="card-desc">{{product.prod_desc}}</p>
             <p class="card-price">R {{product.prod_price}}</p>
                       

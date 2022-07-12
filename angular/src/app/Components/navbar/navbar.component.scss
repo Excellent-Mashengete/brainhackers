@@ -1,15 +1,6 @@
 
-nav svg {
-
-    height: 70%;
-    width: 70%;
-}
-
-svg {
-    color: rgba(210, 124, 44);
-    //border: 2px solid red;
-    //height: 20px;
-    //width: 20px;
+.nav{
+    margin: 30%;
 }
 
 ul {
@@ -27,4 +18,10 @@ ul li {
     justify-content: space-evenly;
     list-style-type: none;
     list-style: none;
+}
+
+
+.fa-solid{
+    color: #D27C2C;
+
 }
