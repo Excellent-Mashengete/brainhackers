@@ -18,7 +18,7 @@
   }
   button{
     box-sizing: border-box;
-    background: #D9D9D9;
+    background: #d27c2c;
     border: 1px solid #000000;
     border-radius: 10px;
     line-height: 16px;
@@ -32,6 +32,9 @@
   padding-left: 25px;
   
   }
+  .email{
+    padding-left: 25px;
+  }
   .bi-person {
 
     position: absolute;
@@ -40,4 +43,42 @@
     color:#d27c2c;
 
   }
+  .bi-envelope{
+    position:absolute;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    color:#d27c2c;
+  }
+
+ .bi-lock{
+  position: absolute;
+    margin-top: 10px;
+    padding-bottom: 8px;
+    color:#d27c2c;
+
+}
+
+.lock{
+  padding-left: 25px;
+}
+
+.locker{
+  padding-left: 25px;
+}
+
+.all{
+
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+ 
+}
+.here{
+  color:#d27c2c;
+}
+.message{
+  position: absolute;
+  margin-top:27px;
+  margin-left: 20px;
+}
   
