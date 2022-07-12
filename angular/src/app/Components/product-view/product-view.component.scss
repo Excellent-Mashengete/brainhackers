@@ -1,15 +1,13 @@
 .card{
     margin: auto;
-    border-radius: 5%;
-  width: 75%;
-  padding: 10px; 
-}
+    width: 75%;
+    padding: 10px; 
+    border-radius: 10px;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+    }
 
 
-.btn-group{
-    align-content: left;
-    margin: auto;
-}
 
 
 .all-btn{
@@ -23,3 +21,13 @@ align-content: left;
 }
 
 
+.btn{
+    background-color: #D9D9D9;
+}
+
+
+.card-title{
+
+    font-family: 'Hind Siliguri', sans-serif;
+     font-weight:700;
+}
