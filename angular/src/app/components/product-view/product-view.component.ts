@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/Services/card.service';
 import { GedById } from 'src/app/Interfaces/ged-by-id'
+import { CartService } from 'src/app/Services/cart.service'
 
 @Component({
   selector: 'app-product-view',
@@ -10,18 +11,35 @@ import { GedById } from 'src/app/Interfaces/ged-by-id'
 export class ProductViewComponent implements OnInit {
 
   product!:any;
-  constructor() {
-
-    let product:any;
+  items: any;
+  constructor() {let product:any;
     product = localStorage.getItem("product");
+
     console.log(product)
-    this.product = JSON.parse(product)
-   }
-
-
+    this.product = JSON.parse(product)}
+   
   ngOnInit(): void {
+    //this.readproduc();
+
+    //this.addtoCart(this.items);
     // this.getCardbyId();
   }
+
+  // readproduc(){
+  //   let product:any;
+  //   product = localStorage.getItem("product");
+
+  //   // this.product.forEach((a:any)=>{
+  //   //   Object.assign(a,{quatity:1, total:a.prod_price}) 
+  //   //   });
+
+  //   console.log(product)
+  //   this.product = JSON.parse(product)
+  // }
+
+  // addtoCart(item:any){
+  //   this.cartservice.addToCart(item)
+  // }
 
   // getCardbyId(){
   //   return this.cardservice.getCardbyId(this.product).subscribe({

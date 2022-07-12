@@ -1,29 +1,51 @@
-.nav{
-    margin: 30%;
+
+// .fa-solid{
+//     color: #D27C2C;
+//     width: 20px;
+// }
+
+// .text{
+//     font-size: 20px;
+//     color: #D27C2C;
+// }
+
+
+
+// .item-name{
+//     font-family: 'Hind Siliguri', sans-serif;
+//     font-weight:400;
+//     font-size: 15px;
+// }
+
+// .card-category{
+//     font-size: 20px;
+// }
+
+.rows{
+    display: flex;
 }
-
-
-.fa-solid{
-    color: #D27C2C;
-    width: 20px;
+.qtnum{
+    width: 70px;
+    text-align: center;
 }
-
-.text{
-    font-size: 20px;
-    color: #D27C2C;
+.empty{
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
 }
-
-
-.container{
-    width: 80%;
+.center img{
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: 25px;
+    margin: 20px;
 }
-
-.item-name{
-    font-family: 'Hind Siliguri', sans-serif;
-    font-weight:400;
-    font-size: 15px;
-}
-
-.card-category{
-    font-size: 20px;
+.center{
+    top:50%;
+    left:50%;
+    transform: translate(-45%, -45%);
+    text-align: center;
+    position: absolute;
 }
