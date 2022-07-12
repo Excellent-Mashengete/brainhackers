@@ -8,6 +8,7 @@ import { CardComponent } from './Components/card/card.component';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ProductViewComponent } from './Components/product-view/product-view.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { RegisterComponent } from './Components/register/register.component';
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     OneProductComponent,
     ProductsComponent,
     RegisterComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProductViewComponent
 
   ],
   imports: [
