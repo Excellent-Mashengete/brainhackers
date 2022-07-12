@@ -6,10 +6,20 @@
     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
 </svg> -->
 
-<app-navbar></app-navbar>
-<i class="fa-solid fa-arrow-left-long"></i>
 
-<h4>Details</h4>
+
+<!-- CART NAVBAR -->
+
+<div class="Nav">
+  <nav class="navbar navbar-light bg-light">
+      <i class="fa-solid fa-arrow-left-long btn-lg " routerLink="/products"></i>
+      <div class="text">Details</div>
+      <i class="fa-solid fa-cart-shopping" routerLink="/shopping-cart"></i>     
+  </nav>
+</div>
+
+<!-- CART NAVBAR -->
+
 
 <!-- Default dropright button -->
 <!-- <div class="card"  *ngFor="let product of Products ; let i = index"> -->
