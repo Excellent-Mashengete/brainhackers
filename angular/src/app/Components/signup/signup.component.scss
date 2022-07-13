@@ -27,6 +27,7 @@
     height: 47px;
     text-align: center;
     color: #FFFFFF;
+    margin-left: 17px;
   }
   .fullname{
   padding-left: 25px;
@@ -76,9 +77,15 @@
 .here{
   color:#d27c2c;
 }
-.message{
-  position: absolute;
-  margin-top:27px;
-  margin-left: 20px;
+.mb-5{
+  padding:0%;
 }
-  
+// .message{
+//   // position: absolute;
+//   margin-bottom: 20px;
+//   // margin-top:5px;
+//   // margin-left: 20px;
+// }
+  h6{
+    margin-bottom: 30px;
+  }
