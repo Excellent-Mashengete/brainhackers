@@ -10,64 +10,50 @@
 
 <!-- CART NAVBAR -->
 
-<div class="Nav">
-  <nav class="navbar navbar-light bg-light">
-      <i class="fa-solid fa-arrow-left-long btn-lg " routerLink="/products"></i>
-      <div class="text">Details</div>
-      <i class="fa-solid fa-cart-shopping" routerLink="/shopping-cart"></i>     
-  </nav>
-</div>
+<app-navbar></app-navbar>
 
 <!-- CART NAVBAR -->
 
 
 <!-- Default dropright button -->
 <!-- <div class="card"  *ngFor="let product of Products ; let i = index"> -->
+<div class="container">
+  <div class="card">
+    <img src='{{product.image}}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="row">
+        <div class="col"><p class="card-title nike-id">Product Code: 002576-{{product.prod_id}}</p></div>
+        <div class="col"><p class="card-title nike-name">Price: R {{product.prod_name}}</p></div>
+        <p class="price">Price: R {{product.prod_price}}</p>
+      </div>
+      
+     
+      <p class="card-text">Description: {{product.prod_desc}}</p>
+  
+      <div class="all-btn dropright justify-content-between w-100">
+        <div class="rows ">
+          <div class="qt"><p class="card-title">Size:</p></div>
+          <div class="qtnum"><select class="form-control" >
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="7">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="9">10</option>
+              <option value="9">11</option>
+              <option value="9">12</option>
+              <option value="9">13</option>
+          </select></div>
+      </div>
+        <div class="btn-group">
+          <button type="button" class="btn " (click)="addToCart(product)">Add To Cart</button>
+        </div>
+      </div>
 
-<div class="card">
- <img src='{{product.image}}' class="card-img-top" alt="...">
-<div class="card-body">
-  <div class="d-flex justify-content-between w-100">
-    <p class="card-title nike-shoe">{{product.prod_name}}</p>
-    <p class="price">Price: R {{product.prod_price}}</p>
-
+    </div>
   </div>
-
-
-
-
-  <p class="card-text">
-    Description: {{product.prod_desc}}
-  </p>
-
-</div>
-
-<div class="all-btn dropright justify-content-between w-100">
- 
-    Select shoe size
- 
-  <div><select formControlName="usertype" class="form-control" >
-    <option value="1" selected>1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="7">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-    <option value="11">11</option>
-    <option value="12">12</option>
-    <option value="13">13</option>
-    <option value="14">14</option>
-    <option value="15">15</option>
-
-</select>
-  </div>
-  <div class="btn-group">
-    <button type="button" class="btn " routerLink="/cart">Add To Cart</button>
-  </div>
-</div>
-
 </div>

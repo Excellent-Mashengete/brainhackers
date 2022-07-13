@@ -12,7 +12,7 @@ export class ProductViewComponent implements OnInit {
 
   product!:any;
   items: any;
-  constructor() {let product:any;
+  constructor(private cartitem:CartService) {let product:any;
     product = localStorage.getItem("product");
 
     console.log(product)
@@ -24,6 +24,10 @@ export class ProductViewComponent implements OnInit {
     //this.addtoCart(this.items);
     // this.getCardbyId();
   }
+  addToCart(item: any): void {
+    this.cartitem.addToCart(item)
+  }
+  
 
   // readproduc(){
   //   let product:any;

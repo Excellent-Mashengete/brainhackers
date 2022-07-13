@@ -1,41 +1,57 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
-  cartItems : any = [];
-  productList = new BehaviorSubject<any>([]);
 
-  constructor(private http:HttpClient ) { }
+export class CartService {
+  cardDataList:any = []
+  productList = new BehaviorSubject<any>([])
+
+  constructor() { }
 
   //Get Product Data
-  getProductData(){
-    return this.productList.asObservable();
+  getProdList(){
+    return this.productList.asObservable()
   }
 
+  //Set product details
   setProduct(product:any){
-    this.cartItems.push(...product)
+    this.cardDataList.push(...product)
     this.productList.next(product);
   }
 
-  addToCart(product:any){
-    this.cartItems.push(product);
-    this.productList.next(this.cartItems);
-    this.getTotalAmout();
-    console.log(this.cartItems);
+  //Add to cart details
+  addToCart(prodcut:any){
+    this.cardDataList.push(prodcut);
+    this.productList.next(this.cardDataList)
+    this.getAmount();
+    console.log(this.cardDataList)
   }
- 
-  getTotalAmout(){
+
+  //Get total amount
+  getAmount(){
     let grandTotal = 0;
-    this.cartItems.map((a:any) =>{
-      grandTotal += a.prod_price;
+    this.cardDataList.map((a:any)=>{
+      grandTotal += a.total;
     })
   }
-  removeCartItem(product: any){
-    this.cartItems
+
+  //Remove data cart 1 by 1 
+  removeCart(product:any){
+    this.cardDataList.map((a:any, index:any)=>{
+      if (product.id === a.id) {
+        this.cardDataList.splice(index,1)
+      }
+    })
+    this.productList.next(this.cardDataList)
   }
+
+  //Remove all data cart
+  removeAllCart(){
+    this.cardDataList=[];
+    this.productList.next(this.cardDataList)
+  }
+
 }

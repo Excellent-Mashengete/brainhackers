@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service'
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  totalNumber: number = 0
+  constructor(private cartitem:CartService) { }
 
   ngOnInit(): void {
+    this.cartitem.getProdList().subscribe({
+      next:data =>{
+        this.totalNumber = data.length;
+        console.log(this.totalNumber)
+      }
+    })
   }
 
 }

@@ -4,7 +4,11 @@
     <nav class="navbar navbar-light bg-light">
         <i class="fa-solid fa-house btn-lg" routerLink="/products"></i>
         <i class="fa-solid fa-user-large btn-lg" routerLink="/"></i>
-        <i class="fa-solid fa-cart-shopping btn-lg" routerLink="/shopping-cart"></i>     
+        <a routerLink="/cart" >
+          <i style="font-size: 30px;"class="fa-solid fa-cart-shopping btn-lg"></i>    
+          <div class="badge bg-danger">{{totalNumber}}</div>
+        </a>
+         
     </nav>
 
   </div>
