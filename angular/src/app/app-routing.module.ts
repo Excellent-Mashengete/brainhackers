@@ -10,6 +10,7 @@ import { ProductViewComponent } from './Components/product-view/product-view.com
 import { ProductsComponent } from './Components/products/products.component';
 // import { RegisterComponent } from './Components/register/register.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
+import { UserprofileComponent } from './Components/userprofile/userprofile.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path:'shopping-cart',component:ShoppingCartComponent},
   {path: 'one-product',component:OneProductComponent},
-  {path: 'prodDetails/:prod_id', component:ProductViewComponent}
+  {path: 'prodDetails/:prod_id', component:ProductViewComponent},
+  {path: 'userprofile', component: UserprofileComponent}
 ]
 
 @NgModule({

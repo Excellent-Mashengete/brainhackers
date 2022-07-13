@@ -12,6 +12,7 @@ import { SignupComponent } from './Components/signup/signup.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
 import { AppComponent } from './app.component';
+import { UserprofileComponent } from './Components/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     // RegisterComponent,
     ShoppingCartComponent,
     ProductViewComponent,
-    SignupComponent
+    SignupComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
