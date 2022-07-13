@@ -13,20 +13,20 @@ import { ProductsComponent } from './Components/products/products.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
 import { AppComponent } from './app.component';
 import { UserprofileComponent } from './Components/userprofile/userprofile.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FinalProductsPageComponent,
-    // LoginComponent,
     NavbarComponent,
     OneProductComponent,
     ProductsComponent,
-    // RegisterComponent,
     ShoppingCartComponent,
     ProductViewComponent,
     SignupComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
