@@ -75,8 +75,38 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="container ">
+                <div class="card total " style="margin-bottom: 12px;">
+                    <div class="card-body ">
+                        <h3>Order Information</h3>
+                        <div class="row">
+                            <div class="col-9"><h5>No. of items: </h5></div>
+                            <div class="col-3">{{totalNumber}}</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-4">AMOUNT DUE:</div>
+                            <div class="col-8"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">VAT :</div>
+                            <div class="col-8"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">TOTAL AMOUNT:</div>
+                            <div class="col-8"></div>
+                        </div>
+                        <div><p>Vat amount calculated using 15%</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
     </div>
 </div>
+
+
 </ng-container>
 
 <ng-container *ngIf="products.length == 0">
