@@ -13,6 +13,10 @@ module.exports.login = async (req, res) => {
     try{
         if(!(email && password)){
             res.status(400).send("user input require");
+        }else {
+            res.status(500).json({
+                error: "Database has crashed",
+            })
         }
         const logData = await client.query(`SELECT * FROM users WHERE email= $1;`,
         [email]); //Check if user exist
