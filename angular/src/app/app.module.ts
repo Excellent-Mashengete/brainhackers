@@ -17,11 +17,9 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     FinalProductsPageComponent,
-    // LoginComponent,
     NavbarComponent,
     OneProductComponent,
     ProductsComponent,
-    // RegisterComponent,
     ShoppingCartComponent,
     ProductViewComponent,
     SignupComponent
