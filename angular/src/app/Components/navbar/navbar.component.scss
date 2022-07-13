@@ -1,0 +1,27 @@
+
+.nav{
+    margin: 30%;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1%;
+
+    list-style: none;
+    align-items: center;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    list-style: none;
+}
+
+
+.fa-solid{
+    color: #D27C2C;
+
+}

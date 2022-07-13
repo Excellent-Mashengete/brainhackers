@@ -1,0 +1,56 @@
+
+
+<!-- BACK ARROW HERE -->
+
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-left" routerLink="/products"
+  viewBox="0 0 16 16">
+  <path fill-rule="evenodd"
+    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+</svg> -->
+
+<app-navbar></app-navbar>
+<i class="fa-solid fa-arrow-left-long"></i>
+
+<h4>Details</h4>
+
+<!-- Default dropright button -->
+  <div class="card"  *ngFor="let product of product_id ; let i = index">
+    <img src='{{product.image}}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="d-flex justify-content-between w-100">
+        <p class="card-title nike-shoe"> </p>
+        <p class="price">Price : R</p>
+        
+      </div>
+    
+     
+    
+      <p class="text-right">Description </p>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk of
+        the card's content.
+      </p>
+    
+    </div>
+
+    <div class="all-btn dropright justify-content-between w-100">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select shoe size
+      </button>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" value="Size 2">Size 2</a>
+          <a class="dropdown-item" href="#">Size 3</a>
+          <a class="dropdown-item" href="#">Size 4</a>
+          <a class="dropdown-item" href="#">Size 5</a>
+          <a class="dropdown-item" href="#">Size 6</a>
+          <a class="dropdown-item" href="#">Size 7</a>
+          <a class="dropdown-item" href="#">Size 8</a>
+          <a class="dropdown-item" href="#">Size 9</a>
+          <a class="dropdown-item" href="#">Size 10</a>
+      </div>
+      <div class="btn-group">
+          <button type="button" class="btn " routerLink="/cart">Add To Cart</button>
+        </div>
+    </div>
+  
+  </div>
