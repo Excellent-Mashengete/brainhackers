@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
     this.cartitem.getProdList().subscribe({
       next:data =>{
         this.totalNumber = data.length;
-        console.log(this.totalNumber)
+        //console.log(this.totalNumber)
       }
     })
   }

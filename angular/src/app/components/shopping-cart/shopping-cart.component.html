@@ -13,8 +13,10 @@
 <ng-container *ngIf="products.length != 0">
 <div class="container mb-5">
     <div class="content">
+        <a type="button" (click)="removeAllProduct()"><i class="fa-solid fa-trash fa-lg" style="font-size: 20px; float: right; color: red; margin-bottom: 5%;" ></i></a>
         <div class="row justify-content-center">
             <div class="col-lg-12 col-md-12 col-sm-6"  *ngFor="let item of products">
+                
                 <div class="card " style="margin-bottom: 12px;">
                     <div class="card-body ">
                         <div class="row">
@@ -34,7 +36,7 @@
                                 </div>
 
                                 <div class="item-name">
-                                    <a class="remove" (click)="removeProduct(item)">Remove</a>
+                                    <a class="remove" style="cursor: pointer;" (click)="removeProduct(item)">Remove</a>
                                 </div>
                             </div>
 
@@ -83,30 +85,35 @@
                         <h3>Order Information</h3>
                         <div class="row">
                             <div class="col-9"><h5>No. of items: </h5></div>
-                            <div class="col-3">{{totalNumber}}</div>
+                            <div class="col-3"><h5>{{totalNumber}}</h5></div>
                         </div>
                         
                         <div class="row">
-                            <div class="col-4">AMOUNT DUE:</div>
-                            <div class="col-8"></div>
+                            <div class="col-6">AMOUNT DUE: {{allProducts}}</div>
+                            <div class="col-6"></div>
                         </div>
                         <div class="row">
-                            <div class="col-4">VAT :</div>
-                            <div class="col-8"></div>
+                            <div class="col-6">VAT :</div>
+                            <div class="col-6"></div>
                         </div>
                         <div class="row">
-                            <div class="col-4">TOTAL AMOUNT:</div>
-                            <div class="col-8"></div>
+                            <div class="col-6">TOTAL AMOUNT:</div>
+                            <div class="col-6"></div>
                         </div>
                         <div><p>Vat amount calculated using 15%</p></div>
+                        
+                        <div class="buttons mb-4">
+                            <button strouterLink="/products" class="btn btn-success">Shop More</button>
+                            <button class="btn btn-warning">Check out</button>
+                        </div> 
                     </div>
+
+                  
                 </div>
             </div>
         </div>    
     </div>
 </div>
-
-
 </ng-container>
 
 <ng-container *ngIf="products.length == 0">

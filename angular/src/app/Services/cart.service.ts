@@ -27,7 +27,7 @@ export class CartService {
     this.cardDataList.push(prodcut);
     this.productList.next(this.cardDataList)
     this.getAmount();
-    console.log(this.cardDataList)
+    //console.log(this.cardDataList)
   }
 
   //Get total amount

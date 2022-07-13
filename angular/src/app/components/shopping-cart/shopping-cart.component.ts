@@ -8,7 +8,7 @@ import { CartService } from 'src/app/Services/cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
   products:any = [];
-  allProducts:any = 0;
+  allProducts:any = [];
   totalNumber: number = 0
   constructor(private cartitem:CartService) { }
 
@@ -17,10 +17,28 @@ export class ShoppingCartComponent implements OnInit {
     next:data =>{
       this.products = data;
       this.totalNumber = data.length;
-      this.allProducts = this.products;
+
+      // while (this.products != 0) {
+      //   this.allProducts = this.products
+      //   console.log(this.allProducts)
+      //   this.products++
+      // }
+     
     }
    })
+   //this.getTotal();
   }
+  // getTotal(){
+  //   let grandTotal = 0;
+  //   this.cartitem.getProdList().subscribe({
+  //     next:data => {
+  //       this.allProducts = data
+  //       //console.log(this.allProducts.Array)
+  //       console.log(data[0].prod_price)
+  //     }
+  //   })
+  // }
+
   removeProduct(item:any){
     this.cartitem.removeCart(item);
   }

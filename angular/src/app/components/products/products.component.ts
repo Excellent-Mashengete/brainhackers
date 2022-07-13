@@ -15,12 +15,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.cardservice.getCard().subscribe(( respond:any )=>{
 
-      console.log(respond)
-      console.log("response")
+      // console.log(respond)
+      // console.log("response")
 
       
       this.Products = respond;
-      console.log(this.Products)
+      // console.log(this.Products)
 
 
   })
