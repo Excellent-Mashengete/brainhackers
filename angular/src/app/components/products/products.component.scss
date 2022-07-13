@@ -41,3 +41,10 @@ text-align: center;
     color: #D27C2C;     
 }
 
+.text-center{
+    top:50%;
+    left:50%;
+    transform: translate(-45%, -45%);
+    text-align: center;
+    position: absolute;
+}

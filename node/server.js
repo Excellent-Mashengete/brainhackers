@@ -6,6 +6,7 @@ var corsOptions = {
   origin: "*"
 };// only allow that listerning address to connnect to the database
 
+
 const bodyParser = require('body-parser');
 require("./App/config/dotenv.config"); //Import your environmental configs
 const client = require ("./App/config/database.config");
@@ -38,7 +39,7 @@ client.connect((err) =>{ // Connect to the Database
       console.log(err)
      }
   else {
-    console.log("Data logging initialised");
+    console.log("Databased logging initialised");
    }
 });
 

@@ -10,6 +10,7 @@ export class ShoppingCartComponent implements OnInit {
   products:any = [];
   allProducts:any = [];
   totalNumber: number = 0
+  sum: number | undefined;
   constructor(private cartitem:CartService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,18 @@ export class ShoppingCartComponent implements OnInit {
       this.products = data;
       this.totalNumber = data.length;
 
+      
+
+      this.products.forEach((obj:any) => {
+          console.log(obj.prod_price);
+          this.sum = this.sum + obj.prod_price
+        });
+        console.log(this.sum)
+      // for (let price of this.products)
+      // {
+      //   this.allProducts = price.prod_price
+      //   console.log(this.allProducts)
+      // }
       // while (this.products != 0) {
       //   this.allProducts = this.products
       //   console.log(this.allProducts)
@@ -26,7 +39,20 @@ export class ShoppingCartComponent implements OnInit {
      
     }
    })
+   this.doTotalPrice()
    //this.getTotal();
+  }
+  totalPrice: number = 0;
+
+  doTotalPrice(){
+
+    let total = 0;
+    this.products.forEach((item: { price: number, quantity: number }) => {
+      item.quantity = 1;
+      total += item.price * item.quantity
+    });
+    this.totalPrice = total;
+    console.log(this.totalPrice)
   }
   // getTotal(){
   //   let grandTotal = 0;
