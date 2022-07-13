@@ -10,30 +10,30 @@ import { GedById } from 'src/app/Interfaces/ged-by-id'
 export class ProductViewComponent implements OnInit {
 
   product!:any;
-  product_id: any;
- id!: any;
+  constructor() {
 
-  constructor(private cardservice: CardService) {
+    let product:any;
+    product = localStorage.getItem("product");
+    console.log(product)
+    this.product = JSON.parse(product)
+   }
 
-  }
 
   ngOnInit(): void {
-    this.getCardbyId();
+    // this.getCardbyId();
   }
 
-  getCardbyId(){
-    return this.cardservice.getCardbyId(this.id).subscribe({
-      next:data =>{
-        this.product_id = data;
+  // getCardbyId(){
+  //   return this.cardservice.getCardbyId(this.product).subscribe({
+  //     next:data =>{
+  //       this.product_id = data;
      
-        console.log(data)
-      }
-    })
-  }
+  //       console.log(data)
+  //     }
+  //   })
+  // }
 
 
-
-
-
+  
 }
 

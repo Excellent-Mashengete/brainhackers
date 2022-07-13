@@ -15,8 +15,6 @@ const login = require("./App/routes/login_route")
 const products = require('./App/routes/product_route')
 //const oders = require("./App/routes/orders")
 
-const products = require('./App/routes/product_route')
-
 const signUp= require('./App/routes/signup_route')
 
 app.use(express.json());  // to support JSON-encoded
