@@ -5,12 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
-import { LoginComponent } from './Components/login/login.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProductViewComponent } from './Components/product-view/product-view.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
+import { SignupComponent } from './Components/signup/signup.component';
 import { ProductsComponent } from './Components/products/products.component';
-import { RegisterComponent } from './Components/register/register.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
 import { AppComponent } from './app.component';
 
@@ -18,13 +17,14 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     FinalProductsPageComponent,
-    LoginComponent,
+    // LoginComponent,
     NavbarComponent,
     OneProductComponent,
     ProductsComponent,
-    RegisterComponent,
+    // RegisterComponent,
     ShoppingCartComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
