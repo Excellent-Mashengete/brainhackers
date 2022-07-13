@@ -41,12 +41,18 @@ export class CartService {
   //Remove data cart 1 by 1 
   removeCart(product:any){
     this.cardDataList.map((a:any, index:any)=>{
-      if (product.id === a.id) {
+      if (product.prod_id === a.prod_id) {
         this.cardDataList.splice(index,1)
       }
     })
     this.productList.next(this.cardDataList)
   }
+
+  removePerCart(product:any){
+    this.cardDataList.splice(product,1)
+    this.productList.next(this.cardDataList)
+  }
+ 
 
   //Remove all data cart
   removeAllCart(){

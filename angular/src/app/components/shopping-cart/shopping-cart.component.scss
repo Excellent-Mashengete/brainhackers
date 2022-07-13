@@ -40,7 +40,7 @@
 }
 
 .center{
-    top:40%;
+    top:45%;
     left:50%;
     transform: translate(-45%, -45%);
     text-align: center;
@@ -68,6 +68,8 @@ h5{
     line-height: 25px;
 }
 .buttons{
-    width: 121px;
-    height: 55px;
+    display: flex;
+}
+.total .row{
+    margin-left: 20px;
 }

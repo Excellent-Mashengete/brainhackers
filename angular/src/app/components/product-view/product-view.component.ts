@@ -26,6 +26,9 @@ export class ProductViewComponent implements OnInit {
   }
   addToCart(item: any): void {
     this.cartitem.addToCart(item)
+
+
+
   }
   
 

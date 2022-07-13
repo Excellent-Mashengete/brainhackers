@@ -39,8 +39,11 @@ export class ShoppingCartComponent implements OnInit {
   //   })
   // }
 
+  remove(){
+    this.cartitem.addToCart
+  }
   removeProduct(item:any){
-    this.cartitem.removeCart(item);
+    this.cartitem.removePerCart(item);
   }
 
   removeAllProduct(){
