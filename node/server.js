@@ -13,7 +13,8 @@ const client = require ("./App/config/database.config");
 //const user = require("./App/routes/routers")
 
 const products = require('./App/routes/product_route')
-//const oders = require("./App/routes/orders")
+
+const signUp= require('./App/routes/signup_route')
 
 app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
@@ -46,9 +47,13 @@ app.get("/", (req, res) =>{
     res.status(200).send("Sever Initialized and Online. Ready to take OFF!");
 });
 
+app.use("/api", signUp) // to retrive products
+//app.use("/api", oders) // to update order, cancel order and to retrieve order 
+
+
 app.use("/api", products) // to retrive products
 //app.use("/api", oders) // to update order, cancel order and to retrieve order 
 
-app.listen(port, process.env.baseURL , () =>{  
+app.listen(port, process.env.baseUrl , () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
 })
