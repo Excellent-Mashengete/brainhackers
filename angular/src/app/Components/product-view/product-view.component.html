@@ -14,7 +14,9 @@
   <nav class="navbar navbar-light bg-light">
       <i class="fa-solid fa-arrow-left-long btn-lg " routerLink="/products"></i>
       <div class="text">Details</div>
-      <i class="fa-solid fa-cart-shopping" routerLink="/shopping-cart"></i>     
+      <span class="hovertext" data-hover="View Cart">
+        <i class="fa-solid fa-cart-shopping btn-lg" routerLink="/shopping-cart"></i>   
+    </span>    
   </nav>
 </div>
 
@@ -27,9 +29,16 @@
 <div class="card">
  <img src='{{product.image}}' class="card-img-top" alt="...">
 <div class="card-body">
-  <div class="d-flex justify-content-between w-100">
-    <p class="card-title nike-shoe">{{product.prod_name}}</p>
-    <p class="price">Price: R {{product.prod_price}}</p>
+  <div class="row">
+    <div class="col">
+      <p class="card-title nike-shoe">Product Code: 002576-{{product.prod_id}}</p>
+    </div>
+    <div class="col">
+      <p class="card-title nike-shoe">{{product.prod_name}}</p>
+    </div>
+    
+   
+    <p class="price">R{{product.prod_price}}</p>
 
   </div>
 
@@ -65,9 +74,18 @@
 
 </select>
   </div>
+
   <div class="btn-group">
-    <button type="button" class="btn " routerLink="/cart">Add To Cart</button>
+    <div class="btn-1">
+      <button type="button" class="btn " routerLink="/cart">Add To Cart</button> 
+</div>
+
+<div class="btn-2">
+       <button type="button" class="btn" id="see-more" routerLink="/products" width="60px">See More Products</button>
+</div>
+
   </div>
+  
 </div>
 
 </div>
