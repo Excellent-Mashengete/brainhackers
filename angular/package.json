@@ -18,6 +18,10 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+<<<<<<< HEAD
+=======
+    "@ng-bootstrap/ng-bootstrap": "^12.1.2",
+>>>>>>> d0d772dab14713e060ab2f8551566c52f3bc3a49
     "bootstrap": "^3.4.1",
     "cores": "^0.8.5",
     "cors": "^2.8.5",
