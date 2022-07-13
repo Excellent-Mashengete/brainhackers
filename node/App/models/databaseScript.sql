@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS users CASCADE;
 
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -7,20 +7,24 @@ CREATE TABLE users (
     password VARCHAR(255),
 );
 
-CREATE TABLE Products(
+DROP TABLE IF EXISTS products CASCADE;
+CREATE TABLE products(
     id SERIAL PRIMARY KEY,
-    Name VARCHAR(225),
-    Description VARCHAR(225),
-    Price decimal(6, 2),
+    product_name VARCHAR(225),
+    product_desc VARCHAR(225),
+    product_price decimal(8,2),
     size int,
     image VARCHAR(225)
 );
 
-CREATE TABLE Orders(
+DROP TABLE IF EXISTS orders CASCADE;
+CREATE TABLE orders(
     order_ID SERIAL PRIMARY KEY,
     user_id int,
-    FOREIGN KEY(user_id) REFERENCES users(id),
     product_id int,
+    quantity int,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    FOREIGN KEY(user_id) REFERENCES users(id),
     FOREIGN KEY(product_id) REFERENCES products(id),
-    quantity int
 );

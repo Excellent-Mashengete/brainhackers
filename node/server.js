@@ -12,6 +12,9 @@ const client = require ("./App/config/database.config");
 
 const login = require("./App/routes/login_route")
 
+const products = require('./App/routes/product_route')
+//const oders = require("./App/routes/orders")
+
 app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
 
@@ -45,6 +48,8 @@ app.get("/", (req, res) =>{
 
 app.use("/api", login) // User endpoint API
 
+app.use("/api", products) // to retrive products
+//app.use("/api", oders) // to update order, cancel order and to retrieve order 
 
 app.listen(port, process.env.baseUrl , () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
