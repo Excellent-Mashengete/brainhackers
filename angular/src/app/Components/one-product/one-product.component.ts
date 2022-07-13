@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
-import { OneProductService } from 'src/app/Services/one-product.service';
 
 @Component({
   selector: 'app-one-product',
@@ -9,31 +8,15 @@ import { OneProductService } from 'src/app/Services/one-product.service';
 })
 export class OneProductComponent implements OnInit {
 
-// sizeForm!:FormGroup
 
-
-products = [];
-
-
-sizeForm = new FormGroup({
-  size : new FormControl('', Validators.required)
-})
-  constructor(private oneProductservice: OneProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
    
     // this.oneProductservice.sendGetRequest().subscribe((data: any)=>{
     //   console.log(data);
     //   this.products = data;
-      const id = 1;
-      this.oneProductservice.getOneProduct(id).subscribe((data:any)=>{
-        console.log(data)
-        console.log(this.sizeForm.value);
-      })
-
-
-
-    // console.log(this.sizeForm.value);
+  
    }
 
 }
