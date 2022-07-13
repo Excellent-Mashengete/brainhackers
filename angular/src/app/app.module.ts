@@ -23,7 +23,8 @@ import { AppComponent } from './app.component';
     ProductsComponent,
     // RegisterComponent,
     ShoppingCartComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
