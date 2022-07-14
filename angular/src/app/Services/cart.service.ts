@@ -26,28 +26,12 @@ export class CartService {
   addToCart(prodcut:any){
     this.cardDataList.push(prodcut);
     this.productList.next(this.cardDataList)
-    this.getAmount();
     //console.log(this.cardDataList)
   }
 
   //Get total amount
-  getAmount(){
-    let grandTotal = 0;
-    this.cardDataList.map((a:any)=>{
-      grandTotal += a.total;
-    })
-  }
 
-  //Remove data cart 1 by 1 
-  removeCart(product:any){
-    this.cardDataList.map((a:any, index:any)=>{
-      if (product.prod_id === a.prod_id) {
-        this.cardDataList.splice(index,1)
-      }
-    })
-    this.productList.next(this.cardDataList)
-  }
-
+//Remove data cart 1 by 1 
   removePerCart(product:any){
     this.cardDataList.splice(product,1)
     this.productList.next(this.cardDataList)

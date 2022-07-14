@@ -8,9 +8,10 @@ import { CartService } from 'src/app/Services/cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
   products:any = [];
-  allProducts:any = [];
   totalNumber: number = 0
-  sum: number | undefined;
+  sum: number = 0;
+  totTax: number = 0;
+  totalDue: number = 0;
   constructor(private cartitem:CartService) { }
 
   ngOnInit(): void {
@@ -18,56 +19,27 @@ export class ShoppingCartComponent implements OnInit {
     next:data =>{
       this.products = data;
       this.totalNumber = data.length;
-
       
-
-      this.products.forEach((obj:any) => {
-          console.log(obj.prod_price);
-          this.sum = this.sum + obj.prod_price
-        });
-        console.log(this.sum)
-      // for (let price of this.products)
-      // {
-      //   this.allProducts = price.prod_price
-      //   console.log(this.allProducts)
-      // }
-      // while (this.products != 0) {
-      //   this.allProducts = this.products
-      //   console.log(this.allProducts)
-      //   this.products++
-      // }
-     
+      data.forEach((obj:any) => {
+        this.sum += parseFloat(obj.prod_price);
+        
+        console.log(this.sum);
+      });
     }
    })
-   this.doTotalPrice()
+
+   this.totalTax(this.sum)
+   this.totalAmountDue(this.sum)
    //this.getTotal();
   }
-  totalPrice: number = 0;
-
-  doTotalPrice(){
-
-    let total = 0;
-    this.products.forEach((item: { price: number, quantity: number }) => {
-      item.quantity = 1;
-      total += item.price * item.quantity
-    });
-    this.totalPrice = total;
-    console.log(this.totalPrice)
+  totalTax(num:number){
+    return this.totTax = num * 0.15;
   }
-  // getTotal(){
-  //   let grandTotal = 0;
-  //   this.cartitem.getProdList().subscribe({
-  //     next:data => {
-  //       this.allProducts = data
-  //       //console.log(this.allProducts.Array)
-  //       console.log(data[0].prod_price)
-  //     }
-  //   })
-  // }
 
-  remove(){
-    this.cartitem.addToCart
+  totalAmountDue(num:number){
+    return this.totalDue = this.totTax + this.sum;
   }
+
   removeProduct(item:any){
     this.cartitem.removePerCart(item);
   }

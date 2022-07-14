@@ -6,8 +6,6 @@
 
 <app-navbar></app-navbar>
   
-<!-- CART NAVBAR -->
-
 
 <!-- CART CARD HERE -->
 <ng-container *ngIf="products.length != 0">
@@ -81,21 +79,21 @@
                         <div class="card-body ">
                             <h3>Order Information</h3>
                             <div class="row">
-                                <div class="col-9"><h5>No. of items: </h5></div>
-                                <div class="col-3"><h5>{{totalNumber}}</h5></div>
+                                <div class="col-8"><h5>No. of items: </h5></div>
+                                <div class="col-4"><h5>{{totalNumber}}</h5></div>
                             </div>
                             
                             <div class="row">
-                                <div class="col-6"><p>AMOUNT DUE: {{allProducts}}</p></div>
-                                <div class="col-6"></div>
+                                <div class="col-8"><p>AMOUNT DUE: </p></div>
+                                <div class="col-4"><h5>R {{sum | number:'3.1-5'}}</h5></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><p>VAT :</p></div>
-                                <div class="col-6"></div>
+                                <div class="col-8"><p>VAT : </p></div>
+                                <div class="col-4"><h5>R {{totTax | number:'3.1-5'}}</h5></div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><p>TOTAL AMOUNT:</p></div>
-                                <div class="col-6"></div>
+                                <div class="col-8"><p>TOTAL AMOUNT:</p></div>
+                                <div class="col-4"><h5>R {{ totalDue | number:'3.1-5'}}</h5></div>
                             </div>
                             <div class="row"><p>Vat amount calculated using 15%</p></div>
                             
