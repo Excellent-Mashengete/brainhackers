@@ -48,12 +48,9 @@ app.get("/", (req, res) =>{
     res.status(200).send("Sever Initialized and Online. Ready to take OFF!");
 });
 
-<<<<<<< HEAD
 app.use("/api", register) // to retrive products
-=======
 app.use("/api", login) // User endpoint API
-app.use("/api", signUp) // to retrive products
->>>>>>> e4edd2abf9156d4e25ea4dddd8495f9cb8e64a66
+
 //app.use("/api", oders) // to update order, cancel order and to retrieve order 
 
 
