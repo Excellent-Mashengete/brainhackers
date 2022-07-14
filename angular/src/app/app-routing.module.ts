@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 // import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 // import { OneProductComponent } from './Components/one-product/one-product.component';
 // import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { SignupComponent } from './Components/signup/signup.component';
+import { RegisterComponent } from './Components/register/register.component';
+// import { LoginComponent } from './Components/login/login.component';
 import { LoginComponent } from './Components/login/login.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
 import { ProductViewComponent } from './Components/product-view/product-view.component';
@@ -20,7 +21,7 @@ const routes: Routes = [
 //  {path:'login', component:LoginComponent},
 //  {path:'register', component : RegisterComponent},
   {path:'login', component:LoginComponent},
-  {path:'signup',component:SignupComponent},
+  {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent},
   {path:'shopping-cart',component:ShoppingCartComponent},
   {path: 'one-product',component:OneProductComponent},

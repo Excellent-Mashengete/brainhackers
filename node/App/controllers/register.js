@@ -19,7 +19,7 @@ const jwt = require("jsonwebtoken");
 //===========================register functions request trhe body of the database table =======================
 
 
-exports.signup = async (req, res) => {
+exports.register = async (req, res) => {
      const { name, email, password } = req.body;
      try { 
        const data = await client.query(`SELECT * FROM users WHERE email= $1;` , [email]); //Check if user exist
