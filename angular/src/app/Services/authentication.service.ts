@@ -17,4 +17,7 @@ export class AuthenticationService {
     return this.http.post(`${baseUrl}login`, users);
   }
   
+  signup(users : any, ) {
+    return this.http.post(`${baseUrl}signup`, users);
+  }
 }

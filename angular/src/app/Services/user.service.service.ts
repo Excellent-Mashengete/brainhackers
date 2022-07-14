@@ -24,9 +24,7 @@ export class AuthenticateService {
 
   constructor(private http: HttpClient) { }
 
-  signup(users : any, usertype: string) {
-    return this.http.post(`${baseUrl}signup/${usertype}`, users);
-  }
+ 
 
   // signin(users : Login): Observable<any> {
   //   return this.http.post(`${baseUrl}signin`, users);

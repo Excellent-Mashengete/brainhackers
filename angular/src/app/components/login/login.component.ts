@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {AuthenticationService} from '../../Services/authentication.service'
-
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   submitted = false; //bpplean
   errormessage: String = " "// declaring a string data type assigning to the error message
 
-  constructor(private formBuilder: FormBuilder, private auth:AuthenticationService) { }
+  constructor(private formBuilder: FormBuilder, private auth:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
     this.Form = this.formBuilder.group({
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.auth.signin(user).subscribe({
      next:data => {
        console.log(data);
-
+       this.router.navigate(['/products'])
      },
      error: err =>{
       
