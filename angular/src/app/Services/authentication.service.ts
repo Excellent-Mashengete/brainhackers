@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Login } from '../Interface/login';
+import { Register } from '../Interface/register';
 
 const baseUrl = environment.baseUrl;
 
@@ -17,7 +18,7 @@ export class AuthenticationService {
     return this.http.post(`${baseUrl}login`, users);
   }
   
-  signup(users : any, ) {
-    return this.http.post(`${baseUrl}signup`, users);
+  register(users : any, ) {
+    return this.http.post(`${baseUrl}register`, users);
   }
 }
