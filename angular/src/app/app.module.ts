@@ -12,18 +12,23 @@ import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AppComponent } from './app.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-
     LoginComponent,
     NavbarComponent,
     OneProductComponent,
     ProductsComponent,
-    RegisterComponent,
     ShoppingCartComponent,
-    ProductViewComponent
+    ProductViewComponent,
+    RegisterComponent,
+    UserprofileComponent,
+    LoginComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
