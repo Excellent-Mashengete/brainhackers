@@ -1,32 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
-// import { OneProductComponent } from './Components/one-product/one-product.component';
-// import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { RegisterComponent } from './Components/register/register.component';
-// import { LoginComponent } from './Components/login/login.component';
-import { LoginComponent } from './Components/login/login.component';
-import { OneProductComponent } from './Components/one-product/one-product.component';
-import { ProductViewComponent } from './Components/product-view/product-view.component';
-import { ProductsComponent } from './Components/products/products.component';
-//import { RegisterComponent } from './Components/register/register.component';
-// import { RegisterComponent } from './Components/register/register.component';
-import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
-import { UserprofileComponent } from './Components/userprofile/userprofile.component';
-
-
+import { LoginComponent } from './components/login/login.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { OneProductComponent } from './components/one-product/one-product.component';
+import { ProductViewComponent } from './components/product-view/product-view.component';
+import { ProductsComponent } from './components/products/products.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 const routes: Routes = [
-  {path:'', component:LoginComponent},
-//  {path:'login', component:LoginComponent},
-//  {path:'register', component : RegisterComponent},
+  {path:'', redirectTo: 'login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent},
-  {path:'shopping-cart',component:ShoppingCartComponent},
+  {path:'cart',component:ShoppingCartComponent},
   {path: 'one-product',component:OneProductComponent},
   {path: 'prodDetails/:prod_id', component:ProductViewComponent},
-  {path: 'userprofile', component: UserprofileComponent}
+  {path: 'userprofile', component: UserprofileComponent},
+  {path: '404', component:NotfoundComponent},
+  {path:'**', redirectTo: '/404', pathMatch:'full'},
 ]
 
 @NgModule({

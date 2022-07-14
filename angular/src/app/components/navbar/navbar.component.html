@@ -1,0 +1,23 @@
+<div class="Nav">
+  <nav class="navbar navbar-light bg-light">
+    <i class="fa-solid fa-house btn-lg" routerLink="/products"></i>
+    <i class="fa-solid fa-user-large btn-lg"></i>
+    <a routerLink="/cart" >
+      <i style="font-size: 30px;"class="fa-solid fa-cart-shopping btn-lg"></i>    
+      <div class="badge bg-danger">{{totalNumber}}</div>
+    </a>
+        
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><h5 class="dropdown-item-text mb-0">{{name}}</h5></li>
+        <li><p class="dropdown-item-text text-muted mb-0">{{email}}</p></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a  class="dropdown-item">Profile</a></li>
+        <li><a  class="dropdown-item" (click)="signout()" >Sign Out</a></li>
+      </ul>
+    </li>
+  </nav>
+</div>

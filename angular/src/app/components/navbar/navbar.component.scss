@@ -1,0 +1,44 @@
+
+.nav{
+    margin: 30%;
+}
+
+// ul {
+//     display: flex;
+//     justify-content: space-evenly;
+//     width: 100%;
+//     padding: 1%;
+
+//     list-style: none;
+//     align-items: center;
+// }
+.dropdown-menu{
+cursor: pointer;
+}
+ul li {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    list-style: none;
+}
+
+
+.fa-solid{
+    color: #D27C2C;
+
+}
+
+// // .Nav{
+// //     top: 0;
+// //     position: fixed;
+// //     width: 100%;
+// //     background-color: rgba(0, 0, 0, 0.897) !important;
+// //     padding: 10px 0px;
+// // }
+// //HOVER TEXT EFFECT
+
+// .hovertext{
+//     position: relative; 
+      
+// }
+

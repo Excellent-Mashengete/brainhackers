@@ -75,7 +75,19 @@ const bcrypt = require("bcrypt");
 
 const pool = require("../config/database.config")
 
-const jwt = require("jsonwebtoken");
+module.exports.login = async (req, res) => {
+    const {email,password} = req.body;
+    try{
+        if(!(email && password)){
+            res.status(400).send("user input require");
+         }//else {
+        //     res.status(500).json({
+        //         error: "Database has crashed",
+        //     })
+        // }
+        const logData = await client.query(`SELECT * FROM users WHERE email= $1;`,
+        [email]); //Check if user exist
+        arrData = logData.rows;
 
 //Login Function
 exports.login = async (req, res) => {
