@@ -13,32 +13,37 @@ export class ProductsComponent implements OnInit {
   constructor (private cardservice: CardService) { }
 
   ngOnInit(): void {
-    // this.cardservice.getCard().subscribe((respond:any)=>{
-    //   console.log(respond.results)
+    this.cardservice.getCard().subscribe(( respond:any )=>{
+
+      console.log(respond)
+      console.log("response")
+
       
+      this.Products = respond;
+      console.log(this.Products)
 
-    //   //WE ARE CALLING THE PRODUCTS FROM D
-    //   this.Products = respond.results
-    // })
-    this.getProduct();
+
+  })
+    // this.getProduct();
   }
 
-  getProduct(){
-      return this.cardservice.getCard().subscribe({
-        next:data =>{
-          this.Products = data;
-          console.log(data);
+  // getProduct(){
+  //     return this.cardservice.getCard().subscribe({
+  //       next:data =>{
+  //         this.Products = data;
+  //         console.log(data);
           
-        }
-      })
+  //       }
+  //     })
 
-  }
-  getCardbyId(){
+  // }
 
-  }
-    // getProductinfo(index: any){
-    //     localStorage.setItem("product",JSON.stringify(this.Products[index]))
-    //    }
+  // getCardbyId(){
+
+  // }
+    getProductinfo(index: any){
+        localStorage.setItem("product",JSON.stringify(this.Products[index]))
+       }
 }
 
   // getProductinfo(index: any){

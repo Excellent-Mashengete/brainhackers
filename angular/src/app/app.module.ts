@@ -8,23 +8,25 @@ import { FinalProductsPageComponent } from './Components/final-products-page/fin
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProductViewComponent } from './Components/product-view/product-view.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
-import { SignupComponent } from './Components/register/register.component';
+import { RegisterComponent } from './Components/register/register.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ShoppingCartComponent } from './Components/shopping-cart/shopping-cart.component';
 import { AppComponent } from './app.component';
+import { UserprofileComponent } from './Components/userprofile/userprofile.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FinalProductsPageComponent,
-    // LoginComponent,
     NavbarComponent,
     OneProductComponent,
     ProductsComponent,
-    // RegisterComponent,
     ShoppingCartComponent,
     ProductViewComponent,
-    SignupComponent
+    RegisterComponent,
+    UserprofileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

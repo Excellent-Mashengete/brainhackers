@@ -5,7 +5,11 @@
     border-radius: 10px;
     border: 1px solid #D9D9D9;
     box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.25);
+    max-height: 100%;
     }
+@media screen {
+    
+}
 
 .all-btn{
 margin: auto;
@@ -15,12 +19,32 @@ align-content: left;
 
 img{
     border-radius: 10px;
+   
+}
+
+
+
+//ADD TO CART AND SEE MORE BUTTON
+.btn-group{
+    display: flex;
 }
 
 
 .btn{
     background-color: #D9D9D9;
 }
+
+#see-more{
+    background-color:  #D27C2C;
+    color: white;
+    border: none;
+    border-radius: 30;
+    margin-left: 10%;
+    padding: 7px;
+}
+
+//ADD TO CART AND SEE MORE BUTTON
+
 
 
 .card-title{
@@ -33,6 +57,78 @@ img{
 .price{
     font-family: 'Hind Siliguri', sans-serif;
      font-size: 30px;
-     font-weight:300;
+     font-weight:400;
      color: #D27C2C;
 }
+
+
+
+// PRODUCT VIEW NAVBAR HERE
+
+.nav{
+    margin: 30%;
+}
+
+
+.fa-solid{
+    color: #D27C2C;
+    width: 20px;
+}
+
+.text{
+    font-size: 20px;
+    color: #D27C2C;
+}
+
+
+.container{
+    width: 80%;
+}
+
+.item-name{
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight:400;
+    font-size: 15px;
+}
+
+.card-category{
+    font-size: 20px;
+}
+
+//PRODUCT VIEW NAVBAR HERE
+
+
+
+
+//HOVER TEXT EFFECT
+
+.hovertext{
+    position: relative; 
+      
+}
+
+.hovertext:before {
+    content: attr(data-hover);
+    left: 30px;
+    visibility: hidden;
+    opacity: 0;
+    width: 140px;
+    background-color: #D27C2C;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+  
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
+  }
+  
+  .hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  //HOVER TEXT EFFECT
