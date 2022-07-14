@@ -25,5 +25,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('product')
     localStorage.removeItem('email')
     localStorage.removeItem('name')
+    localStorage.removeItem('authenitcated')
   }
 }

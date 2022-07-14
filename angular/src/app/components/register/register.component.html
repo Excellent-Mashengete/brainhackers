@@ -1,64 +1,120 @@
-<section class="mx-3">
+<section class="gradient-custom">
+    <div class="container all">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+                    <div class="card-body p-4 p-md-5">
+                        <div>
+                            
+                            <h3 class="mb-0  text-uppercase text-center">create Account</h3>
+                            <h6 class="text-center ">Let's get started!</h6>
+                        </div>
+                        <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                            <div class="row"></div>
 
-    <h1 class="text-center">Create Account</h1>
-    <p>Let's get started!</p>
-    <div class="container ">
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-            <!--full name-->
-            <div class="form-group col mb-3">
-                <div class="lock-icon">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <input required type="text" formControlName="  fullname" placeholder=" Full Name" class="form-control">
-                <!-- <span class="text-danger" **ngIf="form.control['fullname'].dirty('required','fullname')">full name is required</span> -->
-                <div **ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                    <div **ngIf="f['fullname'].errors['required']">Full Name is required</div>
+                            <!-- <div class="column"> -->
+                               
+                                <div class="form-group col-md-6 mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-person i" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                </svg>
+                                    <input type="text" formControlName="firstname" placeholder="Full Name"
+                                        class="form-control fullname" [ngClass]="{
+                      'is-invalid': submitted && f['firstname'].errors
+                    }" />
+                                    <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['firstname'].errors['required']">
+                                            First name is required
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+
+                            <!-- <div class="column"> -->
+                                
+                                <div class="form-group col-md-6 mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                    class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                </svg>
+                                    <input type="text" formControlName="email" placeholder="Email"
+                                        class="form-control email"
+                                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors['required']">
+                                            Email is required
+                                        </div>
+                                        <div *ngIf="f['email'].errors['email']">
+                                            Email is invalid
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+
+                            <!-- <div class="column"> -->
+                                <div class="column">
+                                    
+                                    <div class="form-group col-md-6 mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-lock" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                                    </svg>
+                                        <input type="password" formControlName="password" placeholder="Password"
+                                            class="form-control lock" [ngClass]="{
+                        'is-invalid': submitted && f['password'].errors
+                      }" />
+                                        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['password'].errors['required']">
+                                                Password is required
+                                            </div>
+                                            <div *ngIf="f['password'].errors['minlength']">
+                                                Password must be at least 6 character
+                                            </div>
+                                            <div *ngIf="f['password'].errors['maxlength']">
+                                                Password must not exceed 40 character
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                   
+                                    <div class="form-group col-md-6 mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                        class="bi bi-lock" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                                    </svg>
+                                        <input type="password" formControlName="confirmpassword"
+                                            placeholder="Confirm Password" class="form-control locker" [ngClass]="{
+                        'is-invalid': submitted && f['confirmpassword'].errors
+                      }" />
+                                        <div *ngIf="submitted && f['confirmpassword'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['confirmpassword'].errors['required']">
+                                                Confirm Password is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                            <div class="form-group">
+                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg">
+                                    Register
+                                </button>
+                            </div>
+                        </form>
+                        <div class="form-group mt-3">
+                            <P>
+                                Already have an account? Click
+                                <a routerLink="/login" class="here">here</a> to log in
+                            </P>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--email-->
-            <div class="form-group col mb-3">
-                <div class="lock-icon">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <input required type="email" formControlName="  email" placeholder="  Email" class="form-control" [ngClass]="{'is-invalid':submitted && f['email']}">
-                <!-- <span class="text-danger" **ngIf="form.control['fEmail'].dirty('required','Email')">Email is required</span> -->
-                <div **ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                    <div **ngIf="f['email'].errors['required']">Email is required</div>
-                    <div **ngIf="f['email'].errors['required']">Email invalid></div>
-
-                </div>
-            </div>
-            <!--  password -->
-            <div class="form-group col mb-3">
-                <div class="lock-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <input required type="password" formControlName="  password" placeholder="  Password" class="form-control" [ngClass]="{'is-invalid':submitted && f['password']}">
-                <!-- <span class="text-danger" **ngIf="form.control['password'].dirty('required','password')">full name is required</span> -->
-                <div **ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
-                    <div **ngIf="f['password'].errors['required']">Passwrod is required</div>
-                    <div **ngIf="f['password'].errors['required']">Password must be at least 6 character</div>
-                    <div **ngIf="f['passwrod'].errors['required']">Password must not exceed 40 character</div>
-
-                </div>
-            </div>
-            <!--retype password-->
-            <div class="form-group col mb-3">
-                <div class="lock-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <input required type="password" formControlName="  retypepassword" placeholder="  Retype Password" class="form-control" [ngClass]="{'is-invalid':submitted && f['retypepassword']}">
-                <!-- <span class="text-danger" **ngIf="form.control['retypepassword'].dirty('required','password')">Retype Password is required</span> -->
-
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn1 mb-3 btn btn-success btn-block btn-lg" (click)="Register()"> <a style="color: white;" >Register</a></button>
-                <p router="#" style="color: black;">Already have an account? <a style="color: rgba(219,124,44);" href="#">Login</a></p>
-                <!-- <div class="mb-3 form-check">
-                  <label class="form-check-label" for="exampleCheck1"><small> <a style="color: 000000;">Already have an account?</a>  <a style="color: rgba(210, 124, 44, 1); text-decoration: underline;"> Login </a></small></label>
-                </div> -->
-            </div>
-        </form>
+        </div>
     </div>
 </section>

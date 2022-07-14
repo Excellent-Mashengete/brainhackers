@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { MustMatch } from 'src/app/utils/validation';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+//import Swal from 'sweetalert2';
+import { Router} from '@angular/router';
+
 
 
 @Component({
@@ -8,67 +12,61 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
 export class RegisterComponent implements OnInit {
-  form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
+  Form = new FormGroup({
+    name: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
-    retypepassword: new FormControl(''),
+    confirmPassword: new FormControl(''),
   
   });
   submitted = false;
-  autheticationService: any;
-  constructor(private formBuilder: FormBuilder, private router:Router) {}
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+  constructor(private formBuilder: FormBuilder, 
+    private userService : AuthenticationService, 
+    private router:Router) { }
+
   ngOnInit(): void {
-    this.form = this.formBuilder.group(
-      {
-        fullname: ['', Validators.required],
-       email: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(20),
-            // console.log("fullname is "+ this.form)
-            
-          ]
-        ],
-        password: ['', [Validators.required, Validators.email]],
-        retypepassword: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(6),
-            Validators.maxLength(40)
-          ]
-        ],
-        
-      },
+    this.Form = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
+      confirmpassword: ['', Validators.required],
+    },
     );
   }
-  get f(): { [key: string]: AbstractControl } {
-    return this.form.controls;
+  get f():{ [key: string]: AbstractControl }{
+    return this.Form.controls;
   }
-  onSubmit(): void {
-    this.submitted = true;
-    if (this.form.invalid) {
-      return;
-    }
-  }
-  onReset(): void {
-    this.submitted = false;
-    this.form.reset();
-  }
-  Register (){
-    this.autheticationService.Register(this.form.value)
-    .subscribe((res: any)=>{
-    alert("Register Successful");
-    this.form.reset();
-    this.router.navigate(["Login"]);
-    },(err: any)=>{
-    alert ("Something went wrong")
-    })
-    }
-  
 
+  onSubmit():void{
+    this.submitted = true;
+
+    let user = {
+      name : this.Form.value.firstname,
+      email: this.Form.value.email,
+      password : this.Form.value.password,
+    }
+
+    this.userService.signup(user).subscribe({
+      next:data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        
+        this.router.navigate(['/login']);
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+       
+      
+      }
+    });
+
+    console.log(JSON.stringify(this.Form.value));
+  }
 }
