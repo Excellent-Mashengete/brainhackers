@@ -14,7 +14,7 @@ const client = require ("./App/config/database.config");
 
 const products = require('./App/routes/product_route')
 
-const signUp= require('./App/routes/signup_route')
+const register= require('./App/routes/register.route')
 
 app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
@@ -47,7 +47,7 @@ app.get("/", (req, res) =>{
     res.status(200).send("Sever Initialized and Online. Ready to take OFF!");
 });
 
-app.use("/api", signUp) // to retrive products
+app.use("/api", register) // to retrive products
 //app.use("/api", oders) // to update order, cancel order and to retrieve order 
 
 
