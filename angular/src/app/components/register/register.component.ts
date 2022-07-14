@@ -47,12 +47,12 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
 
     let user = {
-      name : this.Form.value.firstname,
+      name : this.Form.value.name,
       email: this.Form.value.email,
       password : this.Form.value.password,
     }
 
-    this.userService.signup(user).subscribe({
+    this.userService.register(user).subscribe({
       next:data => {
         console.log(data);
         this.isSuccessful = true;
