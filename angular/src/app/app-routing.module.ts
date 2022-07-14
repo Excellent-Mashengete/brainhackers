@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 // import { FinalProductsPageComponent } from './Components/final-products-page/final-products-page.component';
 // import { OneProductComponent } from './Components/one-product/one-product.component';
 // import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { SignupComponent } from './Components/signup/signup.component';
+import { SignupComponent } from './Components/register/register.component';
 // import { LoginComponent } from './Components/login/login.component';
 import { OneProductComponent } from './Components/one-product/one-product.component';
 import { ProductViewComponent } from './Components/product-view/product-view.component';

@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { SignupComponent } from '../Components/signup/signup.component';
+import { SignupComponent } from '../Components/register/register.component';
 //import { Login } from '../Interfaces/login';
 
 const baseUrl = environment.baseUrl
