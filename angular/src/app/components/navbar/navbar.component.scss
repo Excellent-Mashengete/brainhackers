@@ -1,7 +1,7 @@
 
-// .nav{
-//     margin: 30%;
-// }
+.nav{
+    margin: 30%;
+}
 
 // ul {
 //     display: flex;
@@ -12,19 +12,21 @@
 //     list-style: none;
 //     align-items: center;
 // }
+.dropdown-menu{
+cursor: pointer;
+}
+ul li {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    list-style: none;
+}
 
-// ul li {
-//     display: flex;
-//     justify-content: space-evenly;
-//     list-style-type: none;
-//     list-style: none;
-// }
 
+.fa-solid{
+    color: #D27C2C;
 
-// .fa-solid{
-//     color: #D27C2C;
-
-// }
+}
 
 // // .Nav{
 // //     top: 0;

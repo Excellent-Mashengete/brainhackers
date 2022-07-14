@@ -19,7 +19,8 @@ export class NavbarComponent implements OnInit {
       }
     })
   }
-
+  email = localStorage.getItem('email')
+  name = localStorage.getItem('name')
   signout(){
     this.router.navigate(['/']);
     localStorage.removeItem('product')

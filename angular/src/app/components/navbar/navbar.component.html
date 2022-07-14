@@ -1,114 +1,23 @@
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #011345">
-  <a class="navbar-brand" class="logo" ></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> 
-  <div class="collapse navbar-collapse" id="collapsibleNavId">
-    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"></a>
-      </li>     
-    </ul>
-          
-    <form class="d-flex my-2 my-lg-0" >
-      <li class="navbar-nav me-auto mt-2 mt-lg-0">
-        <li class="nav-item" >
-          <a class="nav-link" routerLink="/create" >Create Survey</a>
-        </li>
-          
-        <li class="nav-item" >
-          <a class="nav-link" >List of Surveys</a>
-        </li>
-          
-        <li class="nav-item ">
-          <a class="nav-link">List of Active Surveys</a>
-        </li> 
-      
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><h5 class="dropdown-item-text mb-0">name</h5></li>
-          <li><p class="dropdown-item-text text-muted mb-0">Login</p></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a  class="dropdown-item">Profile</a></li>
-          <li><a  class="dropdown-item" (click)="signout()" >Sign Out</a></li>
-        </ul>
-      </li>
-    </form>
-  </div>
-</nav>
-
-
-
 <div class="Nav">
-  <form class="container-fluid">
-    <a class="navbar-brand me-auto">
-        <img src="../../../assets/EduApp Logo.png" alt="" width="100" height="30">
-      </a>
-        <button class="btn btn-outline-success me-2 btn-lg" 
-        
-        routerLink="/register" type="button">Register</button>
-
-        <button class="btn btn btn-outline-primary btn-lg" 
-       
-        routerLink="/login" type="button">Log in </button>
-        
-      <div class="menu" style="color: rgb(6, 89, 243);">
-        <i type="menu" class="fa fa-bars fa-3x" ></i>
-      </div>
-</form>
   <nav class="navbar navbar-light bg-light">
     <i class="fa-solid fa-house btn-lg" routerLink="/products"></i>
-        <i class="fa-solid fa-user-large btn-lg" routerLink="/"></i>
-        <a routerLink="/cart" >
-          <i style="font-size: 30px;"class="fa-solid fa-cart-shopping btn-lg"></i>    
-          <div class="badge bg-danger">{{totalNumber}}</div>
-        </a>
+    <i class="fa-solid fa-user-large btn-lg"></i>
+    <a routerLink="/cart" >
+      <i style="font-size: 30px;"class="fa-solid fa-cart-shopping btn-lg"></i>    
+      <div class="badge bg-danger">{{totalNumber}}</div>
+    </a>
         
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><h5 class="dropdown-item-text mb-0">name</h5></li>
-            <li><p class="dropdown-item-text text-muted mb-0">Login</p></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a  class="dropdown-item">Profile</a></li>
-            <li><a  class="dropdown-item" (click)="signout()" >Sign Out</a></li>
-          </ul>
-        </li>
-  </nav>
-</div>
-   
-<nav class="navbar navbar-expand-lg navbar-light sticky-top" >
-
-<form class="container-fluid">
-    <a class="navbar-brand me-auto">
-        <img src="../../../assets/EduApp Logo.png" alt="" width="100" height="30">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown
       </a>
-        <button class="btn btn-outline-success me-2 btn-lg" 
-        
-        routerLink="/register" type="button">Register</button>
-
-        <button class="btn btn btn-outline-primary btn-lg" 
-       
-        routerLink="/login" type="button">Log in </button>
-        
-      <div class="menu" style="color: rgb(6, 89, 243);">
-        <i type="menu" class="fa fa-bars fa-3x" ></i>
-      </div>
-</form>
-</nav>
-
-
-
-<div class="container">
-  <table mdbTable mdbTableScroll scrollx="true" maxWidth="400" class="table table-sm table-striped table-hover" >
-    <tr>
-       
-    </tr>
-  </table>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><h5 class="dropdown-item-text mb-0">{{name}}</h5></li>
+        <li><p class="dropdown-item-text text-muted mb-0">{{email}}</p></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a  class="dropdown-item">Profile</a></li>
+        <li><a  class="dropdown-item" (click)="signout()" >Sign Out</a></li>
+      </ul>
+    </li>
+  </nav>
 </div>

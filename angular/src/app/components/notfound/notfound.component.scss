@@ -1,6 +1,4 @@
-.container{
-    padding: 10em 0; 
-}
+
 h2 {
     font-family: 'Chango', cursive;
     font-size: 2em;
@@ -9,17 +7,11 @@ h2 {
     text-transform: uppercase;
     line-height: 1.1;
 }
+.card{
+    border: none;
+    margin-top: 150px;
+}
 
-.message{
-    text-align: center;
-}
-p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #222;
-}
 a{
-    text-decoration: none;
     color: red;
 }

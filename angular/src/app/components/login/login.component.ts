@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   });
   submitted = false; //bpplean
   errormessage: String = " "// declaring a string data type assigning to the error message
-  authenitcated: any; 
+  authenitcated: any;
+  email:any
+  name:any 
   constructor(private formBuilder: FormBuilder, private auth:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
@@ -39,7 +41,11 @@ export class LoginComponent implements OnInit {
      next:data => {
        console.log(data);
        this.router.navigate(['/products'])
+       this.email = data.arrData[0].email;
+       this.name = data.arrData[0].email;
        this.authenitcated = true
+       localStorage.setItem('email', this.email);
+       localStorage.setItem('name', this.name);
        localStorage.setItem('authenitcated', this.authenitcated);
      },
      error: err =>{
