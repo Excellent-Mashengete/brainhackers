@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { GedById } from 'src/app/Interfaces/ged-by-id'
+import { GetById } from 'src/app/Interface/get-by-id';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class CardService {
     return this.http.get(`${this.baseUrl}product_list`)
     //return this.http.get(this.baseUrl)+"product_list";
   }
-  getCardbyId(prod_id:GedById){
+  getCardbyId(prod_id:GetById){
     return this.http.get(`${this.baseUrl}productbyid/${prod_id}`)
     //return this.http.get(this.baseUrl)+"product_list";
   }

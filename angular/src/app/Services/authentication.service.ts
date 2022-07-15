@@ -14,11 +14,11 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  signin(users : any) {
+  login(users : Login) {
     return this.http.post(`${baseUrl}login`, users);
   }
   
-  register(users : any, ) {
+  register(users : any) {
     return this.http.post(`${baseUrl}register`, users);
   }
 }
