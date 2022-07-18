@@ -17,7 +17,7 @@ const register= require('./App/routes/register.route')
 
 app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
-
+app.use(cors({origin: true, credentials: true}) )
 app.use(express.urlencoded({ extended: true }));
 // simple route  // to support JSON-encoded 
 // app.use( cors({origin: true, credentials: true}) )
@@ -55,7 +55,7 @@ app.use("/api", login) // User endpoint API
 app.use("/api", products) // to retrive products
 app.use("/api", orders) // to update order, cancel order and to retrieve order 
 
-app.listen(port, process.env.baseUrl , () =>{  
+app.listen(process.env.PORT || 3000 , () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
 })
 
