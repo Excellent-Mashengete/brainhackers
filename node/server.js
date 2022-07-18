@@ -6,7 +6,6 @@ var corsOptions = {
   origin: "*"
 };// only allow that listerning address to connnect to the database
 
-
 const bodyParser = require('body-parser');
 require("./App/config/dotenv.config"); //Import your environmental configs
 const client = require ("./App/config/database.config");
