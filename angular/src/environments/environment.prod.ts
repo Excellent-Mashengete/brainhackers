@@ -1,3 +1,5 @@
+const baseUrl = "http://localhost:7070/api/"
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: `${baseUrl}`
 };
