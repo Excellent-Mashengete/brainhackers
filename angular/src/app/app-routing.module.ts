@@ -18,17 +18,17 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent
-  ,canActivate: [AuthGuardGuard]
+  // ,canActivate: [AuthGuardGuard]
 },
   {path:'cart',component:ShoppingCartComponent
-   , canActivate: [AuthGuardGuard]
+  //  , canActivate: [AuthGuardGuard]
 },
   {path: 'orders',component:OrdersComponent
-   , canActivate: [AuthGuardGuard]
+  //  , canActivate: [AuthGuardGuard]
 },
   {path: 'prodDetails/:prod_id', component: ProductViewComponent},
   {path: 'userprofile', component: UserprofileComponent
-   , canActivate: [AuthGuardGuard]
+  //  , canActivate: [AuthGuardGuard]
 },
   {path: '404', component:NotfoundComponent},
   {path:'**', redirectTo: '/404', pathMatch:'full'},

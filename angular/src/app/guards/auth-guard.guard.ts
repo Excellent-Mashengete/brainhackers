@@ -22,6 +22,7 @@ export class AuthGuardGuard implements CanActivate {
         
         return true;
         
+        
       }
       else{
         console.log(this.authenticationservice.isLoggedIn);
@@ -32,7 +33,4 @@ export class AuthGuardGuard implements CanActivate {
      
    
   }
-
-
-  
 }
