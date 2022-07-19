@@ -20,6 +20,7 @@ export class OrdersComponent implements OnInit {
       next:data =>{
         console.log(data)
         this.orders = data;
+        console.log(this.orders[1].prodifd[1])
       }
     })
   }
