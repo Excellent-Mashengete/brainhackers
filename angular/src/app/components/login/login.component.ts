@@ -70,29 +70,5 @@ export class LoginComponent implements OnInit {
   }
 
 
-<<<<<<< HEAD
-    let user = {
-      email: this.Form.value.email,
-      password: this.Form.value.password
-    }
-    this.auth.signin(user).subscribe({
-     next:data => {
-       console.log(data);
-       this.router.navigate(['/products'])
-       this.email = data.arrData[0].email;
-       this.name = data.arrData[0].email;
-       this.authenitcated = true
-       localStorage.setItem('email', this.email);
-       localStorage.setItem('name', this.name);
-       localStorage.setItem('authenitcated', this.authenitcated);
-     },
-     error: err =>{
-      
-      this.errormessage = err.message;
-      this.authenitcated = true
-      console.log(this.errormessage)
-    }
-=======
->>>>>>> f344a2526306b7bbc634b9c97405ea977094ceb8
 
 }
