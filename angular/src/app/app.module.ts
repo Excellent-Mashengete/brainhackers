@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AuthGuard } from './components/guards/auth.guard';
+
 
 
 @NgModule({
@@ -40,7 +42,10 @@ import { OrdersComponent } from './components/orders/orders.component';
     FormsModule, 
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

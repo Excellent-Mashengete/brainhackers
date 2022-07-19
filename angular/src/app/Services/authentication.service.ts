@@ -14,6 +14,12 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
+
+  // AUTH GUARD
+  isLoggedIn(): boolean {
+    return true;}
+  //AUTH GUARD
+
   login(users : Login) {
     return this.http.post(`${baseUrl}login`, users);
   }
