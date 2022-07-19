@@ -4,30 +4,70 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Login } from '../Interface/login';
 import { Register } from '../Interface/register';
-import { AuthGuard } from '../components/guards/auth.guard';
+import { AuthGuardGuard } from '../guards/auth-guard.guard';
+import { Router } from '@angular/router';
 // AuthGuard
 
-const baseUrl = environment.baseUrl;
+const baseUrl$ = environment.baseUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  isLoggedInT:boolean = false;
+
+  id : any;
+  email: any;
+  name : any; 
+  authenitcated: any;
+ 
+  constructor(private http: HttpClient,private router: Router) { }
+
 
 
   // AUTH GUARD
   isLoggedIn(): boolean {
-    return true;}
+    return true;
+  }
   //AUTH GUARD
 
+
   login(users : Login) {
-    return this.http.post(`${baseUrl}login`, users);
+     this.http.post(`${baseUrl$}login`, users).subscribe(
+      (info:any) => {
+
+       
+             this.id = info.arrData[0].id
+             this.email = info.arrData[0].email
+             this.name =  info.arrData[0].name;
+             this.authenitcated = true
+            
+            //  localStorage.setItem('isLoggedIn', this.isLoggedIn)
+             localStorage.setItem('user_id', this.id);
+             localStorage.setItem('email', this.email);
+             localStorage.setItem('name', this.name);
+             localStorage.setItem('authenitcated', this.authenitcated);
+
+        // this.isLoggedInT = true;
+        setTimeout(() => {
+          this.router.navigate(['/products']);
+        }, 1000);
+        
+      },
+      (err:any) => {
+        console.log(err);
+      },
+      () => console.log('HTTP request completed.')
+     )
+  }
+
+  routeTo(){
+    return this.router.navigate(['/products'])
   }
   
   register(users : any) {
-    return this.http.post(`${baseUrl}register`, users);
+    return this.http.post(`${baseUrl$}register`, users);
   }
 }
 

@@ -15,7 +15,9 @@ import { AppComponent } from './app.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { OrdersComponent } from './components/orders/orders.component';
-import { AuthGuard } from './components/guards/auth.guard';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
+
+
 
 
 
@@ -42,10 +44,7 @@ import { AuthGuard } from './components/guards/auth.guard';
     FormsModule, 
     HttpClientModule
   ],
-  providers: [
-
-    AuthGuard
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
