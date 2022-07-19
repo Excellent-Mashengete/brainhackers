@@ -11,13 +11,16 @@ import { AuthenticationService } from './../../Services/authentication.service';
 export class AuthGuard implements CanActivate {
 
   constructor(private auth: AuthenticationService) {}
+
+  //AUTH GUARD//
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.auth.isLoggedIn()) {
-        return true;
-      }
-      window.alert('You don\'t have permission to view this page');
+      if (this.auth.isLoggedIn()) {return true; }
+      console.log('cannot access')
+      
+      window.alert('Cannot view this page');
       return false;
   }
 }

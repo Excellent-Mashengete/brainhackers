@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Login } from '../Interface/login';
 import { Register } from '../Interface/register';
+import { AuthGuard } from '../components/guards/auth.guard';
+// AuthGuard
 
 const baseUrl = environment.baseUrl;
 

@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   name:any 
   info: any
   id:any
+  isLoggedIn: any = false
   constructor(private formBuilder: FormBuilder, private auth:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
@@ -43,11 +44,13 @@ export class LoginComponent implements OnInit {
      next:data => {
        console.log(data);
        this.router.navigate(['/products'])
-      this.info = data
-      this.id = this.info.arrData[0].id
-      this.email = this.info.arrData[0].email
-      this.name =  this.info.arrData[0].name;
+       this.info = data
+       this.id = this.info.arrData[0].id
+       this.email = this.info.arrData[0].email
+       this.name =  this.info.arrData[0].name;
        this.authenitcated = true
+       this.isLoggedIn = true
+       localStorage.setItem('isLoggedIn', this.isLoggedIn)
        localStorage.setItem('user_id', this.id);
        localStorage.setItem('email', this.email);
        localStorage.setItem('name', this.name);
