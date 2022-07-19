@@ -12,12 +12,13 @@
 //     list-style: none;
 //     align-items: center;
 // }
+
 .dropdown-menu{
 cursor: pointer;
 }
 ul li {
     display: flex;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
     list-style-type: none;
     list-style: none;
 }

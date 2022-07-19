@@ -10,7 +10,7 @@
                             <P> get the best from our app </P>
 
                         </div>
-                        <form [formGroup]="Form" >
+                        <form [formGroup]="Form" (ngSubmit)="onSubmit()">
                             <div class="form-group col mb-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                     class="bi bi-envelope" viewBox="0 0 16 16">

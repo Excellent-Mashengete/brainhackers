@@ -14,6 +14,11 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { AppComponent } from './app.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
+
+
+
 
 
 @NgModule({
@@ -28,7 +33,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     RegisterComponent,
     UserprofileComponent,
     LoginComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

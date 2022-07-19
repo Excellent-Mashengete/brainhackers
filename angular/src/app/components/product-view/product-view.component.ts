@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/Services/card.service';
-import { GedById } from 'src/app/Interfaces/ged-by-id'
 import { CartService } from 'src/app/Services/cart.service'
 
 @Component({
