@@ -55,7 +55,7 @@ app.use("/api", login) // User endpoint API
 app.use("/api", products) // to retrive products
 app.use("/api", orders) // to update order, cancel order and to retrieve order 
 
-app.listen(process.env.PORT || 3000 , () =>{  
+app.listen(port, process.env.baseUrl, () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
 })
 
