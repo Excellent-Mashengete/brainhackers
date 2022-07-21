@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { CartService } from 'src/app/Services/cart.service'
 
 @Component({
@@ -9,8 +10,11 @@ import { CartService } from 'src/app/Services/cart.service'
 })
 export class NavbarComponent implements OnInit {
   totalNumber: number = 0
-  isLoggedIn: boolean = false
-  constructor(private cartitem:CartService, private router: Router) { }
+  isLoggedIn: boolean = true
+  constructor(
+    private cartitem:CartService, 
+    private router: Router,
+    public auth:AuthenticationService) { }
 
   ngOnInit(): void {
     this.cartitem.getProdList().subscribe({
@@ -29,5 +33,9 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('name')
     localStorage.removeItem('authenitcated')
     localStorage.removeItem('user_id')
+  }
+
+  Logout(){
+    this.auth.doLogout()
   }
 }

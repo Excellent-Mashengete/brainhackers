@@ -19,8 +19,6 @@ app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
 app.use(cors({origin: true, credentials: true}) )
 app.use(express.urlencoded({ extended: true }));
-// simple route  // to support JSON-encoded 
-// app.use( cors({origin: true, credentials: true}) )
  
 app.use(bodyParser.json());
 app.use(
@@ -48,10 +46,7 @@ app.get("/", (req, res) =>{
 
 app.use("/api", register) // to retrive products
 app.use("/api", login) // User endpoint API
-
-//app.use("/api", oders) // to update order, cancel order and to retrieve order 
-
-
+app.use("/api", orders) // to update order, cancel order and to retrieve order 
 app.use("/api", products) // to retrive products
 app.use("/api", orders) // to update order, cancel order and to retrieve order 
 
