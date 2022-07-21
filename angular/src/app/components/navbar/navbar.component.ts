@@ -9,6 +9,7 @@ import { CartService } from 'src/app/Services/cart.service'
 })
 export class NavbarComponent implements OnInit {
   totalNumber: number = 0
+  isLoggedIn: boolean = false
   constructor(private cartitem:CartService, private router: Router) { }
 
   ngOnInit(): void {
