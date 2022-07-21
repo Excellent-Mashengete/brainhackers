@@ -44,6 +44,7 @@ export class ProductsComponent implements OnInit {
     getProductinfo(index: any){
         localStorage.setItem("product",JSON.stringify(this.Products[index]))
        }
+       
 }
 
   // getProductinfo(index: any){

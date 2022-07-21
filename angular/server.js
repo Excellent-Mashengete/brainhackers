@@ -14,9 +14,9 @@ app.get('*.*', express.static(_app_folder, {
   maxAge: '1y'
 }));
 
-// ---- SERVE APLICATION PATHS ---- //
+// ---- SERVE APPLICATION PATHS ---- //
 app.all('*', function (req, res) {
-  res.status(200).sendFile('/', {
+  res.status(200).sendFile(`/`, {
     root: _app_folder
   });
 });
