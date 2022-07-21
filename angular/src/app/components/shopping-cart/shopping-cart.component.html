@@ -76,9 +76,9 @@
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">Shipping Address</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <button type="button" class="close" data-dismiss="modal" data-dismiss="modal-backdrop fade in" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
-                              </button>
+                              </button >
                             </div>
                             <form [formGroup]="Form" (ngSubmit)="onSubmit()">
                               <div class="modal-body">
@@ -133,7 +133,7 @@
                               </div>
                               <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                  <button type="submit" class="btn btn-primary" >Save changes</button>
                               </div>
                           </form>
                           </div>
@@ -191,7 +191,7 @@
         </div>
 
         <div class="center">
-            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=30" alt="">
+            <img src="https://media.istockphoto.com/vectors/purchase-flat-line-icon-outline-vector-symbol-illustration-pixel-vector-id1225349588?k=20&m=1225349588&s=612x612&w=0&h=NjO2s3jAZJ6sh3VybcPp-mGjo9SqTMkfY9i9iI1DKLc=" alt="">
             <h5>Your shopping cart is empty!</h5>
             <h6>Add items to it now</h6>
             <button routerLink="/products" routerLinkActive="router-link-active"  class="btn-shop">Shop Now</button>
@@ -199,9 +199,5 @@
     </div>
 </ng-container>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary " >
-    SHOW DETAIL
-  </button>
     
    

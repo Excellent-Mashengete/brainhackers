@@ -15,6 +15,10 @@ import { AppComponent } from './app.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
+
+
+
 
 
 @NgModule({

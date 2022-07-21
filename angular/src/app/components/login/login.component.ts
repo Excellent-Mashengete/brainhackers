@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   name:any 
   info: any
   id:any
+  isLoggedIn = false
   constructor(private formBuilder: FormBuilder, private auth:AuthenticationService, private router:Router) { }
 
   ngOnInit(): void {
@@ -34,36 +35,40 @@ export class LoginComponent implements OnInit {
 
   onSubmit():void{
     this.submitted = true;// submit when the details are true/when form is not blank
-
-    let user = {
-      email: this.Form.value.email,
-      password: this.Form.value.password
-    }
-    this.auth.login(user).subscribe({
-     next:data => {
-       console.log(data);
-       this.router.navigate(['/products'])
-      this.info = data
-      this.id = this.info.arrData[0].id
-      this.email = this.info.arrData[0].email
-      this.name =  this.info.arrData[0].name;
-       this.authenitcated = true
-       localStorage.setItem('user_id', this.id);
-       localStorage.setItem('email', this.email);
-       localStorage.setItem('name', this.name);
-       localStorage.setItem('authenitcated', this.authenitcated);
-     },
-     error: err =>{
+    this.auth.login(this.Form.value);
+  //   let user = {
+  //     email: this.Form.value.email,
+  //     password: this.Form.value.password
+  //   }
+  // //   this.auth.login(user).subscribe({
+  // //    next:data => {
+  // //      console.log(data);
+  // //      this.router.navigate(['/products'])
+  // //      this.info = data
+  // //      this.id = this.info.arrData[0].id
+  // //      this.email = this.info.arrData[0].email
+  // //      this.name =  this.info.arrData[0].name;
+  // //      this.authenitcated = true
+  // //      this.isLoggedIn = true
+  // //     //  localStorage.setItem('isLoggedIn', this.isLoggedIn)
+  // //      localStorage.setItem('user_id', this.id);
+  // //      localStorage.setItem('email', this.email);
+  // //      localStorage.setItem('name', this.name);
+  // //      localStorage.setItem('authenitcated', this.authenitcated);
+  // //    },
+  // //    error: err =>{
       
-      this.errormessage = err.message;
-      this.authenitcated = true
-      console.log(this.errormessage)
-    }
+  // //     this.errormessage = err.message;
+  // //     this.authenitcated = true
+  // //     console.log(this.errormessage)
+  // //   }
      
-   },)
-    
+  // //  },)
+  //   this.loginF();
    
-    console.log(JSON.stringify(this.Form.value));
+  //   console.log(JSON.stringify(this.Form.value));
   }
+
+
 
 }
