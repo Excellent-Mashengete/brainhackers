@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Odersid} from 'src/app/Interface/odersid';
+import { UserId } from '../Interface/userid'
 import { OrdersGet} from 'src/app/Interface/orders-get';
 import { environment } from 'src/environments/environment'; 
 import { HttpClient } from '@angular/common/http';
@@ -11,11 +11,11 @@ export class OrdersService {
   baseUrl = environment.baseUrl;
   constructor(private http:HttpClient) { }
 
-  getAllorders(orders:Odersid){
+  getAllorders(orders:UserId){
     return this.http.get(`${this.baseUrl}order_list/${orders}`)
   }
 
-  addOrders(orderlist:OrdersGet, id:Odersid){
+  addOrders(orderlist:OrdersGet, id:UserId){
     return this.http.post(`${this.baseUrl}add_list/${id}`,orderlist)
   }
 }

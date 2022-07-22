@@ -89,14 +89,17 @@ module.exports.login = async (req, res) => {
                         error: "Server error"
                     })
                 } else if (results === true) {
-                    const token = jwt.sign({email: email},
-                        process.env.SECRET_KEY
+                    const token = jwt.sign({email: email, id:arrData.id},
+                        process.env.SECRET_KEY,
+                        { expiresIn: '1h' }
                     );
                     logData.rows.token = token
                     res.status(200).json({
                         message: "User successfully signed in",
-                        arrData,
-                        token
+                        id: arrData[0].id,
+                        expiresIn: 3600,
+                        token:token,
+                        //_id: arrData.id,
                     });
                 } else {
                     //define errors
@@ -116,11 +119,38 @@ module.exports.login = async (req, res) => {
         })
     }
 }
-// /**
-//  * logs out user by setting empty jwt token
-//  * @param {*} req
-//  * @param {*} res
-//  */
-module.exports.logout = (req, res) => {
-    res.status(200).json({token: ''});
+
+module.exports.userProfile = async (req, res, next) => {
+    const id = parseInt(req.params.id);
+    try{  
+        await client.query(`SELECT * FROM users WHERE id= $1`, [id], (error, results) => {
+                if(error){ //checks for errors and return them 
+                    // return res.status(400).json({
+                    //     next(error)
+                    // })//Throw t //Throw the error in the terminal
+                    return next(error)
+                }
+                res.status(200).json({msg: results}) //Return a status 200 if there is no error
+            }
+        )
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+           error: "Database error while retrieving products", 
+        });
+    };
 }
+
+
+
+//     userSchema.findById(req.params.id, (error, data) => {
+//         if (error) {
+//             return next(error);
+//         } else {
+//             res.status(200).json({
+//                 msg: data
+//             })
+//         }
+//     })
+// })

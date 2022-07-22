@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {AuthenticationService} from '../../Services/authentication.service'
 import { Router} from '@angular/router';
+//import { ToastrService } from "ngx-toastr"
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,15 +13,15 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
+
+  currentUser = {};
+  userToken: any = {}
   submitted = false; //bpplean
-  errormessage: String = " "// declaring a string data type assigning to the error message
-  authenitcated: any;
-  email:any
-  name:any 
-  info: any
-  id:any
-  isLoggedIn = false
-  constructor(private formBuilder: FormBuilder, private auth:AuthenticationService, private router:Router) { }
+  errorMessage: String = " "// declaring a string data type assigning to the error message
+ 
+  constructor(private formBuilder: FormBuilder, 
+    public auth:AuthenticationService, 
+    private router:Router) { }
 
   ngOnInit(): void {
     this.Form = this.formBuilder.group({
@@ -35,11 +36,30 @@ export class LoginComponent implements OnInit {
 
   onSubmit():void{
     this.submitted = true;// submit when the details are true/when form is not blank
-    this.auth.login(this.Form.value);
-  //   let user = {
-  //     email: this.Form.value.email,
-  //     password: this.Form.value.password
-  //   }
+
+    if(this.Form.invalid)
+    { 
+      return
+    }
+
+    let user = {
+      email: this.Form.value.email,
+      password: this.Form.value.password
+    }
+    this.auth.login(user).subscribe({
+      next:data =>{
+        this.userToken = data
+        localStorage.setItem('access_token', this.userToken.token)
+        this.router.navigate(['/products'])
+      },
+        error: err => {
+          this.errorMessage = err.error.message;
+      }
+    } 
+  ) 
+}  
+
+
   // //   this.auth.login(user).subscribe({
   // //    next:data => {
   // //      console.log(data);
@@ -71,4 +91,3 @@ export class LoginComponent implements OnInit {
 
 
 
-}
