@@ -62,3 +62,24 @@ module.exports.prod_brandName = async (req, res) => {
         });
      };
 }
+
+module.exports.productExist = async (req, res) => {
+    const id = parseInt(req.params.id)
+    try{
+        await client.query
+        (`SELECT unit FROM products WHERE prod_id = $1;`,[id], (error, results) =>{ //returns  products list by id in the database from product and ascending order
+            if(error){ //checks for errors and return them 
+                return res.status(400).json({
+                    error: "Database error"
+                 })//Throw the error in the terminal
+            }
+            res.status(200).json(results.rows) //Return a status 200 if there is no error
+        })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+           error: "Database error while retrieving products", 
+        });
+     };
+}

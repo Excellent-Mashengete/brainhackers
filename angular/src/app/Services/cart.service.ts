@@ -25,9 +25,6 @@ export class CartService {
   addToCart(prodcut:any){
     this.cardDataList.push(prodcut);
     this.productList.next(this.cardDataList)
-    if (this.cardDataList > 0){
-      
-    }
 
     //console.log(this.cardDataList)
   }

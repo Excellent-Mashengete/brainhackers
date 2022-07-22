@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { OrdersService } from 'src/app/Services/orders.service';
+import { CardService } from 'src/app/Services/card.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -20,6 +21,7 @@ export class ShoppingCartComponent implements OnInit {
   submitted = false;
   isSuccessful = false;
   isSignUpFailed = false;
+  stocktype = false
   errorMessage = '';
 
   products:any = [];
@@ -29,9 +31,13 @@ export class ShoppingCartComponent implements OnInit {
   totalDue: number = 0;
   shipping: number = 0;
   totalshipping:number = 0; 
-  id:any
-  products_id:any = []
-  constructor(private order:OrdersService, 
+  id:any;
+  products_id:any = [];
+  Stock:any
+  stockMessage = '';
+  idstock:any
+  constructor(private order:OrdersService,
+    private stock:CardService, 
     private cartitem:CartService,  
     private router:Router, 
     private formBuilder: FormBuilder) {
@@ -42,21 +48,24 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem('user_id')
-   this.cartitem.getProdList().subscribe({
+    this.cartitem.getProdList().subscribe({
     next:data =>{
       this.products = data;
-      
+      console.log(this.products[0].prod_id)
+      localStorage.setItem("prodid", this.products[0])
       this.totalNumber = data.length;
       
+
       data.forEach((obj:any) => {
         this.sum += parseFloat(obj.prod_price);
-        console.log(this.sum);
+        this.idstock = parseInt(obj.prod_id);
+       
+        //console.log(this.products[0].prod_id);
+        //console.log(this.sum);
       });
-
-      //console.log(this.products_id)
     }
    })
-
+   //this.CheckStock(this.idstock)
    this.totalTax(this.sum);
    this.totalAmountDue();
    this.shippingCost(this.totalDue);
@@ -112,6 +121,20 @@ export class ShoppingCartComponent implements OnInit {
     })
   }
  
+  CheckStock(id:any){
+    return this.stock.getunit(id).subscribe({next:data =>{
+      this.Stock = data
+      if(this.Stock>0){
+        this.stockMessage = "IN STOCK"
+        this.stocktype = true
+      }
+      else{
+        this.stockMessage = "OUT OF STOCK"
+        this.stocktype = false
+      }
+    }})
+  }
+  
  
   totalTax(num:number){
     return this.totTax = num * 0.15;
@@ -128,7 +151,6 @@ export class ShoppingCartComponent implements OnInit {
     return this.totalshipping = this.shipping + this.totalDue
   }
   
-  
   removeProduct(item:any){
     this.cartitem.removePerCart(item);
   }
@@ -136,9 +158,4 @@ export class ShoppingCartComponent implements OnInit {
   removeAllProduct(){
     this.cartitem.removeAllCart();
   }
-
-  checkout(item:any){
-    
-  }
-
 }

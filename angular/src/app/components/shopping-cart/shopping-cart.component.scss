@@ -87,3 +87,26 @@ h5{
     padding: 10px;
     border-radius: 10px;
 }
+
+.btn-continue-shopping{
+    background-color: #D27C2C;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.btn-checkout{
+    background-color: #D27C2C;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: px
+}
+
+@media screen and (min-height: 768px) {
+    .item-stock{
+        width: 10vw;
+    }
+}
