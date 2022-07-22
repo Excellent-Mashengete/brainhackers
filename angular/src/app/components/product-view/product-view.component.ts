@@ -14,7 +14,7 @@ export class ProductViewComponent implements OnInit {
   constructor(private cartitem:CartService) {let product:any;
     product = localStorage.getItem("product");
 
-    //console.log(product)
+   
     this.product = JSON.parse(product)}
    
   ngOnInit(): void {
@@ -26,8 +26,10 @@ export class ProductViewComponent implements OnInit {
   addToCart(item: any): void {
     this.cartitem.addToCart(item)
 
-
-
+    if(item == item)
+    {
+      
+    }
   }
   
 

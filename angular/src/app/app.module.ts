@@ -18,6 +18,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AuthInterceptor } from './interceptor/authconfig.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserprofileComponent,
     LoginComponent,
     NotfoundComponent,
-    OrdersComponent
+    OrdersComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

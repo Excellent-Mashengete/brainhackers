@@ -36,10 +36,8 @@ export class ShoppingCartComponent implements OnInit {
     private router:Router, 
     private formBuilder: FormBuilder) {
       let product:any;
-    product = localStorage.getItem("product");
-
-    //console.log(product)
-    this.products_id = JSON.parse(product)
+      product = localStorage.getItem("product");
+      this.products_id = JSON.parse(product)
      }
 
   ngOnInit(): void {

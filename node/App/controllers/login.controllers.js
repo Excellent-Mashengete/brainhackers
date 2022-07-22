@@ -142,15 +142,3 @@ module.exports.userProfile = async (req, res, next) => {
     };
 }
 
-
-
-//     userSchema.findById(req.params.id, (error, data) => {
-//         if (error) {
-//             return next(error);
-//         } else {
-//             res.status(200).json({
-//                 msg: data
-//             })
-//         }
-//     })
-// })

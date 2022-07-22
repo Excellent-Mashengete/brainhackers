@@ -5,5 +5,6 @@ const list = require('../controllers/productlist');
 
 router.get("/product_list", list.prod_list);
 router.get('/productbyid/:prod_id', list.prod_listByID);
+router.get('/prod_brand/:brand', list.prod_brandName)
 
 module.exports = router;
