@@ -5,7 +5,7 @@ import { map, Observable, observable } from 'rxjs';
 import { Login } from '../Interface/login';
 import { Register } from '../Interface/register';
 import { Router } from '@angular/router';
-import { UserId } from '../Interface/userid'
+import { UserId } from '../Interface/userid';
 
 @Injectable({
   providedIn: 'root'
