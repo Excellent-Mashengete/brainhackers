@@ -19,6 +19,7 @@ import { AuthInterceptor } from './interceptor/authconfig.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 @NgModule({
@@ -36,6 +37,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     NotfoundComponent,
     OrdersComponent,
     CheckoutComponent
+   
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     RouterModule,
     FormsModule, 
     HttpClientModule,
+    NgxScrollTopModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],
