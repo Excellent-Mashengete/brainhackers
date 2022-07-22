@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 const login = require("../controllers/login.controllers");
+const authorize = require('../middlewares/usercontroller')
 
-// router.post('/logout',login.logout);
 app.post('/login',login.login);
+app.get('/profile/:id', authorize, login.userProfile);
 module.exports = app;

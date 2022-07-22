@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
 
   constructor(private formBuilder: FormBuilder, 
-    private userService : AuthenticationService, 
+    public userService : AuthenticationService, 
     private router:Router) { }
 
   ngOnInit(): void {
@@ -46,6 +46,11 @@ export class RegisterComponent implements OnInit {
   onSubmit():void{
     this.submitted = true;
 
+    if(this.Form.invalid)
+    { 
+      return
+    }
+
     let user = {
       name : this.Form.value.name,
       email: this.Form.value.email,
@@ -54,19 +59,14 @@ export class RegisterComponent implements OnInit {
 
     this.userService.register(user).subscribe({
       next:data => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        
+        this.Form.reset();
         this.router.navigate(['/login']);
       },
       error: err => {
         this.errorMessage = err.error.message;
-       
-      
       }
     });
-
-    console.log(JSON.stringify(this.Form.value));
   }
 }
