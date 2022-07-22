@@ -107,7 +107,7 @@
                                 </div>
                            
                             <div class="form-group">
-                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg" 
+                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg" (click)="loading = !loading"
                                 >
                                     Register
                                 </button>
@@ -116,12 +116,20 @@
                         <div class="form-group mt-3">
                             <P class = "Already">
                                 Already have an account? Click
-                                <a routerLink="/login" class="here">here</a> to log in
+                                <a routerLink="/login" class="here" (click)="loading = !loading">here</a> to log in
                             </P>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ngx-loading
+        [show]="loading"
+        [config]="{
+          animationType: ngxLoadingAnimationTypes.circleSwish,
+          primaryColour: '#ffffff', secondaryColour: '#ffffff',
+          backdropBorderRadius: '3px'
+        }">
+        </ngx-loading>
     </div>
 </section>
