@@ -18,6 +18,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AuthInterceptor } from './interceptor/authconfig.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserprofileComponent,
     LoginComponent,
     NotfoundComponent,
-    OrdersComponent
+    OrdersComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     FormsModule, 
     HttpClientModule,
+    NgxScrollTopModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],
