@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CardService } from 'src/app/Services/card.service';
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
+import { NgxLoadingComponent } from 'ngx-loading';
 
 @Component({
   selector: 'app-products',
@@ -7,14 +9,21 @@ import { CardService } from 'src/app/Services/card.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  @ViewChild('ngxLoading', { static: false })
+  ngxLoadingComponent!: NgxLoadingComponent;
+  showingTemplate = false;
+  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public loading = false;
+  
   errorMessage = ''
   Products: any;
 
   constructor (private cardservice: CardService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.cardservice.getCard().subscribe(( respond:any )=>{
-
+      this.loading = false;
       // console.log(respond)
       // console.log("response")
 
@@ -24,6 +33,7 @@ export class ProductsComponent implements OnInit {
 
 
   })
+ // this.loading = false;
     // this.getProduct();
   }
 
@@ -42,7 +52,9 @@ export class ProductsComponent implements OnInit {
 
   // }
     getProductinfo(index: any){
+      this.loading = true;
         localStorage.setItem("product",JSON.stringify(this.Products[index]))
+        this.loading = false;
        }
        
 }
