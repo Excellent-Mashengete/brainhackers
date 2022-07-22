@@ -71,13 +71,14 @@ module.exports.login = async (req, res) => {
     const {email,password} = req.body;
     try{
         if(!(email && password)){
-            res.status(400).send("user input require");
+            res.status(400).json({message:"user input required"});
         }
         
         const logData = await client.query(`SELECT * FROM users WHERE email= $1;`,
         [email]); //Check if user exist
         arrData = logData.rows;
 
+        
         if (arrData.length == 0) {
             res.status(400).json({
                 message: "user doesn't exist"

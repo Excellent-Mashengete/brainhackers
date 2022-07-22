@@ -68,6 +68,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/products'])
       },
         error: err => {
+          this.submitted = true;
           this.loading = false;
           this.errorMessage = err.error.message;
           

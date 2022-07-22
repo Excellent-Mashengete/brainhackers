@@ -45,7 +45,10 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
       confirmpassword: ['', Validators.required],
-    },
+    },{
+      validator:MustMatch("password","confirmpassword"),
+    }
+
     );
   }
   get f():{ [key: string]: AbstractControl }{
