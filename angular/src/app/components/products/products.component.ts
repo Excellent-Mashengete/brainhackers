@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CardService } from 'src/app/Services/card.service';
 import { ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxLoadingComponent } from 'ngx-loading';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -17,8 +18,9 @@ export class ProductsComponent implements OnInit {
   
   errorMessage = ''
   Products: any;
+  items: any;
 
-  constructor (private cardservice: CardService) { }
+  constructor (private cardservice: CardService, private cartService:CartService) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -29,28 +31,24 @@ export class ProductsComponent implements OnInit {
 
       
       this.Products = respond;
+      
       // console.log(this.Products)
+    })
 
 
-  })
+  // })
  // this.loading = false;
     // this.getProduct();
   }
-
-  // getProduct(){
-  //     return this.cardservice.getCard().subscribe({
-  //       next:data =>{
-  //         this.Products = data;
-  //         console.log(data);
-          
-  //       }
-  //     })
-
+  // addToCart(product: any): {
+  //   this.cartService.addToCart(product);
   // }
 
-  // getCardbyId(){
+    addToCart(item: any): void {
+      this.cartService.addToCart(item)
+  
+    }
 
-  // }
     getProductinfo(index: any){
       this.loading = true;
         localStorage.setItem("product",JSON.stringify(this.Products[index]))
@@ -58,10 +56,5 @@ export class ProductsComponent implements OnInit {
        }
        
 }
-
-  // getProductinfo(index: any){
-  //   localStorage.setItem("product",JSON.stringify(this.Products[index]))
-  // }
-
 
 
