@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
     UserprofileComponent,
     LoginComponent,
     NotfoundComponent,
-    OrdersComponent
+    OrdersComponent,
+   
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
     RouterModule,
     FormsModule, 
     HttpClientModule,
+    NgxScrollTopModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     NgxLoadingModule.forRoot({
