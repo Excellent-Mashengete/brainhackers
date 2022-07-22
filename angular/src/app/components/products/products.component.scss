@@ -14,7 +14,7 @@ text-align: center;
 .card img{
     border-radius: 10px;
     transition: 0.3s ease-in-out;
-    max-height: 200px;
+    height: 250px;
 }
 
 .card img:hover{
@@ -26,6 +26,7 @@ text-align: center;
     font-family: 'Hind Siliguri', sans-serif;
     font-weight:400;
     font-size: 15px;
+    height: 50px;
    }
 
 .card-desc{
@@ -94,4 +95,10 @@ text-align: center;
     height: 40px;
     border-radius: 50px;
     transition: all 0.4s;
+}
+.n{
+    width: 100%;
+    background-color: #D27C2C;
+    height: 40px;
+
 }

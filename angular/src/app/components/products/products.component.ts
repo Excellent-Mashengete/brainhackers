@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardService } from 'src/app/Services/card.service';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -9,47 +10,31 @@ import { CardService } from 'src/app/Services/card.service';
 export class ProductsComponent implements OnInit {
   errorMessage = ''
   Products: any;
+  items: any;
 
-  constructor (private cardservice: CardService) { }
+  constructor (private cardservice: CardService, private cartService:CartService) { }
 
   ngOnInit(): void {
     this.cardservice.getCard().subscribe(( respond:any )=>{
-
-      // console.log(respond)
-      // console.log("response")
-
-      
       this.Products = respond;
+      
       // console.log(this.Products)
+    })
 
-
-  })
-    // this.getProduct();
   }
-
-  // getProduct(){
-  //     return this.cardservice.getCard().subscribe({
-  //       next:data =>{
-  //         this.Products = data;
-  //         console.log(data);
-          
-  //       }
-  //     })
-
+  // addToCart(product: any): {
+  //   this.cartService.addToCart(product);
   // }
 
-  // getCardbyId(){
+    addToCart(item: any): void {
+      this.cartService.addToCart(item)
+  
+    }
 
-  // }
     getProductinfo(index: any){
         localStorage.setItem("product",JSON.stringify(this.Products[index]))
        }
        
 }
-
-  // getProductinfo(index: any){
-  //   localStorage.setItem("product",JSON.stringify(this.Products[index]))
-  // }
-
 
 
