@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {AuthenticationService} from '../../Services/authentication.service'
 import { Router} from '@angular/router';
-import { ToastrService } from "ngx-toastr"
+//import { ToastrService } from "ngx-toastr"
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,9 +20,8 @@ export class LoginComponent implements OnInit {
   errorMessage: String = " "// declaring a string data type assigning to the error message
  
   constructor(private formBuilder: FormBuilder, 
-    private auth:AuthenticationService, 
-    private router:Router,
-    private toaster:ToastrService) { }
+    public auth:AuthenticationService, 
+    private router:Router) { }
 
   ngOnInit(): void {
     this.Form = this.formBuilder.group({
@@ -55,7 +54,6 @@ export class LoginComponent implements OnInit {
       },
         error: err => {
           this.errorMessage = err.error.message;
-          this.toaster.warning("Incorrect Login Details");
       }
     } 
   ) 

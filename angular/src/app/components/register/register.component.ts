@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
   errorMessage = '';
 
   constructor(private formBuilder: FormBuilder, 
-    private userService : AuthenticationService, 
+    public userService : AuthenticationService, 
     private router:Router) { }
 
   ngOnInit(): void {
@@ -66,7 +66,6 @@ export class RegisterComponent implements OnInit {
       },
       error: err => {
         this.errorMessage = err.error.message;
-       
       }
     });
   }
