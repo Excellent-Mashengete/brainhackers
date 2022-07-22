@@ -21,11 +21,11 @@
                                         <p class="card-category">{{item.prod_name}}</p>
                                     </div>
 
-                                    <div class="item-stock" *ngIf="!stocktype">
-                                        <div class="alert alert-danger"><p class="card-category">{{stockMessage}}</p></div>
+                                    <div class="item-stock" >
+                                        <div class="alert alert-danger"><p class="card-category"></p></div>
                                     </div>
-                                    <div class="item-stock" *ngIf="stocktype">
-                                        <div class="alert alert-success"><p class="card-category">{{stockMessage}}</p></div>
+                                    <div class="item-stock" >
+                                        <div class="alert alert-success"><p class="card-category"></p></div>
                                     </div>
                                 </div>
 
@@ -99,7 +99,7 @@
                                     <button routerLink="/products" class="btn-continue-shopping">Continue shopping</button>
                                 </div>
                                 <div style="margin-left:20px;">
-                                    <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn-checkout">Check out</button>
+                                    <button data-toggle="modal" (click)="Checkout()" type="button" class="btn-checkout">Check out</button>
                                 </div>
                             </div> 
                         </div>

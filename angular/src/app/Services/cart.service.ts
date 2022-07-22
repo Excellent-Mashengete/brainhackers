@@ -25,10 +25,16 @@ export class CartService {
   addToCart(prodcut:any){
     this.cardDataList.push(prodcut);
     this.productList.next(this.cardDataList)
-
+    this.getAmount();
     //console.log(this.cardDataList)
   }
   
+  getAmount(){
+    let grandToat =0;
+    this.cardDataList.map((a:any)=>{
+      grandToat += a.total;
+    })
+  }
 
   //Increatse Qty
   
