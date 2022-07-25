@@ -6,7 +6,7 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;" >
                     <div class="card-body p-4 p-md-5">
                         <div class="text-center">
-                            <h1 class="text-center text-dark mt-2 mb-3">SHIPPING ADDRESS!</h1>
+                            <h1 class="text-center text-dark mt-2 mb-3">DELIVERY ADDRESS!</h1>
                         </div>
                         <form [formGroup]="Form" (ngSubmit)="onSubmit()">
                             <div class="form-group col mb-4">
@@ -63,15 +63,13 @@
                             <div class="form-group mt-3">
                                 <div class="row">
                                     <div class="col btn1">
-                                        <button type="submit" (click)="cancelForm()" class="submit btn btn-secondary btn-block btn-lg" (click)="loading = !loading">Cancel Order</button>
+                                        <button type="submit" routerLink="/products" class="btn btn-secondary btn-sm n" (click)="loading = !loading">Continue shopping</button>
                                     </div>
                                     <div class="col btn1">
-                                        <button type="submit" (click)="onReset()"
-                                        class="btn btn-warning float-right"
-                               class="submit btn btn-secondary btn-block btn-lg" (click)="loading = !loading">Resert Form</button>
+                                        <button type="submit" (click)="cancelForm()" class="btn btn-secondary btn-sm n" (click)="loading = !loading">Cancel Order</button>
                                     </div>
                                     <div class="col btn2">
-                                        <button type="submit" (ngSubmit)="onSubmit()" class="submit btn btn-secondary btn-block btn-lg" (click)="loading = !loading">Place Order</button>
+                                        <button type="submit" (ngSubmit)="onSubmit()" class="btn btn-secondary btn-sm n" (click)="loading = !loading">Place Order</button>
                                     </div>
                                 </div>
                             </div>
