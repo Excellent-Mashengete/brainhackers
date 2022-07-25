@@ -1,5 +1,5 @@
-
-<div class="container mt-5">
+<ng-container *ngIf="orders.length != 0">
+  <div class="container mt-5">
     <div class="content">
         <div class="row justify-content-center">
             <h4 style="text-align:center;">Order History</h4>
@@ -61,7 +61,24 @@
     <span ngxScrollTop>
       <a routerLink="/orders"  class="back-to-top d-flex align-items-center justify-content-center active"  ><i class="fa-solid fa-arrow-up"></i></a>
     </span>
-</div>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="orders.length == 0">
+  <div class="container">
+      <div class="card empty" >
+          <h4 class="card-title">My order history</h4>
+      </div>
+
+      <div class="center">
+          <img src="https://media.istockphoto.com/vectors/purchase-flat-line-icon-outline-vector-symbol-illustration-pixel-vector-id1225349588?k=20&m=1225349588&s=612x612&w=0&h=NjO2s3jAZJ6sh3VybcPp-mGjo9SqTMkfY9i9iI1DKLc=" alt="">
+          <h5>Your Order history is empty</h5>
+          <h6>Place orders to see order history</h6>
+          <!-- <button routerLink="/products" routerLinkActive="router-link-active"  class="btn-shop">Shop Now</button> -->
+      </div>
+  </div>
+</ng-container>
 
 <ngx-loading
 [show]="loading"

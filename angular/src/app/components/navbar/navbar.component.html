@@ -6,10 +6,11 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal p-0">
         <li (click)="loading = !loading" *ngIf="this.auth.isLoggedIn" routerLink="/orders"><a>Orders</a></li>
-        <li *ngIf="!this.auth.isLoggedIn" routerLink="/login"><a>Login</a></li>
-        <li *ngIf="!this.auth.isLoggedIn" routerLink="/register"><a>Register</a></li>
+         <!-- <li *ngIf="this.auth.isLoggedIn" routerLink="/userprofile"><a>Profile</a></li>  -->
+        <li *ngIf="!this.auth.isLoggedIn" routerLink="/login"><a class="log">Login</a></li>
+        <li *ngIf="!this.auth.isLoggedIn" routerLink="/register"><a >Register</a></li>
         <li>
-          <a routerLink="/cart"><i class="fa-solid fa-cart-shopping fa-2x"  ></i>
+          <a style="text-decoration: none;" routerLink="/cart"><i  class="fa-solid fa-cart-shopping fa-2x"  ></i>
             <div class="total">{{totalNumber}}</div>
           </a>
         </li>
