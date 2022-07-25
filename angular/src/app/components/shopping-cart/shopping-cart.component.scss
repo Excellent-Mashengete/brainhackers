@@ -105,3 +105,8 @@ h5{
     width: px
 }
 
+@media screen and (min-height: 768px) {
+    .item-stock{
+        width: 10vw;
+    }
+}

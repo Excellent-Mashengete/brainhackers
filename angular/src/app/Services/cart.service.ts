@@ -10,7 +10,6 @@ export class CartService {
   productList = new BehaviorSubject<any>([])
 
   constructor() { }
-
   //Get Product Data
   getProdList(){
     return this.productList.asObservable()
@@ -26,10 +25,19 @@ export class CartService {
   addToCart(prodcut:any){
     this.cardDataList.push(prodcut);
     this.productList.next(this.cardDataList)
+    this.getAmount();
     //console.log(this.cardDataList)
   }
+  
+  getAmount(){
+    let grandToat =0;
+    this.cardDataList.map((a:any)=>{
+      grandToat += a.total;
+    })
+  }
 
-  //Get total amount
+  //Increatse Qty
+  
 
 //Remove data cart 1 by 1 
   removePerCart(product:any){

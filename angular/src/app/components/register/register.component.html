@@ -68,11 +68,11 @@
                                         class="bi bi-lock" viewBox="0 0 16 16">
                                         <path
                                             d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
-                                    </svg>
+                                        </svg>
                                         <input type="password" formControlName="password" placeholder="Password"
                                             class="form-control lock" [ngClass]="{
-                        'is-invalid': submitted && f['password'].errors
-                      }" />
+                                             'is-invalid': submitted && f['password'].errors
+                                            }" />
                                         <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                                             <div *ngIf="f['password'].errors['required']">
                                                 Password is required
@@ -93,35 +93,47 @@
                                         class="bi bi-lock" viewBox="0 0 16 16">
                                         <path
                                             d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
-                                    </svg>
+                                         </svg>
                                         <input type="password" formControlName="confirmpassword"
                                             placeholder="Confirm Password" class="form-control locker" [ngClass]="{
-                        'is-invalid': submitted && f['confirmpassword'].errors
-                      }" />
-                                        <div *ngIf="submitted && f['confirmpassword'].errors" class="invalid-feedback">
-                                            <div *ngIf="f['confirmpassword'].errors['required']">
-                                                Confirm Password is required
+                                                'is-invalid': submitted && f['confirmpassword'].errors
+                                            }" />
+                                            <div *ngIf="submitted && f['confirmpassword'].errors" class="invalid-feedback">
+                                                <div *ngIf="f['confirmpassword'].errors['required']">
+                                                    Confirm Password is required
+                                                </div>
+    
+                                                <div *ngIf="f['confirmpassword'].errors['mustMatch']">
+                                                    Password must match
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                            
                             <div class="form-group">
-                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg" 
+                                <button type="submit" class="submit btn btn-secondary btn-block btn-lg" (click)="loading = !loading"
                                 >
                                     Register
                                 </button>
                             </div>
                         </form>
                         <div class="form-group mt-3">
-                            <P>
+                            <P class = "Already">
                                 Already have an account? Click
-                                <a routerLink="/login" class="here">here</a> to log in
+                                <a routerLink="/login" class="here" (click)="loading = !loading">here</a> to log in
                             </P>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <ngx-loading
+        [show]="loading"
+        [config]="{
+          animationType: ngxLoadingAnimationTypes.circleSwish,
+          primaryColour: '#ffffff', secondaryColour: '#ffffff',
+          backdropBorderRadius: '3px'
+        }">
+        </ngx-loading>
     </div>
 </section>

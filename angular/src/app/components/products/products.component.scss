@@ -16,6 +16,12 @@ text-align: center;
     transition: 0.3s ease-in-out;
     height: 250px;
 }
+@media screen and (max-width: 576px) {
+    .card img{
+
+        height: 150px;
+    }
+}
 
 .card img:hover{
      transition: 0.2s ease-in-out;

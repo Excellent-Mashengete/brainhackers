@@ -18,6 +18,10 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AuthInterceptor } from './interceptor/authconfig.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
+
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserprofileComponent,
     LoginComponent,
     NotfoundComponent,
-    OrdersComponent
+    OrdersComponent,
+    CheckoutComponent
+   
+
   ],
   imports: [
     BrowserModule,
@@ -42,8 +49,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     FormsModule, 
     HttpClientModule,
+    NgxScrollTopModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.wanderingCubes,
+      backdropBackgroundColour: 'rgba(0,0,0,0.5)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#ffffff',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff',
+      fullScreenBackdrop: false,
+    }),
   ],
   providers: [
     {

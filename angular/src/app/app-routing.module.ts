@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { OrdersComponent } from './components/orders/orders.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'cart',component:ShoppingCartComponent},
   {path:'orders',component:OrdersComponent, canActivate: [AuthGuard]},
   {path:'prodDetails/:prod_id', component: ProductViewComponent},
+  {path:'checkout', component:CheckoutComponent,canActivate: [AuthGuard]},
   {path:'userprofile', component: UserprofileComponent, canActivate: [AuthGuard]},
   {path:'404', component:NotfoundComponent},
   {path:'**', redirectTo: '/404', pathMatch:'full'},

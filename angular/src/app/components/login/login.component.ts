@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {AuthenticationService} from '../../Services/authentication.service'
 import { Router} from '@angular/router';
 //import { ToastrService } from "ngx-toastr"
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
+import { NgxLoadingComponent } from 'ngx-loading';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
+  @ViewChild('ngxLoading', { static: false })
+  ngxLoadingComponent!: NgxLoadingComponent;
+  showingTemplate = false;
+  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public loading = false;
+
+  
   Form = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -24,6 +35,7 @@ export class LoginComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+    this.loading = false;
     this.Form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
@@ -39,6 +51,7 @@ export class LoginComponent implements OnInit {
 
     if(this.Form.invalid)
     { 
+      this.loading = false;
       return
     }
 
@@ -48,12 +61,17 @@ export class LoginComponent implements OnInit {
     }
     this.auth.login(user).subscribe({
       next:data =>{
+        this.loading = true;
         this.userToken = data
         localStorage.setItem('access_token', this.userToken.token)
+        this.loading = false;
         this.router.navigate(['/products'])
       },
         error: err => {
+          this.submitted = true;
+          this.loading = false;
           this.errorMessage = err.error.message;
+          
       }
     } 
   ) 
