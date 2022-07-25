@@ -103,3 +103,23 @@ module.exports.addIterms = async (req, res) => {
         });
      };
 }
+
+
+module.exports.userProfile = async (req, res, next) => {
+    try{  
+        await client.query(`SELECT * FROM users`, (error, results) => {
+                if(error){ 
+                    return next(error)
+                }
+                res.status(200).json(results.rows) //Return a status 200 if there is no error
+            }
+        )
+    }
+    catch (err) {
+        res.status(500).json({
+           error: "Database error while retrieving products", 
+        });
+    };
+}
+
+

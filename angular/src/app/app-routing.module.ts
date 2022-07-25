@@ -11,8 +11,6 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { AuthGuard } from './guards/auth.guard';
 
-
-
 const routes: Routes = [
   {path:'', redirectTo: 'products', pathMatch:'full'},
   {path:'login', component:LoginComponent},
