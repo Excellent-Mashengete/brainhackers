@@ -6,7 +6,6 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal p-0">
         <li (click)="loading = !loading" *ngIf="this.auth.isLoggedIn" routerLink="/orders"><a>Orders</a></li>
-         <li *ngIf="this.auth.isLoggedIn" routerLink="/userprofile"><a>Profile</a></li> 
         <li *ngIf="!this.auth.isLoggedIn" routerLink="/login"><a>Login</a></li>
         <li *ngIf="!this.auth.isLoggedIn" routerLink="/register"><a>Register</a></li>
         <li>
@@ -20,6 +19,7 @@
           </a>
           <ul class="dopdown">
             <li><h5>{{fullname}}</h5></li>
+            <li><p>{{email}}</p></li>
             <li><hr></li>
           
             <li><a (click)="Logout()" *ngIf="this.auth.isLoggedIn">Logout</a></li>

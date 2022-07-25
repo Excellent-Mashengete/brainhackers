@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
     return this.auth.getUserProfile().subscribe({next:data => {
       this.profile = data
       this.name = this.profile.decoded.name
-      // this.email = this.profile.decoded.email.slice('',this.profile.decoded.email.search("@"))
+      this.email = this.profile.decoded.email
       this.fullname =  this.transform(this.name)
     }})
   }
