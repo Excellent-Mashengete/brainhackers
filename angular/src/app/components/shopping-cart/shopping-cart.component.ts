@@ -27,6 +27,9 @@ export class ShoppingCartComponent implements OnInit {
   Stock:any
   stockMessage = '';
   idstock:any
+
+
+  product!:any;
   constructor(private order:OrdersService,
     private auth:AuthenticationService,
     private stock:CardService, 
@@ -82,6 +85,7 @@ export class ShoppingCartComponent implements OnInit {
 
   removeProduct(item:any){
     this.cartitem.removePerCart(item);
+    
   }
 
   removeAllProduct(){
