@@ -120,26 +120,3 @@ module.exports.login = async (req, res) => {
         })
     }
 }
-
-module.exports.userProfile = async (req, res, next) => {
-    const id = parseInt(req.params.id);
-    try{  
-        await client.query(`SELECT * FROM users WHERE id= $1`, [id], (error, results) => {
-                if(error){ //checks for errors and return them 
-                    // return res.status(400).json({
-                    //     next(error)
-                    // })//Throw t //Throw the error in the terminal
-                    return next(error)
-                }
-                res.status(200).json({msg: results}) //Return a status 200 if there is no error
-            }
-        )
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).json({
-           error: "Database error while retrieving products", 
-        });
-    };
-}
-

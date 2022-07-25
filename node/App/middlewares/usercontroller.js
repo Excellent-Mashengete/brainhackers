@@ -1,11 +1,11 @@
-const jwt = require("jsonwebtoken");
+const jwt_decode = require("jwt-decode");
 
-module.exports = (req, res, next) => {
-   
+module.exports = (req, res) => {
+   var token =  req.headers("token")
     try {
-        const token = req.headers.authorization.split(" ")[1];
-        jwt.verify(token, "longer-secret-is-better");
-        next();
+        var decode = jwt_decode(token);
+        res.status(401).json({ decode });
+
     } catch (error) {
         res.status(401).json({ message: "No token provided" });
     }

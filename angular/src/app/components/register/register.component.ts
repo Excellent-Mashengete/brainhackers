@@ -54,7 +54,21 @@ export class RegisterComponent implements OnInit {
   get f():{ [key: string]: AbstractControl }{
     return this.Form.controls;
   }
+   
 
+  keyPressAlphanumeric(event: { keyCode: number; preventDefault: () => void; }) {
+
+    var inp = String.fromCharCode(event.keyCode);
+
+    if (/[a-zA-Z]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
+  }
+
+  
   onSubmit():void{
     this.loading = false;
     this.submitted = true;
@@ -64,6 +78,8 @@ export class RegisterComponent implements OnInit {
       this.loading = false;
       return
     }
+
+
 
     let user = {
       
