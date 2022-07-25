@@ -27,6 +27,10 @@ export class ShoppingCartComponent implements OnInit {
   Stock:any
   stockMessage = '';
   idstock:any
+
+  item:any
+  sumTotal:any;
+
   constructor(private order:OrdersService,
     private auth:AuthenticationService,
     private stock:CardService, 
@@ -40,15 +44,18 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {
     this.cartitem.getProdList().subscribe({
     next:data =>{
-      this.products = data;
+      this.products = data; 
       this.totalNumber = data.length;
       
+     
       data.forEach((obj:any) => {
         this.sum += parseFloat(obj.prod_price);
 
-      });
+      }
+      );
+      this.sumTotal = this.sum;
     }
-
+      
    })
 
    this.totalTax(this.sum);
@@ -77,11 +84,16 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   totalAmountDue(){
-    return this.totalDue = this.totTax + this.sum;
+    return this.totalDue = this.totTax + this.sumTotal;
   }
 
   removeProduct(item:any){
     this.cartitem.removePerCart(item);
+    this.sumTotal -= (item.prod_price)
+    this.totalTax(this.sumTotal);
+    this.totalAmountDue();
+    console.log(this.sumTotal)
+    return 
   }
 
   removeAllProduct(){

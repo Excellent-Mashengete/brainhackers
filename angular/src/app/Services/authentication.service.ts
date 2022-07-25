@@ -5,7 +5,7 @@ import { map, Observable, observable } from 'rxjs';
 import { Login } from '../Interface/login';
 import { Register } from '../Interface/register';
 import { Router } from '@angular/router';
-import { UserId } from '../Interface/userid'
+import { UserId } from '../Interface/userid';
 
 const token = localStorage.getItem('access_token');
 const httpOptions = {
@@ -30,6 +30,8 @@ export class AuthenticationService {
   getToken() {
     return localStorage.getItem('access_token');
   }
+
+  
 
   get isLoggedIn(): boolean {
     let authToken = localStorage.getItem('access_token');

@@ -3,7 +3,6 @@ const router = express.Router();
 
 const orders = require('../controllers/orders');
 const usercontroller = require('../middlewares/usercontroller')
-
 //Get all orders
 router.get("/oders", orders.oderList)
 router.get("/order_list/:id", orders.getAllOrders);
