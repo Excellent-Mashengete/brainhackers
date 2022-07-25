@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {  Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { CartService } from 'src/app/Services/cart.service'
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
+import { NgxLoadingComponent } from 'ngx-loading';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +11,12 @@ import { CartService } from 'src/app/Services/cart.service'
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('ngxLoading', { static: false })
+  ngxLoadingComponent!: NgxLoadingComponent;
+  showingTemplate = false;
+  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public loading = false;
+
   totalNumber: number = 0
   isLoggedIn: boolean = true
   constructor(

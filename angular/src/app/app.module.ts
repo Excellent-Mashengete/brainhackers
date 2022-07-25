@@ -18,6 +18,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AuthInterceptor } from './interceptor/authconfig.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 
 import { NgxScrollTopModule } from 'ngx-scrolltop';
@@ -37,6 +38,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     LoginComponent,
     NotfoundComponent,
     OrdersComponent,
+    CheckoutComponent
    
 
   ],

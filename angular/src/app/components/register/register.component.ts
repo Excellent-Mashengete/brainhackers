@@ -45,7 +45,10 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(40)]],
       confirmpassword: ['', Validators.required],
-    },
+    },{
+      validator:MustMatch("password","confirmpassword"),
+    }
+
     );
   }
   get f():{ [key: string]: AbstractControl }{
@@ -74,6 +77,7 @@ export class RegisterComponent implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.Form.reset();
+        this.submitted = false;
         this.loading = false;
         this.router.navigate(['/login']);
       },

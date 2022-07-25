@@ -25,4 +25,8 @@ export class CardService {
     return this.http.get(`${this.baseUrl}productbyid/${prod_id}`)
     //return this.http.get(this.baseUrl)+"product_list";
   }
+  
+  getunit(id:GetById){
+    return this.http.get(`${this.baseUrl}stock/${id}`)
+  }
 }

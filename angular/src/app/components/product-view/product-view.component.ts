@@ -42,8 +42,10 @@ export class ProductViewComponent implements OnInit {
     this.cartitem.addToCart(item)
     this.loading = false;
 
-
-
+    if(item == item)
+    {
+      
+    }
   }
   
 
