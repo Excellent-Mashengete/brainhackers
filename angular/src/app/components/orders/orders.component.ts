@@ -17,6 +17,7 @@ export class OrdersComponent implements OnInit {
   public loading = false;
 
   id :any 
+  orderid: any 
   orders:any
   profile:any
   constructor(
@@ -26,16 +27,15 @@ export class OrdersComponent implements OnInit {
   ngOnInit(): void {
     // this.id = localStorage.getItem('user_id')
     this.loading = true;
-    this.getOrders(this.id);
     this.user()
   }
   user(){
     return this.auth.getUserProfile().subscribe({next:data => {
       this.profile = data
       this.id = this.profile.decoded.id
-    }})
+      this.getOrders(this.id)
+    }})  
   }
-
   getOrders(id:any){
     return this.order.getAllorders(id).subscribe({
       next:data =>{
@@ -44,6 +44,4 @@ export class OrdersComponent implements OnInit {
       }
     })
   }
-
- 
 }
