@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import Swal from 'sweetalert2';
 import { ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxLoadingComponent } from 'ngx-loading';
-import { ProductsComponent } from '../products/products.component';
+
 import { Router } from '@angular/router';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 
@@ -19,8 +19,8 @@ export class CheckoutComponent implements OnInit {
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public loading = false;
 
-  @ViewChild(ShoppingCartComponent)
-  public productsComponent!: ShoppingCartComponent;
+  @ViewChild('ShoppingCartComponent', {static: false})
+  ShoppingCartComponent!: ShoppingCartComponent;
 
   keyPressAlphanumeric(event: { keyCode: number; preventDefault: () => void; }) {
 
@@ -58,7 +58,8 @@ export class CheckoutComponent implements OnInit {
       zip: ['', Validators.required],
     },
   );
-  console.log(this.productsComponent)
+  console.log(this.ShoppingCartComponent.totalDue)
+
   }
 
   get f():{ [key: string]: AbstractControl }{

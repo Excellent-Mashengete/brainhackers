@@ -7,6 +7,11 @@ import { Register } from '../Interface/register';
 import { Router } from '@angular/router';
 import { UserId } from '../Interface/userid'
 
+const token = localStorage.getItem('access_token');
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': `${token}` })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +26,7 @@ export class AuthenticationService {
   register(users : Register) {
     return this.http.post(`${this.baseUrl$}register`, users);
   }
-
+  
   getToken() {
     return localStorage.getItem('access_token');
   }
@@ -37,8 +42,10 @@ export class AuthenticationService {
       this.router.navigate(['products']);
     }
   }
-
- 
+  
+  getUserProfile(){
+    return this.http.get(`${this.baseUrl$}profile`,httpOptions)
+  }
 }
 
 

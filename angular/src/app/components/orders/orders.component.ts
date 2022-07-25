@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OrdersService } from 'src/app/Services/orders.service';
 import { ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxLoadingComponent } from 'ngx-loading';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
   selector: 'app-orders',
@@ -17,13 +18,22 @@ export class OrdersComponent implements OnInit {
 
   id :any 
   orders:any
-  constructor(private order:OrdersService) { }
+  profile:any
+  constructor(
+    private order:OrdersService,
+    private auth:AuthenticationService) { }
   
   ngOnInit(): void {
-  // this.id = localStorage.getItem('user_id')
-  this.loading = true;
-  this.id = 1
+    // this.id = localStorage.getItem('user_id')
+    this.loading = true;
     this.getOrders(this.id);
+    this.user()
+  }
+  user(){
+    return this.auth.getUserProfile().subscribe({next:data => {
+      this.profile = data
+      this.id = this.profile.decoded.id
+    }})
   }
 
   getOrders(id:any){
@@ -34,4 +44,6 @@ export class OrdersComponent implements OnInit {
       }
     })
   }
+
+ 
 }

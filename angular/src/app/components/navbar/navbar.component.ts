@@ -17,6 +17,11 @@ export class NavbarComponent implements OnInit {
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public loading = false;
 
+
+  name: any 
+  email: any
+  profile:any
+  fullname: any
   totalNumber: number = 0
   isLoggedIn: boolean = true
   constructor(
@@ -31,19 +36,25 @@ export class NavbarComponent implements OnInit {
         //console.log(this.totalNumber)
       }
     })
+    this.user()
   }
-  email = localStorage.getItem('email')
-  name = localStorage.getItem('name')
-  signout(){
-    this.router.navigate(['/']);
-    localStorage.removeItem('product')
-    localStorage.removeItem('email')
-    localStorage.removeItem('name')
-    localStorage.removeItem('authenitcated')
-    localStorage.removeItem('user_id')
-  }
+
 
   Logout(){
     this.auth.doLogout()
+  }
+
+  user(){
+    return this.auth.getUserProfile().subscribe({next:data => {
+      this.profile = data
+      this.name = this.profile.decoded.name
+      this.email = this.profile.decoded.email.slice('',this.profile.decoded.email.search("@"))
+      this.fullname = this.name + " " + this.transform(this.email)
+    }})
+  }
+
+  transform(value:string): string {
+    let first = value.substr(0,1).toUpperCase();
+    return first + value.substr(1); 
   }
 }
