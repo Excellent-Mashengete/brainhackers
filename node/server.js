@@ -29,7 +29,7 @@ app.use(
 
 const port = process.env.PORT || 7070;
  
-const hostURL = '0.0.0.0'; //Fault-Tolerant listening port for Backend. Picks available dynamic IPv4 and IPv6 addresses of the local host
+//const hostURL = '0.0.0.0'; //Fault-Tolerant listening port for Backend. Picks available dynamic IPv4 and IPv6 addresses of the local host
 
 client.connect((err) =>{ // Connect to the Database
    if (err) {
@@ -50,7 +50,7 @@ app.use("/api", orders) // to update order, cancel order and to retrieve order
 app.use("/api", products) // to retrive products
 app.use("/api", orders) // to update order, cancel order and to retrieve order 
 
-app.listen(port, process.env.baseUrl, () =>{  
+app.listen(port, () =>{  
    console.log(`Here we go, All Engines started at ${port}.`) 
 })
 
