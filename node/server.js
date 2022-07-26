@@ -20,6 +20,7 @@ app.use(express.json());  // to support JSON-encoded
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
  
+app.use(express.static('dist/angular'))
 app.use(bodyParser.json());
 app.use(
     bodyParser.urlencoded({
