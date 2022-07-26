@@ -46,20 +46,20 @@
                             <div class="amounts mb-4"> 
                                 <div class="row">
                                     <div class="col-8"><p>AMOUNT:</p></div>
-                                    <div class="col-4"><h5>R {{ totalDue | number:'3.1-2' }} </h5></div>
+                                    <div class="col-4"><h5 style="font-size: 1.2em;">R {{ totalDue | number:'3.1-2' }} </h5></div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-8"><p>Shipping Cost : </p></div>
-                                    <div class="col-4"><h5>R </h5></div>
+                                    <div class="col-8"><p>Delivery Cost : </p></div>
+                                    <div class="col-4"><h5 style="font-size: 1.2em;">R {{ delivery | number:'3.1-2' }}</h5></div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-8"><p>TOTAL DUE:</p></div>
-                                    <div class="col-4"><h5>R </h5></div>
+                                    <div class="col-4"><h5 style="font-size: 1.2em;">R {{ amountDelivery | number:'3.1-2' }}</h5></div>
                                 </div>
                             </div>
-
+                            <div class="div class"><p>Delivery cost is 10% of the actual bill which the amount is paid on delivery</p></div>
                             <div class="form-group mt-3">
                                 <div class="row">
                                     <div class="col btn1">

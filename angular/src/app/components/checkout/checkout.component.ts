@@ -20,7 +20,6 @@ export class CheckoutComponent implements OnInit {
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public loading = false;
 
-
   totalDue: number = 0;
 
   keyPressAlphanumeric(event: { keyCode: number; preventDefault: () => void; }) {
@@ -52,6 +51,8 @@ export class CheckoutComponent implements OnInit {
   submitted = false
   profile:any
   id: any
+  delivery:number = 0;
+  amountDelivery:number = 0;
 
   ngOnInit(): void {
     this.loading = false;
@@ -62,15 +63,30 @@ export class CheckoutComponent implements OnInit {
       zip: ['', Validators.required],
       },
     );
-  this.user()
+  this.user();
 
-  this.getAmount()
+  this.getAmount();
+  this.deliveryCost();
+  this.totalAmount();
   }
 
   get f():{ [key: string]: AbstractControl }{
 
     return this.Form.controls;
   }
+
+  getAmount(){
+    this.totalDue = this.cartitem.totalAmountDue()
+  }
+  
+  deliveryCost(){
+    return this.delivery = this.totalDue * 0.10
+  }
+
+  totalAmount(){
+    return this.amountDelivery = this.totalDue + this.delivery
+  }
+  
 
   user(){
     return this.auth.getUserProfile().subscribe({next:data => {
@@ -101,10 +117,7 @@ export class CheckoutComponent implements OnInit {
      console.log(shipping)
   }
 
-  getAmount(){
-    this.totalDue = this.cartitem.totalAmountDue()
-  }
-  
+ 
   cancelForm(){
     this.router.navigate(['cart'])
   }

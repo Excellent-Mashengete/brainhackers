@@ -50,6 +50,7 @@ export class CartService {
       grandToat += parseFloat(sm.prod_price);
       this.sumTotal = grandToat;
     });
+    
     this.totalTax(grandToat)
     this.tax = this.totalTax(grandToat)
     this.total = this.totalAmountDue()
@@ -60,14 +61,14 @@ export class CartService {
     let totalText = 0
     return totalText = num * 0.15;
   }
-  
+
   //Calculate total Amount with tax included  
   totalAmountDue(){
     let totAmt = 0;
     return totAmt = this.tax + this.sumTotal;
   }
   
-//Remove data cart 1 by 1 
+  //Remove data cart 1 by 1 
   removePerCart(product:any){
     this.cardDataList.splice(product,1)
     this.productList.next(this.cardDataList)
