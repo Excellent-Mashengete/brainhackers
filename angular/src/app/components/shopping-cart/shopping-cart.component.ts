@@ -24,7 +24,7 @@ export class ShoppingCartComponent implements OnInit {
 
   products:any = [];
   totalNumber: number = 0
-  sum: number = 0;
+  sumTotal: number = 0;
   totTax: number = 0;
   totalDue: number = 0;
   shipping: number = 0;
@@ -36,7 +36,6 @@ export class ShoppingCartComponent implements OnInit {
   idstock:any
 
   item:any
-  sumTotal:any;
 
   constructor(private order:OrdersService,
     private auth:AuthenticationService,
@@ -50,23 +49,25 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartitem.getProdList().subscribe({
-    next:data =>{
-      this.products = data; 
-      this.totalNumber = data.length;
-      
-      data.forEach((obj:any) => {
-        this.sum += parseFloat(obj.prod_price);
-      });
-      this.sumTotal = this.sum;
-    }
-      
-   })
-
-   this.totalTax(this.sum);
-   this.totalAmountDue();
+      next:data =>{
+        this.products = data; 
+        this.totalNumber = data.length;
+      }    
+    })
+    this.getSum();
+    this.getTax();
+    this.getAmount();
   }
 
-  
+  getSum(){
+    this.sumTotal = this.cartitem.sumTotal;
+  }
+  getTax(){
+    this.totTax = this.cartitem.tax;
+  }
+  getAmount(){
+   this.totalDue = this.cartitem.totalAmountDue()
+  }
  
   CheckStock(id:any){
     return this.stock.getunit(id).subscribe({next:data =>{
@@ -82,22 +83,11 @@ export class ShoppingCartComponent implements OnInit {
     }})
   }
   
- 
-  totalTax(num:number){
-    return this.totTax = num * 0.15;
-  }
-
-  totalAmountDue(){
-    return this.totalDue = this.totTax + this.sumTotal;
-  }
-
   removeProduct(item:any){
     this.cartitem.removePerCart(item);
-    this.sumTotal -= (item.prod_price)
-    this.totalTax(this.sumTotal);
-    this.totalAmountDue();
-    console.log(this.sumTotal)
-    return 
+    this.getTax();
+    this.getSum();
+    this.getAmount();
   }
 
   removeAllProduct(){
@@ -111,5 +101,4 @@ export class ShoppingCartComponent implements OnInit {
       this.router.navigate(['/checkout'])
     }
   }
-
 }

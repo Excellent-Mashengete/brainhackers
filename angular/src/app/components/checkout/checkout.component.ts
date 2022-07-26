@@ -5,6 +5,7 @@ import { ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxLoadingComponent } from 'ngx-loading';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { CartService } from 'src/app/Services/cart.service';
 
 
 @Component({
@@ -19,6 +20,8 @@ export class CheckoutComponent implements OnInit {
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public loading = false;
 
+
+  totalDue: number = 0;
 
   keyPressAlphanumeric(event: { keyCode: number; preventDefault: () => void; }) {
 
@@ -35,7 +38,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router:Router,
-    private auth:AuthenticationService
+    private auth:AuthenticationService,
+    private cartitem:CartService
    ) { }
 
   Form = new FormGroup({
@@ -56,11 +60,11 @@ export class CheckoutComponent implements OnInit {
       city: ['', Validators.required],
       town: ['', Validators.required],
       zip: ['', Validators.required],
-    },
-  );
+      },
+    );
   this.user()
-  
 
+  this.getAmount()
   }
 
   get f():{ [key: string]: AbstractControl }{
@@ -97,6 +101,10 @@ export class CheckoutComponent implements OnInit {
      console.log(shipping)
   }
 
+  getAmount(){
+    this.totalDue = this.cartitem.totalAmountDue()
+  }
+  
   cancelForm(){
     this.router.navigate(['cart'])
   }

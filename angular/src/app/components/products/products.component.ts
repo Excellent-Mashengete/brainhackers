@@ -25,14 +25,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this.cardservice.getCard().subscribe(( respond:any )=>{
-      this.loading = false;
-      // console.log(respond)
-      // console.log("response")
-
-      
+      this.loading = false;  
       this.Products = respond;
-      
-      // console.log(this.Products)
     })
 
 
