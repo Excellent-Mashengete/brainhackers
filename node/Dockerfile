@@ -1,7 +1,7 @@
 FROM node:14-alpine 
 
 # Create app directory
-WORKDIR /angular/src/app
+WORKDIR /usr/src/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -15,6 +15,6 @@ RUN npm install
 # Bundle app source
 COPY ./ .
 
-EXPOSE 4300
+EXPOSE 4301
 
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
