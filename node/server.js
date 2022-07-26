@@ -29,7 +29,7 @@ app.use(
 
 const port = process.env.PORT || 7070;
  
-// const hostURL = '0.0.0.0'; //Fault-Tolerant listening port for Backend. Picks available dynamic IPv4 and IPv6 addresses of the local host
+//const hostURL = '0.0.0.0'; //Fault-Tolerant listening port for Backend. Picks available dynamic IPv4 and IPv6 addresses of the local host
 
 client.connect((err) =>{ // Connect to the Database
    if (err) {
