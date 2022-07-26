@@ -6,6 +6,7 @@ import { NgxLoadingComponent } from 'ngx-loading';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { CartService } from 'src/app/Services/cart.service';
+import { OrdersService } from 'src/app/Services/orders.service';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class CheckoutComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router:Router,
     private auth:AuthenticationService,
-    private cartitem:CartService
+    private cartitem:CartService,
+    private order:OrdersService,
    ) { }
 
   Form = new FormGroup({
@@ -106,14 +108,31 @@ export class CheckoutComponent implements OnInit {
     }
 
      let shipping = {
-       userid : this.id,
-       address : this.Form.value.address,
-       city: this.Form.value.city,
-       town : this.Form.value.town,
-       zip : this.Form.value.zip,
-      //  delivery_price: this.shipping,
-      //  totalcost: this.totalshipping
+        address : this.Form.value.address,
+        city: this.Form.value.city,
+        town : this.Form.value.town,
+        zip : this.Form.value.zip,
+        delivery_price: this.delivery,
+        totalcost: this.amountDelivery
      }
+     this.order.addOrders(shipping, this.id).subscribe({
+      next:data =>{
+        console.log(data);
+        Swal.fire(
+          'order successfully made!',
+          '',
+          'success'
+        )
+        this.router.navigate(['products'])
+      }, error:err =>{
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
+      }
+     })
      console.log(shipping)
   }
 
