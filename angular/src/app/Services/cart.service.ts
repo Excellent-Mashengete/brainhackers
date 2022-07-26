@@ -7,6 +7,9 @@ import { BehaviorSubject, Subject } from 'rxjs';
 
 export class CartService {
   cardDataList:any = []
+  singlePrice: number [] = []
+  singleID: number [] = []
+  ourCard: any [] = []
   productList = new BehaviorSubject<any>([])
   tax:number= 0;
   sumTotal:number = 0;
@@ -38,7 +41,12 @@ export class CartService {
         break;
       }
     }
-    
+    for(let i=0; i< this.cardDataList.length; i++){
+      this.singleID[i] = this.cardDataList[i].prod_id
+      this.singlePrice[i] = this.cardDataList[i].prod_price
+      this.ourCard[i] = this.cardDataList[i]
+    }
+
     this.productList.next(this.cardDataList)
     this.getAmount(this.cardDataList.prod_price);
   }
@@ -49,8 +57,9 @@ export class CartService {
     this.cardDataList.forEach((sm:any) => {
       grandToat += parseFloat(sm.prod_price);
       this.sumTotal = grandToat;
+      
     });
-    
+
     this.totalTax(grandToat)
     this.tax = this.totalTax(grandToat)
     this.total = this.totalAmountDue()

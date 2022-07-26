@@ -89,8 +89,9 @@ module.exports.addIterms = async (req, res) => {
             INSERT INTO orderitems (orderid, product_id, actualprice, quantity) 
             VALUES ($1, $2, $3, $4)`, [orderid, product_id, actualprice, quantity], (error, results) => {
                 if(error){ //checks for errors and return them 
-                    throw error
-                    //Throw t //Throw the error in the terminal
+                    return res.status(400).json({
+                        error: "Database error"
+                    })//Throw t //Throw the error in the terminal
                 }
                 res.status(200).json(results.rows) //Return a status 200 if there is no error
             }

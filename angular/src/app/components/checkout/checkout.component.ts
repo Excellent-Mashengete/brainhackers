@@ -50,12 +50,18 @@ export class CheckoutComponent implements OnInit {
     zip: new FormControl(''),
   });
 
-  submitted = false
-  profile:any
-  id: any
+  submitted = false;
+  profile:any;
+  id: any;
   delivery:number = 0;
   amountDelivery:number = 0;
-
+  orderitem: any;
+  actualPrice: number [] = []
+  singleId: number [] = []
+  ourOrder: any [] = []
+  price: number = 0;
+  prodId: number = 0;
+  index:number = 0;
   ngOnInit(): void {
     this.loading = false;
     this.Form = this.formBuilder.group({
@@ -65,11 +71,13 @@ export class CheckoutComponent implements OnInit {
       zip: ['', Validators.required],
       },
     );
-  this.user();
 
-  this.getAmount();
-  this.deliveryCost();
-  this.totalAmount();
+    this.user();
+    this.getid();
+    this.getActualPrice()
+    this.getAmount();
+    this.deliveryCost();
+    this.totalAmount();
   }
 
   get f():{ [key: string]: AbstractControl }{
@@ -78,23 +86,40 @@ export class CheckoutComponent implements OnInit {
   }
 
   getAmount(){
-    this.totalDue = this.cartitem.totalAmountDue()
+    this.totalDue = this.cartitem.totalAmountDue();
   }
   
   deliveryCost(){
-    return this.delivery = this.totalDue * 0.10
+    return this.delivery = this.totalDue * 0.10;
   }
 
   totalAmount(){
-    return this.amountDelivery = this.totalDue + this.delivery
+    return this.amountDelivery = this.totalDue + this.delivery;
   }
   
+  getid(){
+     this.singleId = this.cartitem.singleID
+     for(let i=0; i<this.singleId.length; i++){
+      this.prodId = this.singleId[i]
+     }
+  }
+ 
+  getOrderlist(){
+    this.ourOrder = this.cartitem.ourCard
+  }
 
+  getActualPrice(){
+     this.actualPrice = this.cartitem.singlePrice;
+     for(let i=0; i<this.actualPrice.length; i++){
+      this.price = this.actualPrice[i]
+      this.index = i
+     }
+  }
+  
   user(){
     return this.auth.getUserProfile().subscribe({next:data => {
-      this.profile = data
-      this.id = this.profile.decoded.id
-      
+      this.profile = data;
+      this.id = this.profile.decoded.id;
     }})  
   }
 
@@ -115,9 +140,24 @@ export class CheckoutComponent implements OnInit {
         delivery_price: this.delivery,
         totalcost: this.amountDelivery
      }
+    
+    console.log( )
+    console.log()
+
+     let list = {
+      product_id: this.prodId,
+      actualprice: this.price,
+      quantity: this.index + 1,
+     }
+
      this.order.addOrders(shipping, this.id).subscribe({
       next:data =>{
         console.log(data);
+        this.orderitem = data
+        //for(let i=0; i<this.ourOrder.length; i++){
+          this.order.addIterms(list,this.orderitem).subscribe()
+      
+        //}
         Swal.fire(
           'order successfully made!',
           '',
@@ -133,7 +173,8 @@ export class CheckoutComponent implements OnInit {
         })
       }
      })
-     console.log(shipping)
+
+     
   }
 
  

@@ -3,6 +3,7 @@ import { UserId } from '../Interface/userid'
 import { OrdersGet} from 'src/app/Interface/orders-get';
 import { environment } from 'src/environments/environment'; 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Items } from '../Interface/items';
 const token = localStorage.getItem('access_token');
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json', 'token': `${token}` })
@@ -23,4 +24,8 @@ export class OrdersService {
     return this.http.post(`${this.baseUrl}add_list/${id}`,orderlist)
   }
   
+  addIterms(orderiterms: any, id:UserId){
+    return this.http.post(`${this.baseUrl}add_items/${id}`, orderiterms)
+  }
+
 }
