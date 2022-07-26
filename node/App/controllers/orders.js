@@ -2,26 +2,26 @@ const express = require("express");
 const client = require("../config/database.config");
 const app = express.Router();
 
-module.exports.oderList = async(req, res) =>{
-    try{
-        client.query
-        (`SELECT * FROM orders ORDER BY user_id`, (error, results) =>{ //returns all orders  in the database from product list and ascending order
+// module.exports.oderList = async(req, res) =>{
+//     try{
+//         client.query
+//         (`SELECT * FROM orders ORDER BY user_id`, (error, results) =>{ //returns all orders  in the database from product list and ascending order
 
-            if(error){ //checks for errors and return them 
-                return res.status(400).json({
-                    error: "Database error"
-                })//Throw t //Throw the error in the terminal
-            }
-            res.status(200).json(results.rows) //Return a status 200 if there is no error
-        })
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).json({
-           error: "Database error while retrieving products", 
-        });
-     };
-}
+//             if(error){ //checks for errors and return them 
+//                 return res.status(400).json({
+//                     error: "Database error"
+//                 })//Throw t //Throw the error in the terminal
+//             }
+//             res.status(200).json(results.rows) //Return a status 200 if there is no error
+//         })
+//     }
+//     catch (err) {
+//         console.log(err);
+//         res.status(500).json({
+//            error: "Database error while retrieving products", 
+//         });
+//      };
+// }
 
 module.exports.getAllOrders = async (req, res) => {
     const id = parseInt(req.params.id); 

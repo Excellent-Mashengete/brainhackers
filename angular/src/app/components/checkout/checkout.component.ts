@@ -3,9 +3,9 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import Swal from 'sweetalert2';
 import { ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxLoadingComponent } from 'ngx-loading';
-
 import { Router } from '@angular/router';
-import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+
 
 @Component({
   selector: 'app-checkout',
@@ -19,8 +19,6 @@ export class CheckoutComponent implements OnInit {
   public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
   public loading = false;
 
-  @ViewChild('ShoppingCartComponent', {static: false})
-  ShoppingCartComponent!: ShoppingCartComponent;
 
   keyPressAlphanumeric(event: { keyCode: number; preventDefault: () => void; }) {
 
@@ -34,11 +32,11 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
-
-
   constructor(
     private formBuilder: FormBuilder,
-    private router:Router) { }
+    private router:Router,
+    private auth:AuthenticationService
+   ) { }
 
   Form = new FormGroup({
     address: new FormControl(''),
@@ -48,6 +46,8 @@ export class CheckoutComponent implements OnInit {
   });
 
   submitted = false
+  profile:any
+  id: any
 
   ngOnInit(): void {
     this.loading = false;
@@ -58,13 +58,22 @@ export class CheckoutComponent implements OnInit {
       zip: ['', Validators.required],
     },
   );
-  console.log(this.ShoppingCartComponent.totalDue)
+  this.user()
+  
 
   }
 
   get f():{ [key: string]: AbstractControl }{
 
     return this.Form.controls;
+  }
+
+  user(){
+    return this.auth.getUserProfile().subscribe({next:data => {
+      this.profile = data
+      this.id = this.profile.decoded.id
+      
+    }})  
   }
 
   onSubmit(){
@@ -76,25 +85,23 @@ export class CheckoutComponent implements OnInit {
       return
     }
 
-    // let shipping = {
-    //   quantity: 1,
-    //   address : this.Form.value.address,
-    //   city: this.Form.value.city,
-    //   town : this.Form.value.town,
-    //   zip : this.Form.value.zip,
-    //   delivery_price: this.shipping,
-    //   totalcost: this.totalshipping
-    // }
+     let shipping = {
+       userid : this.id,
+       address : this.Form.value.address,
+       city: this.Form.value.city,
+       town : this.Form.value.town,
+       zip : this.Form.value.zip,
+      //  delivery_price: this.shipping,
+      //  totalcost: this.totalshipping
+     }
+     console.log(shipping)
   }
 
   cancelForm(){
     this.router.navigate(['cart'])
   }
-  onReset(): void {
-    this.submitted = false;
-    this.Form.reset();
-  }
 
+  
 }
 
 // onSubmit():void{

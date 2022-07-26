@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CartService } from 'src/app/Services/cart.service';
 import { Router } from '@angular/router';
 import { OrdersService } from 'src/app/Services/orders.service';
 import { CardService } from 'src/app/Services/card.service';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { ngxLoadingAnimationTypes } from 'ngx-loading';
+import { NgxLoadingComponent } from 'ngx-loading';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -11,7 +13,12 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
   styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent implements OnInit {
-
+  @ViewChild('ngxLoading', { static: false })
+  ngxLoadingComponent!: NgxLoadingComponent;
+  showingTemplate = false;
+  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public loading = false;
+  
   stocktype = false
   errorMessage = '';
 
@@ -47,12 +54,9 @@ export class ShoppingCartComponent implements OnInit {
       this.products = data; 
       this.totalNumber = data.length;
       
-     
       data.forEach((obj:any) => {
         this.sum += parseFloat(obj.prod_price);
-
-      }
-      );
+      });
       this.sumTotal = this.sum;
     }
       

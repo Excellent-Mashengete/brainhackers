@@ -68,14 +68,16 @@
 <ng-container *ngIf="orders.length == 0">
   <div class="container">
       <div class="card empty" >
-          <h4 class="card-title">My order history</h4>
+          <h4 class="card-title">Order history</h4>
       </div>
 
       <div class="center">
-          <img src="https://media.istockphoto.com/vectors/purchase-flat-line-icon-outline-vector-symbol-illustration-pixel-vector-id1225349588?k=20&m=1225349588&s=612x612&w=0&h=NjO2s3jAZJ6sh3VybcPp-mGjo9SqTMkfY9i9iI1DKLc=" alt="">
+          <img src="https://shopfront.takealot.com/static/media/empty-order-icon-6bcc4601443c5d44b8ae3e5317d1e262.svg" alt="">
           <h5>Your Order history is empty</h5>
-          <h6>Place orders to see order history</h6>
-          <!-- <button routerLink="/products" routerLinkActive="router-link-active"  class="btn-shop">Shop Now</button> -->
+          <div class="col">
+            <button type="button" class="btn btn-secondary  btn-sm n" routerLink="/products">Start Shopping</button>
+          </div>
+            <!-- <button routerLink="/products" routerLinkActive="router-link-active"  class="btn-shop">Shop Now</button> -->
       </div>
   </div>
 </ng-container>

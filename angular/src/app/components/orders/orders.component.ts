@@ -18,7 +18,7 @@ export class OrdersComponent implements OnInit {
 
   id :any 
   orderid: any 
-  orders:any
+  orders:any = [];
   profile:any
   constructor(
     private order:OrdersService,
