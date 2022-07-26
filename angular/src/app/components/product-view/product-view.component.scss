@@ -90,7 +90,7 @@ img{
 }
 
 
-@media screen and (max-width:768px ) {
+@media screen and (max-width:576px ) {
     .scroller{
         overflow:auto;
         width: 100%;
@@ -98,9 +98,16 @@ img{
 
     }   
     .card img{
-        height: 40vh;
+        height: 80%;
+        width: 100%;
     } 
+    .img{
+        margin-bottom: -60px;
+    }
+   
 }
+
+
 
 //PRODUCT VIEW NAVBAR HERE
 
