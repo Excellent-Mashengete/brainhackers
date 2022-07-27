@@ -90,7 +90,12 @@ export class CheckoutComponent implements OnInit {
   }
   
   deliveryCost(){
-    return this.delivery = this.totalDue * 0.10;
+    if(this.totalDue > 4000){
+      return this.delivery = this.totalDue * 0.10;
+    }else{
+      return this.delivery = 0;
+    }
+   
   }
 
   totalAmount(){
@@ -145,19 +150,18 @@ export class CheckoutComponent implements OnInit {
     console.log()
 
      let list = {
-      product_id: this.prodId,
-      actualprice: this.price,
-      quantity: this.index + 1,
+      product_id: this.singleId,
+      actualprice: this.actualPrice,
+      quantity: 1,
      }
 
      this.order.addOrders(shipping, this.id).subscribe({
       next:data =>{
         console.log(data);
         this.orderitem = data
-        //for(let i=0; i<this.ourOrder.length; i++){
-          this.order.addIterms(list,this.orderitem).subscribe()
-      
-        //}
+        for(let i=0; i<this.singleId.length; i++){
+          this.order.addIterms(this.singleId[i],this.actualPrice[i],list.quantity,this.orderitem).subscribe()
+        }
         Swal.fire(
           'order successfully made!',
           '',

@@ -24,8 +24,10 @@ export class OrdersService {
     return this.http.post(`${this.baseUrl}add_list/${id}`,orderlist)
   }
   
-  addIterms(orderiterms: any, id:UserId){
-    return this.http.post(`${this.baseUrl}add_items/${id}`, orderiterms)
+  addIterms(product_id: any,actualprice:any,quantity:any , id:UserId){
+    return this.http.post(`${this.baseUrl}add_items/${id}`, {product_id,actualprice,quantity})
   }
 
+  // actualprice: number [] ;
+  //   quantity: number;
 }
